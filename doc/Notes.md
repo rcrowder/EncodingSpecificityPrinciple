@@ -31,6 +31,12 @@ Reduced minicolumn stacked regions for cascading inhibitory events? ...
 
 Short term 'Echoic' 15 - 20 seconds
 
+## Concepts (Basal Ganglia):
+
+![Basal Ganglia and The Regulation of Movement](nfgz001.gif "http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html")
+
+Turner, Robert S(Sep 2009) Basal Ganglia and The Regulation of Movement. In: eLS. John Wiley & Sons Ltd, Chichester. http://www.els.net [doi: 10.1002/9780470015902.a0000020.pub2]
+
 ![Basal Ganglia Classic](Basal-ganglia-classic.png "http://commons.wikimedia.org/wiki/File:Basal-ganglia-classic.png#mediaviewer/File:Basal-ganglia-classic.png")
 
 Key;
@@ -41,17 +47,9 @@ Key;
 * AC  - Anterior Commissure
 * STN - Sub Thalamic Nucleus
 
-...
 Thalamus predicting action plan feedback? Sending projections back in as potential actions to choose?
 
 Sensorimotor cortices, Associative cortices, and Limbic cortices projecting through AC, Nucleus Accumbens to GPe, GPi, SNr, and SNc
-...
-
-## Concepts (Basal Ganglia):
-
-![Basal Ganglia and The Regulation of Movement](nfgz001.gif "http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html")
-
-Turner, Robert S(Sep 2009) Basal Ganglia and The Regulation of Movement. In: eLS. John Wiley & Sons Ltd, Chichester. http://www.els.net [doi: 10.1002/9780470015902.a0000020.pub2]
 
 - The BG is organized as anatomically segregated loop circuits that contribute to the control of movement, cognition and motivation.
 - All BG circuits share a common basic organization.
