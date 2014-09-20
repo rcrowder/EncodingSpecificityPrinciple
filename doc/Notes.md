@@ -2,6 +2,9 @@
 
 These thoughts show progress learning a new subject as complex as neuroscience.
 
+Genes relating to Absolute Pitch used as a fast-learning mechanism?  
+e.g. Can Absolute Pitch be related to fetal environmental distractions during initial sensing phase of their, or mothers, heartbeat?  
+
 POv Relay from spinothalamic tract?  
 Parabrochial cells involvment in labelling and **dual labelling**?  
 Do Synaptic Vesicles contain consistant volume/amount of neurotransmitter molecules?  
