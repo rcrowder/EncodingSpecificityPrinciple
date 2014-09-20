@@ -13,6 +13,13 @@ Glutamatergic synapse formation
 
 ### Working memory:
 
+http://www.joaquinfuster.com/
+
+
+Function of basal ganglia in bridging cognitive and motor modules to perform an action  
+http://journal.frontiersin.org/Journal/10.3389/fnins.2014.00187/full
+
+
 1 OFC - Integration of infomation that derives value of potential reward outcomes  
 * Connects to  
     MPFC and DLPFC  
@@ -33,16 +40,21 @@ Glutamatergic synapse formation
 * Outputs to  
     Behavioural response  
 
-Short term 'Echoic' 15 - 20 seconds
+PFC - http://en.wikipedia.org/wiki/Prefrontal_cortex  
+dlPFC - http://en.wikipedia.org/wiki/Dorsolateral_prefrontal_cortex  
+
+Short term 'Echoic' 15 - 20 seconds  
+
+![Function of basal ganglia in bridging cognitive and motor modules to perform an action](fnins-08-00187-g005.jpg "http://journal.frontiersin.org/Journal/10.3389/fnins.2014.00187/full")
 
 ### Concepts (Basal Ganglia):
 
-Turner, Robert S (Sep 2009) Basal Ganglia and The Regulation of Movement.
-In: eLS. John Wiley & Sons Ltd, Chichester.
-http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html
-[doi: 10.1002/9780470015902.a0000020.pub2]
+Turner, Robert S (Sep 2009) Basal Ganglia and The Regulation of Movement.  
+In: eLS. John Wiley & Sons Ltd, Chichester.  
+http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html  
+[doi: 10.1002/9780470015902.a0000020.pub2]  
 
-![Basal Ganglia and The Regulation of Movement](nfgz001.gif "http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html")
+![Basal Ganglia and The Regulation of Movement](nfgz001.gif "http://www.els.net/WileyCDA/ElsArticle/refId-a0000020.html")  
 
 ![Basal Ganglia Classic](Basal-ganglia-classic.png "http://commons.wikimedia.org/wiki/File:Basal-ganglia-classic.png#mediaviewer/File:Basal-ganglia-classic.png")
 
