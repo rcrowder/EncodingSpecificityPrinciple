@@ -17,6 +17,10 @@ Before reaching the ventral division of the medial geniculate body of the thalam
 
 http://en.wikipedia.org/wiki/Neuronal_encoding_of_sound
 
+The Auditory Image Model - AIM  
+http://www.pdn.cam.ac.uk/groups/cnbh/research/aim.php  
+http://www.acousticscale.org/wiki/index.php/Main_Page  
+
 Auditory abstraction from spectro-temporal features to coding auditory entities  
 http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/
 
@@ -26,24 +30,33 @@ Need to model? ;
 * Astrocytic glial cell effects on the modulation of synaptic transmission and promotion of the myelinating activity of oligodendrocytes  
 * Martinotti cell cortical dampening mechanism?  
 
-The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells in the cochlear. 
+http://en.wikipedia.org/wiki/Critical_band
+
+The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells per ear in the cochlear. 
 
 Via mechanotransduction (see organ of Corti, below), inner hair cells detect the motion of waves, and excite myelinated Type I neurons of the auditory nerve. Exocytosis of neurotransmitter vesicles at ribbon synapses, generates an action potential in the connected auditory-nerve fiber. 
 
 The mechanotransduction by stereocilia is highly sensitive and able to detect perturbations as small as fluid fluctuations of 0.3 nanometers, and can convert this mechanical stimulation into an electrical nerve impulse in about 10 microseconds. 
 
 http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem  
-40k Hz for infants, 32k Hz for adults
+Maximum frequency 20k Hz for infants, 16k Hz for adults. Within this range, the human ear is most sensitive between 2 and 5 kHz, largely due to the resonance of the ear canal and the transfer function of the ossicles of the middle ear.
 
-Outer hair cells on the other hand boost the mechanical signal by using electromechanical feedback, a frequency specific boost and unmyelinated. Can this support background noise filtering?
+Outer hair cells on the other hand boost the mechanical signal by using electromechanical feedback, a frequency specific boost and unmyelinated. Fast enough feedback from unmyelinated cortical neurons to handle attentional auditory processing? (In the inferior colliculus?)
 
 Feedback from the tensor tympani and stapedius muscles could also be determined, to deduce energy state information from ossicle simulation.
 
-The basilar membrane of the cochlea is tonotopic. Fourier Transform. Power Spectrum. Difference in spiral between individuals? Would spiral function contribute to size of buckets, a genetically inherited mapping? Mipmap sub-sampling in both domains adds to receptive field.
+The basilar membrane of the cochlea is tonotopic.
+
+* Fourier Transform.  
+* Power Spectrum.  
+* Mipmap sub-sampling to add to receptive field.  
+* Tuning on the basilar membrane changes from high to low frequency.  
+  * Auditory filters that are non-linear, level-dependent.
+  * Filter critical bandwidth size decreases from the base to apex of the cochlea (high to low)
+  * Need a Glasberg and Moore approximation equivalent rectangular bandwidth (ERB)?  
+  * A simple linear gammatone filter?  
 
 http://en.wikipedia.org/wiki/Spectral_density
-
-Neural response enhanced with velocity information? (how many derivativies?, deminishing return?)
 
 http://en.wikipedia.org/wiki/Hair_cell#Neural_connection
 
@@ -58,14 +71,17 @@ Pars Orbitalis, temporal coherence in Brodmann area 47?
 Speech and music divergence (phoneme recognition)?  
 
 * Feature extraction (150 - 400 ms)  
-  * absolute pitch, 
+  * relative piches (~1500 frequencies),  
+  * peak absolute pitch, 
+  * loudness, 
   * timbre, 
   * spatial location, 
-  * loudness, 
   * reverb, 
   * tone duration, 
   * note onset times  
 * Feature inegration (100 - 150 ms)  
+
+http://en.wikipedia.org/wiki/Equal-loudness_contour  
 
 ### Anatomy of the Human Ear
 
@@ -75,7 +91,7 @@ http://en.wikibooks.org/wiki/Sensory_Systems/Auditory_System
 
 ### Organ of corti
 
-<p><a href="http://commons.wikimedia.org/wiki/File:Organ_of_corti.svg#mediaviewer/File:Organ_of_corti.svg"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Organ_of_corti.svg/1200px-Organ_of_corti.svg.png" alt="Organ of corti.svg"></a><br>"<a href="http://commons.wikimedia.org/wiki/File:Organ_of_corti.svg#mediaviewer/File:Organ_of_corti.svg">Organ of corti</a>" by <a href="//commons.wikimedia.org/wiki/User:Madhero88" title="User:Madhero88">Madhero88</a> - <span class="int-own-work"></span>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
+<p><a href="http://commons.wikimedia.org/wiki/File:Organ_of_corti.svg#mediaviewer/File:Organ_of_corti.svg"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Organ_of_corti.svg/1200px-Organ_of_corti.svg.png" alt="Organ of corti.svg"></a><br>"<a href="http://commons.wikimedia.org/wiki/File:Organ_of_corti.svg#mediaviewer/File:Organ_of_corti.svg">Organ of corti</a>" by <a href="//commons.wikimedia.org/wiki/User:Madhero88" title="User:Madhero88">Madhero88</a><span class="int-own-work"></span> Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
 
 ### Uncoiled cochlea with basilar membrane
 
