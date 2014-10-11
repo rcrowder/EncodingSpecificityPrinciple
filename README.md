@@ -21,9 +21,10 @@ Auditory abstraction from spectro-temporal features to coding auditory entities
 http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/
 
 Need to model? ;  
-* oligodendrocytes variation between cortical regions?  
-* astrocyte calcium release and propogation events between cortical layers?  
-* astrocytic glial cell effects on the modulation of synaptic transmission and promotion of the myelinating activity of oligodendrocytes  
+* Oligodendrocytes variation between cortical regions?  
+* Astrocyte calcium release and propogation events between cortical layers?  
+* Astrocytic glial cell effects on the modulation of synaptic transmission and promotion of the myelinating activity of oligodendrocytes  
+* Martinotti cell cortical dampening mechanism?  
 
 The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells in the cochlear. 
 
