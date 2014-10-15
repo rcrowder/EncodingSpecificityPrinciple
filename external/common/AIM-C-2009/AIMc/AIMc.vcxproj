@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97E8EBC6-34CD-4DA0-A6BD-28B7A3599A85}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>AIMc</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINDOWS;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\src;..\..\include;..\external\libsndfile</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libsndfile-1.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\external\libsndfile</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\external\libsndfile\libsndfile-1.def</ModuleDefinitionFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libsndfile-1.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\external\libsndfile</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\external\libsndfile\sndfile.h" />
+    <ClInclude Include="..\src\Modules\BMM\ModuleGammatone.h" />
+    <ClInclude Include="..\src\Modules\BMM\ModulePZFC.h" />
+    <ClInclude Include="..\src\Modules\Features\ModuleBoxes.h" />
+    <ClInclude Include="..\src\Modules\Features\ModuleGaussians.h" />
+    <ClInclude Include="..\src\Modules\Input\ModuleFileInput.h" />
+    <ClInclude Include="..\src\Modules\NAP\ModuleHCL.h" />
+    <ClInclude Include="..\src\Modules\Output\FileOutputAIMC.h" />
+    <ClInclude Include="..\src\Modules\Output\FileOutputHTK.h" />
+    <ClInclude Include="..\src\Modules\Output\FileOutputJSON.h" />
+    <ClInclude Include="..\src\Modules\Profile\ModuleScaler.h" />
+    <ClInclude Include="..\src\Modules\Profile\ModuleSlice.h" />
+    <ClInclude Include="..\src\Modules\SAI\ModuleSAI.h" />
+    <ClInclude Include="..\src\Modules\SNR\ModuleNoise.h" />
+    <ClInclude Include="..\src\Modules\SSI\ModuleSSI.h" />
+    <ClInclude Include="..\src\Modules\Strobes\ModuleLocalMax.h" />
+    <ClInclude Include="..\src\Modules\Strobes\ModuleParabola.h" />
+    <ClInclude Include="..\src\Support\Common.h" />
+    <ClInclude Include="..\src\Support\ConvertUTF.h" />
+    <ClInclude Include="..\src\Support\ERBTools.h" />
+    <ClInclude Include="..\src\Support\FileList.h" />
+    <ClInclude Include="..\src\Support\linked_ptr.h" />
+    <ClInclude Include="..\src\Support\Module.h" />
+    <ClInclude Include="..\src\Support\ModuleFactory.h" />
+    <ClInclude Include="..\src\Support\ModuleTree.h" />
+    <ClInclude Include="..\src\Support\Parameters.h" />
+    <ClInclude Include="..\src\Support\SignalBank.h" />
+    <ClInclude Include="..\src\Support\SimpleIni.h" />
+    <ClInclude Include="..\src\Support\StrobeList.h" />
+    <ClInclude Include="AIMc.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Modules\BMM\ModuleGammatone.cc" />
+    <ClCompile Include="..\src\Modules\BMM\ModulePZFC.cc" />
+    <ClCompile Include="..\src\Modules\Features\ModuleBoxes.cc" />
+    <ClCompile Include="..\src\Modules\Features\ModuleGaussians.cc" />
+    <ClCompile Include="..\src\Modules\Input\ModuleFileInput.cc" />
+    <ClCompile Include="..\src\Modules\NAP\ModuleHCL.cc" />
+    <ClCompile Include="..\src\Modules\Output\FileOutputAIMC.cc" />
+    <ClCompile Include="..\src\Modules\Output\FileOutputHTK.cc" />
+    <ClCompile Include="..\src\Modules\Output\FileOutputJSON.cc" />
+    <ClCompile Include="..\src\Modules\Profile\ModuleScaler.cc" />
+    <ClCompile Include="..\src\Modules\Profile\ModuleSlice.cc" />
+    <ClCompile Include="..\src\Modules\SAI\ModuleSAI.cc" />
+    <ClCompile Include="..\src\Modules\SNR\ModuleNoise.cc" />
+    <ClCompile Include="..\src\Modules\SSI\ModuleSSI.cc" />
+    <ClCompile Include="..\src\Modules\Strobes\ModuleLocalMax.cc" />
+    <ClCompile Include="..\src\Modules\Strobes\ModuleParabola.cc" />
+    <ClCompile Include="..\src\Support\Common.cc" />
+    <ClCompile Include="..\src\Support\ConvertUTF.cc" />
+    <ClCompile Include="..\src\Support\FileList.cc" />
+    <ClCompile Include="..\src\Support\Module.cc" />
+    <ClCompile Include="..\src\Support\ModuleFactory.cc" />
+    <ClCompile Include="..\src\Support\ModuleTree.cc" />
+    <ClCompile Include="..\src\Support\Parameters.cc" />
+    <ClCompile Include="..\src\Support\SignalBank.cc" />
+    <ClCompile Include="AIMc.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
