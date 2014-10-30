@@ -1,29 +1,72 @@
-Vestibulocochlear Nerve
-=======================
+Cochlear Nerve
+==============
 
 The purpose of this repository is to investigate the sparse encoding of auditory signals ([Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus)), and it's passage into the primary auditory cortex. 
 
 http://en.wikipedia.org/wiki/Vestibulocochlear_nerve
 
-An intention is to use the [Numenta Platform for Intelligent Computing](http://numenta.org/ "Numenta | NuPIC") library for high level abstraction and inference (only PreFrontal and T2/T3?).  
-Working down via the;  
+An intention is to use the [Numenta Platform for Intelligent Computing](http://numenta.org/ "Numenta | NuPIC") library at the highest level (only PreFrontal, and T2/T3?). Working down via the;  
 * [Medial geniculate nucleus](http://en.wikipedia.org/wiki/Medial_geniculate_nucleus) (MGB to Brodmann area 41 (A1)), [Ventral posterior nucleus](http://en.wikipedia.org/wiki/Ventral_posterior_nucleus)
 * [Inferior colliculus](http://en.wikipedia.org/wiki/Inferior_colliculus) (Midbrain), 
 * [Lateral lemniscus nuclei](http://en.wikipedia.org/wiki/Lateral_lemniscus) (Pons), 
 * [Superior olivary complex](http://en.wikipedia.org/wiki/Superior_olivary_complex) (Pons), 
 * to the [Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus) (Medulla).
 
+###### Suggested reading list
+
+[Spectral density](http://en.wikipedia.org/wiki/Spectral_density)  
+[Critical band](http://en.wikipedia.org/wiki/Critical_band)  
+[Equal loudness contour](http://en.wikipedia.org/wiki/Equal-loudness_contour)   
+[Hair cell - Neural connection](http://en.wikipedia.org/wiki/Hair_cell#Neural_connection)  
+[Nyquist–Shannon sampling theorem](http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem)  
+
+- 
+Auditory-Based Processing of Communication Sounds  
+Walters, Thomas C. (2011)  
+http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds
+- 
+Patterning of pre-thalamic somatosensory pathways  
+Gabrielle Pouchelon, Laura Frangeul, Filippo M. Rijli and Denis Jabaudon (2012)  
+http://scholar.google.co.uk/scholar?q=Patterning+of+pre-thalamic+somatosensory+pathways&hl=en&as_sdt=0&as_vis=1&oi=scholart&sa=X&ei=padSVPTzGsLhaPOjgagH&ved=0CCAQgQMwAA  
+
+See section _Ascending trigeminothalamic pathways_, follows _From whiskers to the brainstem trigeminal complex_.  
+And Fig 1. Summary of pre-thalamic somatosensory pathways.
+
+- 
+Time‐domain modeling of peripheral auditory processing: A modular architecture and a software platform  
+Roy D. Patterson1, Mike H. Allerhand1 and Christian Giguère (1995)  
+http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
+http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing
+- 
+Binary Spiking in Auditory Cortex  
+Michael R. DeWeese, Michael Wehr, and Anthony M. Zador (2003)  
+http://scholar.google.co.uk/scholar?q=Binary+Spiking+in+Auditory+Cortex
+- 
+Efficient coding of natural sounds  
+Michael S. Lewicki (2012)  
+http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds
+- 
+Auditory abstraction from spectro-temporal features to coding auditory entities  
+Gal Chechik and Israel Nelken (2012)  
+http://www.pnas.org/content/109/46/18968.short  
+http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/  
+- 
+Steady-state evoked potentials as an index of multisensory temporal binding  
+Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
+http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding
+
+
 But firstly, the creation of the SDR encoders.
 
-### Encoding for the Thalamocortical pathway
+### Encoding for the Thalamocortical pathways
 
-Before reaching the ventral division of the medial geniculate body of the thalamus (MGB), a variety of information processing needs to take place.
+Before reaching the ventral division of the medial geniculate body of the thalamus (MGB), a variety of information processing needs to take place. A [sparse distributed representation](https://www.youtube.com/watch?v=LbZtc_zWBS4) ([SDR](https://github.com/numenta/nupic/wiki/Sparse-Distributed-Representations)), an array containing distributed bit encoded semantic meanings, is required to be sent into the Thalamocortical highways. Our highways will be built using NuPIC. 
 
 http://en.wikipedia.org/wiki/Neuronal_encoding_of_sound
 
 #### AIM - The Auditory Image Model
 
-http://www.pdn.cam.ac.uk/groups/cnbh/research/aim.php    
+http://www.pdn.cam.ac.uk/groups/cnbh/research/aim.php  
 http://www.acousticscale.org/wiki/index.php/Main_Page  
 https://code.google.com/p/aimc/  
 
@@ -39,36 +82,34 @@ The principle functions of AIM are to simulate:
 
 Optionally; A size invariant representation of the information in the SAI referred to as the Mellin Magnitude Image (MMI).
 
-Outer middle ear processing (PCP) can be approximated with 2nd order Butterworth filter? (Lf 450 Hz, Hf 8000 Hz)
-
-###### Suggested reading
-
-[Spectral density](http://en.wikipedia.org/wiki/Spectral_density)  
-[Critical band](http://en.wikipedia.org/wiki/Critical_band)  
-[Equal loudness contour](http://en.wikipedia.org/wiki/Equal-loudness_contour)   
-[Hair cell - Neural connection](http://en.wikipedia.org/wiki/Hair_cell#Neural_connection)  
-[Nyquist–Shannon sampling theorem](http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem)  
-
-Auditory abstraction from spectro-temporal features to coding auditory entities  
-http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/
-
-The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells per ear in the cochlear.  
-Maximum frequency 20k Hz for infants, 16k Hz for adults. Within this range, the human ear is most sensitive between 2 and 5 kHz, largely due to the resonance of the ear canal and the transfer function of the ossicles of the middle ear.
+The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells per ear in the cochlear. Maximum frequency 20k Hz for infants, 16k Hz for adults. Within this range, the human ear is most sensitive between 2 and 5 kHz, largely due to the resonance of the ear canal and the transfer function of the ossicles of the middle ear.
 
 Via mechanotransduction (see organ of Corti, below), inner hair cells detect the motion of waves, and excite myelinated Type I neurons of the auditory nerve. Exocytosis of neurotransmitter vesicles at ribbon synapses, generates an action potential in the connected auditory-nerve fiber. 
 
-The mechanotransduction by stereocilia is highly sensitive and able to detect perturbations as small as fluid fluctuations of 0.3 nanometers. And can convert this mechanical stimulation into an electrical nerve impulse in about 10 microseconds. 
+The mechanotransduction by stereocilia is highly sensitive, and able to detect perturbations as small as fluid fluctuations of 0.3 nanometers. Converting this mechanical stimulation into an electrical nerve impulse in about 10 microseconds. 
 
 Outer hair cells on the other hand boost the mechanical signal by using electromechanical feedback, a frequency specific boost and unmyelinated.  
 
+Outer middle ear processing (PCP) can be approximated with 2nd order Butterworth filter? (Lf 450 Hz, Hf 8000 Hz)
+
 The basilar membrane of the cochlea is tonotopic.  
 
-* Fourier Transform.  
-* Power Spectrum.  
+Feature extraction (150 - 400 ms)  
+ * relative piches (~1500 frequencies),  
+ * peak absolute pitch, 
+ * loudness, 
+ * timbre, 
+ * spatial location, 
+ * reverb, 
+ * tone duration, 
+ * note onset times  
+
+followed by,  
+Feature inegration (100 - 150 ms)  
+
 * Tuning on the basilar membrane changes from high to low frequency.  
   * Auditory filters that are non-linear, level-dependent.
   * Filter critical bandwidth size decreases from the base to apex of the cochlea (high to low)
-  
 
 Can feedback from unmyelinated cortical neurons handle attentional auditory processing? Via the inferior colliculus?
 
@@ -83,19 +124,6 @@ Thalamic reticular nucleus (TRN) neurons (targets medial geniculate body (MGB)),
 - Structure cortical region BA44 & Meaning BA47  
 - Pars Orbitalis, temporal coherence in Brodmann area 47?  
 - Speech and music divergence (phoneme recognition)?  
-
-Feature extraction (150 - 400 ms)  
- * relative piches (~1500 frequencies),  
- * peak absolute pitch, 
- * loudness, 
- * timbre, 
- * spatial location, 
- * reverb, 
- * tone duration, 
- * note onset times  
-
-followed by,  
-Feature inegration (100 - 150 ms)  
 
 ### The pathways of our hearing
 
