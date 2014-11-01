@@ -1,0 +1,76 @@
+2009-12-14  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * configure.ac
+    Don't test for a fortran compiler.
+
+    * man/sndfile-generate-chirp.1 man/sndfile-mix-to-mono.1
+	    man/sndfile-spectrogram.1
+    New man pages.
+
+    * Makefile.am
+    Hook new man pages into build.
+
+    * NEWS doc/index.html
+    Update for 1.03 release.
+
+2009-12-07  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * M4/*.m4 configure.ac
+    Rename custom M4 macros to MN_*.
+
+    * man/sndfile-jackplay.1 Makefile.am
+    Add man page for sndfile-jackplay.
+
+    * doc/index.html
+    Add sndfile-jackplay.
+
+2009-12-04  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * src/sndfile-merge.c
+    Remove this (moved to libsndfile source distribution).
+
+    * src/sndfile-jackplay.c
+    Add file originally from the libsndfile source distribution.
+
+    * M4/extra_pkg.m4 configure.ac
+    Add M4 macro for using in configure.ac to find the JACK library.
+
+    * Makefile.am
+    Fix build after previous changes.
+
+2009-11-28  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * src/sndfile-spectrogram.c
+    Improve the way the spectrogram is interpolated.
+
+2009-11-26  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * src/sndfile-spectrogram.c
+    Initialize colour to black so it writes black instead of random values from
+    the stack.
+    Add a --dyn-range=XXX command line option to set spectrogram dynamic range.
+    Add --no-border command line option to disable rendering of border, scales,
+    heat map and title.
+
+    * src/sndfile-merge.c
+    New program contributed by Jonatan Liljedahl that takes two mono files and
+    merges them into a stereo file.
+
+2009-03-02  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * src/window.c
+    Add bounds check before array access.
+
+2007-10-21  Erik de Castro Lopo  <erikd AT mega-nerd DOT com>
+
+    * src/sndfile-spectrogram.c
+    Calculate longer FFTs and then interpolate to the image height.
+
+    * src/kaiser_window_test.c
+    Test a longer window length.
+
+    * doc/*
+    Add rudimentary documentation.
+
+    * configure.ac src/common.c
+    Detect presence of sf_get_info() and SFC_GET_CURRENT_SF_INFO.
