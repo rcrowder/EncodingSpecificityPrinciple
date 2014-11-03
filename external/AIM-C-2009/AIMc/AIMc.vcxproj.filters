@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Support">
+      <UniqueIdentifier>{ebc2422a-6906-404f-b24c-ebefbd756036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{f611d350-7f78-4ff8-b87d-5f0bc13938d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Input">
+      <UniqueIdentifier>{7f8a85a6-b87f-49f9-afc7-c4ea056801c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\BMM">
+      <UniqueIdentifier>{a2ce0caa-ec9e-42d8-b93d-ca3deb9d1682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\NAP">
+      <UniqueIdentifier>{82a763ab-256c-4bcc-b59b-dd54fa3f7a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Strobes">
+      <UniqueIdentifier>{378818a7-8855-48c3-b1ae-4fd143b5d2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\SAI">
+      <UniqueIdentifier>{efaf8a96-5726-4474-b199-d77f7063bffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\SSI">
+      <UniqueIdentifier>{9b6013e6-0e86-4505-9ed7-be520c79debd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Profile">
+      <UniqueIdentifier>{e1b13c10-4a2a-407c-8301-ee98da551700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Output">
+      <UniqueIdentifier>{ab2b36c1-038d-4e79-8cae-5b4ca658e331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Features">
+      <UniqueIdentifier>{e3f9f611-79f9-4a99-a07f-abfde75f6fb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Libsndfile">
+      <UniqueIdentifier>{6a5f8daf-0b3c-421d-8f88-199d9c779325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Output\Graphics">
+      <UniqueIdentifier>{67c3d90a-ce10-45de-a18f-ca2f4ab79083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Output\Graphics\Devices">
+      <UniqueIdentifier>{ebda94c8-88fa-492d-aaab-a08da392dff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Output\Graphics\Scale">
+      <UniqueIdentifier>{32407bbc-59b0-48ad-a567-36f29e68ac4c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIMc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\StrobeList.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\Common.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\ConvertUTF.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\ERBTools.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\FileList.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\linked_ptr.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\Module.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\ModuleFactory.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\ModuleTree.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\Parameters.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\SignalBank.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Support\SimpleIni.h">
+      <Filter>Source Files\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Input\ModuleFileInput.h">
+      <Filter>Source Files\Modules\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\BMM\ModuleGammatone.h">
+      <Filter>Source Files\Modules\BMM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\BMM\ModulePZFC.h">
+      <Filter>Source Files\Modules\BMM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\NAP\ModuleHCL.h">
+      <Filter>Source Files\Modules\NAP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Features\ModuleBoxes.h">
+      <Filter>Source Files\Modules\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Features\ModuleGaussians.h">
+      <Filter>Source Files\Modules\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\FileOutputAIMC.h">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Profile\ModuleScaler.h">
+      <Filter>Source Files\Modules\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Profile\ModuleSlice.h">
+      <Filter>Source Files\Modules\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\SSI\ModuleSSI.h">
+      <Filter>Source Files\Modules\SSI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\SAI\ModuleSAI.h">
+      <Filter>Source Files\Modules\SAI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Strobes\ModuleLocalMax.h">
+      <Filter>Source Files\Modules\Strobes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Strobes\ModuleParabola.h">
+      <Filter>Source Files\Modules\Strobes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\FileOutputHTK.h">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\FileOutputJSON.h">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\libsndfile\sndfile.h">
+      <Filter>Source Files\Libsndfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Scale\Scale.h">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Scale\ScaleERB.h">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Scale\ScaleLinear.h">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Scale\ScaleLog.h">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Scale\ScaleLogScaled.h">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDevice.h">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDeviceCairo.h">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDeviceMovie.h">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\GraphAxisSpec.h">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\GraphicsView.h">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Modules\Output\Graphics\GraphicsViewTime.h">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\Common.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\FileList.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\Module.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\ModuleFactory.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\ModuleTree.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\Parameters.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\SignalBank.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Input\ModuleFileInput.cc">
+      <Filter>Source Files\Modules\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\BMM\ModuleGammatone.cc">
+      <Filter>Source Files\Modules\BMM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\BMM\ModulePZFC.cc">
+      <Filter>Source Files\Modules\BMM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\NAP\ModuleHCL.cc">
+      <Filter>Source Files\Modules\NAP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Features\ModuleBoxes.cc">
+      <Filter>Source Files\Modules\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Features\ModuleGaussians.cc">
+      <Filter>Source Files\Modules\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\FileOutputAIMC.cc">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Profile\ModuleScaler.cc">
+      <Filter>Source Files\Modules\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Profile\ModuleSlice.cc">
+      <Filter>Source Files\Modules\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\SSI\ModuleSSI.cc">
+      <Filter>Source Files\Modules\SSI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\SAI\ModuleSAI.cc">
+      <Filter>Source Files\Modules\SAI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Strobes\ModuleLocalMax.cc">
+      <Filter>Source Files\Modules\Strobes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Strobes\ModuleParabola.cc">
+      <Filter>Source Files\Modules\Strobes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\FileOutputHTK.cc">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\FileOutputJSON.cc">
+      <Filter>Source Files\Modules\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Support\ConvertUTF.cc">
+      <Filter>Source Files\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\Scale\Scale.cc">
+      <Filter>Source Files\Modules\Output\Graphics\Scale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDevice.cc">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDeviceCairo.cc">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\Devices\GraphicsOutputDeviceMovie.cc">
+      <Filter>Source Files\Modules\Output\Graphics\Devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\GraphAxisSpec.cc">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\GraphicsView.cc">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Modules\Output\Graphics\GraphicsViewTime.cc">
+      <Filter>Source Files\Modules\Output\Graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
