@@ -6,11 +6,11 @@ The purpose of this repository is to investigate the sparse encoding of auditory
 http://en.wikipedia.org/wiki/Vestibulocochlear_nerve
 
 An intention is to use the [Numenta Platform for Intelligent Computing](http://numenta.org/ "Numenta | NuPIC") library at the highest level (only PreFrontal, and T2/T3?). Working down via the;  
-* [Medial geniculate nucleus](http://en.wikipedia.org/wiki/Medial_geniculate_nucleus) (MGB to Brodmann area 41 (A1)), [Ventral posterior nucleus](http://en.wikipedia.org/wiki/Ventral_posterior_nucleus)
+* [Medial geniculate nucleus](http://en.wikipedia.org/wiki/Medial_geniculate_nucleus) (MGB to Brodmann area 41 (A1)), [Ventral posterior nucleus](http://en.wikipedia.org/wiki/Ventral_posterior_nucleus) to
 * [Inferior colliculus](http://en.wikipedia.org/wiki/Inferior_colliculus) (Midbrain), 
 * [Lateral lemniscus nuclei](http://en.wikipedia.org/wiki/Lateral_lemniscus) (Pons), 
-* [Superior olivary complex](http://en.wikipedia.org/wiki/Superior_olivary_complex) (Pons), 
-* to the [Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus) (Medulla).
+* [Superior olivary complex](http://en.wikipedia.org/wiki/Superior_olivary_complex) (Pons), to
+* [Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus) (Medulla).
 
 ###### Suggested reading list
 
@@ -24,58 +24,48 @@ An intention is to use the [Numenta Platform for Intelligent Computing](http://n
 **Auditory-Based Processing of Communication Sounds**  
 Walters, Thomas C. (2011)  
 http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds  
-
--
+- 
 **Time‐domain modeling of peripheral auditory processing: A modular architecture and a software platform**  
 Roy D. Patterson1, Mike H. Allerhand1 and Christian Giguère (1995)  
 http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
 http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing  
-
--
+- 
 **Segregating information about the size and shape of the vocal tract using a time-domain auditory model: The Stabilised Wavelet Mellin Transform**  
 Toshio Irino and Roy D. Patterson, Speech Communication, 36 (3-4), pp.181-203, March 2002.  
 http://www.pdn.cam.ac.uk/groups/cnbh/teaching/lectures/IPsc02.pdf  
-
--
+- 
 **Neural Coding of Periodicity in Marmoset Auditory Cortex**  
 Daniel Bendor and Xiaoqin Wang  
 http://web1.johnshopkins.edu/xwang/Publications_files/BendorWang_JN2010.pdf  
-
--
+- 
 *Periodicity coding in the inferior colliculus of the cat.*  
 _I. Topographical Organization AND II. Topographical Organization_  
 G. Langner, C. E. Schreiner, Journal of Neurophysiology  
 http://www.ncbi.nlm.nih.gov/pubmed/3236052  
-
--
+- 
 **Patterning of pre-thalamic somatosensory pathways**  
 Gabrielle Pouchelon, Laura Frangeul, Filippo M. Rijli and Denis Jabaudon (2012)  
 http://scholar.google.co.uk/scholar?q=Patterning+of+pre-thalamic+somatosensory+pathways&hl=en&as_sdt=0&as_vis=1&oi=scholart&sa=X&ei=padSVPTzGsLhaPOjgagH&ved=0CCAQgQMwAA  
 > **See** section _Ascending trigeminothalamic pathways_, follows _From whiskers to the brainstem trigeminal complex_  
 > **And** Fig 1. Summary of pre-thalamic somatosensory pathways  
-
--
+- 
 **Binary Spiking in Auditory Cortex**  
 Michael R. DeWeese, Michael Wehr, and Anthony M. Zador (2003)  
 http://scholar.google.co.uk/scholar?q=Binary+Spiking+in+Auditory+Cortex  
-
--
+- 
 **Efficient coding of natural sounds**  
 Michael S. Lewicki (2012)  
 http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds  
-
--
+- 
 **Steady-state evoked potentials as an index of multisensory temporal binding**  
 Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
 http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding  
-
--
+- 
 **Auditory abstraction from spectro-temporal features to coding auditory entities**  
 Gal Chechik and Israel Nelken (2012)  
 http://www.pnas.org/content/109/46/18968.short  
 http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/  
-
--
+- 
 **Unsupervised feature learning for audio classification using convolutional deep belief networks**  
 Honglak Lee, Yan Largman, Peter Pham and Andrew Y. Ng. In NIPS*2009.  
 http://ai.stanford.edu/~ang/papers/nips09-AudioConvolutionalDBN.pdf  
