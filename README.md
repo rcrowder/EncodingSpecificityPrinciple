@@ -1,7 +1,7 @@
 Cochlear Nerve
 ==============
 
-The purpose of this repository is to investigate the sparse encoding of auditory signals ([Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus)), and it's passage into the primary auditory cortex. 
+The purpose of this repository is to investigate the sparse encoding of auditory signals and it's passage into the primary auditory cortex ([Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus)).
 
 http://en.wikipedia.org/wiki/Vestibulocochlear_nerve
 
@@ -21,42 +21,79 @@ An intention is to use the [Numenta Platform for Intelligent Computing](http://n
 [Nyquist–Shannon sampling theorem](http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem)  
 
 - 
-Auditory-Based Processing of Communication Sounds  
+**Auditory-Based Processing of Communication Sounds**  
 Walters, Thomas C. (2011)  
-http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds
-- 
-Patterning of pre-thalamic somatosensory pathways  
-Gabrielle Pouchelon, Laura Frangeul, Filippo M. Rijli and Denis Jabaudon (2012)  
-http://scholar.google.co.uk/scholar?q=Patterning+of+pre-thalamic+somatosensory+pathways&hl=en&as_sdt=0&as_vis=1&oi=scholart&sa=X&ei=padSVPTzGsLhaPOjgagH&ved=0CCAQgQMwAA  
+http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds  
 
-See section _Ascending trigeminothalamic pathways_, follows _From whiskers to the brainstem trigeminal complex_.  
-And Fig 1. Summary of pre-thalamic somatosensory pathways.
-
-- 
-Time‐domain modeling of peripheral auditory processing: A modular architecture and a software platform  
+-
+**Time‐domain modeling of peripheral auditory processing: A modular architecture and a software platform**  
 Roy D. Patterson1, Mike H. Allerhand1 and Christian Giguère (1995)  
 http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
-http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing
-- 
-Binary Spiking in Auditory Cortex  
+http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing  
+
+-
+**Segregating information about the size and shape of the vocal tract using a time-domain auditory model: The Stabilised Wavelet Mellin Transform**  
+Toshio Irino and Roy D. Patterson, Speech Communication, 36 (3-4), pp.181-203, March 2002.  
+http://www.pdn.cam.ac.uk/groups/cnbh/teaching/lectures/IPsc02.pdf  
+
+-
+**Neural Coding of Periodicity in Marmoset Auditory Cortex**  
+Daniel Bendor and Xiaoqin Wang  
+http://web1.johnshopkins.edu/xwang/Publications_files/BendorWang_JN2010.pdf  
+
+-
+*Periodicity coding in the inferior colliculus of the cat.*  
+_I. Topographical Organization AND II. Topographical Organization_  
+G. Langner, C. E. Schreiner, Journal of Neurophysiology  
+http://www.ncbi.nlm.nih.gov/pubmed/3236052  
+
+-
+**Patterning of pre-thalamic somatosensory pathways**  
+Gabrielle Pouchelon, Laura Frangeul, Filippo M. Rijli and Denis Jabaudon (2012)  
+http://scholar.google.co.uk/scholar?q=Patterning+of+pre-thalamic+somatosensory+pathways&hl=en&as_sdt=0&as_vis=1&oi=scholart&sa=X&ei=padSVPTzGsLhaPOjgagH&ved=0CCAQgQMwAA  
+> **See** section _Ascending trigeminothalamic pathways_, follows _From whiskers to the brainstem trigeminal complex_  
+> **And** Fig 1. Summary of pre-thalamic somatosensory pathways  
+
+-
+**Binary Spiking in Auditory Cortex**  
 Michael R. DeWeese, Michael Wehr, and Anthony M. Zador (2003)  
-http://scholar.google.co.uk/scholar?q=Binary+Spiking+in+Auditory+Cortex
-- 
-Efficient coding of natural sounds  
+http://scholar.google.co.uk/scholar?q=Binary+Spiking+in+Auditory+Cortex  
+
+-
+**Efficient coding of natural sounds**  
 Michael S. Lewicki (2012)  
-http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds
-- 
-Auditory abstraction from spectro-temporal features to coding auditory entities  
+http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds  
+
+-
+**Steady-state evoked potentials as an index of multisensory temporal binding**  
+Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
+http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding  
+
+-
+**Auditory abstraction from spectro-temporal features to coding auditory entities**  
 Gal Chechik and Israel Nelken (2012)  
 http://www.pnas.org/content/109/46/18968.short  
 http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/  
-- 
-Steady-state evoked potentials as an index of multisensory temporal binding  
-Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
-http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding
+
+-
+**Unsupervised feature learning for audio classification using convolutional deep belief networks**  
+Honglak Lee, Yan Largman, Peter Pham and Andrew Y. Ng. In NIPS*2009.  
+http://ai.stanford.edu/~ang/papers/nips09-AudioConvolutionalDBN.pdf  
+
+##### Kaggle competitions
+
+The Marinexplore and Cornell University Whale Detection Challenge  
+http://www.kaggle.com/c/whale-detection-challenge  
+http://danielnouri.org/notes/2014/01/10/using-deep-learning-to-listen-for-whales/  
+
+MLSP 2013 Bird Classification Challenge  
+https://www.kaggle.com/c/mlsp-2013-birds  
+
+ICML 2013 Bird Challenge  
+https://www.kaggle.com/c/the-icml-2013-bird-challenge  
 
 
-But firstly, the creation of the SDR encoders.
+But firstly, the creation of the SDR encoders.  
 
 ### Encoding for the Thalamocortical pathways
 
