@@ -38,18 +38,54 @@
 **
 ****************************************************************************/
 
-//! [0]
-#include "mainwindow.h"
+#ifndef BASICTOOLSPLUGIN_H
+#define BASICTOOLSPLUGIN_H
+
+#include <QRect>
+#include <QObject>
 #include <QtPlugin>
-#include <QApplication>
+#include <QStringList>
+#include <QPainterPath>
+#include <QImage>
 
-Q_IMPORT_PLUGIN(BasicToolsPlugin)
-
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
-    MainWindow window;
-    window.show();
-    return app.exec();
-}
 //! [0]
+#include "../../cochlear-nerve/interfaces.h"
+
+//! [1]
+class BasicToolsPlugin : public QObject,
+                         public BrushInterface,
+                         public ShapeInterface,
+                         public FilterInterface
+{
+    Q_OBJECT
+//! [4]
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.Examples.PlugAndPaint.BrushInterface" FILE "basictools.json")
+//! [4]
+    Q_INTERFACES(BrushInterface ShapeInterface FilterInterface)
+//! [0]
+
+//! [2]
+public:
+//! [1]
+    // BrushInterface
+    QStringList brushes() const;
+    QRect mousePress(const QString &brush, QPainter &painter,
+                     const QPoint &pos);
+    QRect mouseMove(const QString &brush, QPainter &painter,
+                    const QPoint &oldPos, const QPoint &newPos);
+    QRect mouseRelease(const QString &brush, QPainter &painter,
+                       const QPoint &pos);
+
+    // ShapeInterface
+    QStringList shapes() const;
+    QPainterPath generateShape(const QString &shape, QWidget *parent);
+
+    // FilterInterface
+    QStringList filters() const;
+    QImage filterImage(const QString &filter, const QImage &image,
+                       QWidget *parent);
+//! [3]
+};
+//! [2] //! [3]
+
+#endif

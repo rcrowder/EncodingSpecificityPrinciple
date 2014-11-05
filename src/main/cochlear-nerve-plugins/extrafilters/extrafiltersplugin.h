@@ -38,18 +38,28 @@
 **
 ****************************************************************************/
 
+#ifndef EXTRAFILTERSPLUGIN_H
+#define EXTRAFILTERSPLUGIN_H
+
 //! [0]
-#include "mainwindow.h"
+#include <QObject>
 #include <QtPlugin>
-#include <QApplication>
+#include <QStringList>
+#include <QImage>
 
-Q_IMPORT_PLUGIN(BasicToolsPlugin)
+#include "../../cochlear-nerve/interfaces.h"
 
-int main(int argc, char *argv[])
+class ExtraFiltersPlugin : public QObject, public FilterInterface
 {
-    QApplication app(argc, argv);
-    MainWindow window;
-    window.show();
-    return app.exec();
-}
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.Examples.PlugAndPaint.FilterInterface" FILE "extrafilters.json")
+    Q_INTERFACES(FilterInterface)
+
+public:
+    QStringList filters() const;
+    QImage filterImage(const QString &filter, const QImage &image,
+                       QWidget *parent);
+};
 //! [0]
+
+#endif

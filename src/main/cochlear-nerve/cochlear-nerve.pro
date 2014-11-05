@@ -1,18 +1,23 @@
-TEMPLATE = app
+#! [0]
+QT += widgets
 
-QT += qml quick widgets
+HEADERS        = interfaces.h \
+                 mainwindow.h \
+                 paintarea.h \
+                 plugindialog.h
+SOURCES        = main.cpp \
+                 mainwindow.cpp \
+                 paintarea.cpp \
+                 plugindialog.cpp
 
-SOURCES += main.cpp \
-    FileOpenHandler.cpp
+LIBS           = -L../cochlear-nerve/plugins -lpnp_basictools
 
-RESOURCES += \
-    qml.qrc
+if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
+   mac:LIBS = $$member(LIBS, 0) $$member(LIBS, 1)_debug
+   win32:LIBS = $$member(LIBS, 0) $$member(LIBS, 1)d
+}
+#! [0]
 
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
-
-# Default rules for deployment.
-include(deployment.pri)
-
-HEADERS += \
-    FileOpenHandler.h
+# install
+target.path = $$[QT_INSTALL_EXAMPLES]/cochlear-nerve
+INSTALLS += target
