@@ -1,6 +1,8 @@
 #ifndef FILEOPENHANDLER_H
 #define FILEOPENHANDLER_H
 
+#include <QtQml>
+
 class FileOpenHandler : public QObject
 {
     Q_OBJECT

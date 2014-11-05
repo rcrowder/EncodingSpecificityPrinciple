@@ -3,7 +3,6 @@ TEMPLATE = app
 QT += qml quick widgets
 
 SOURCES += main.cpp \
-    QuadSplit.cpp \
     FileOpenHandler.cpp
 
 RESOURCES += \
@@ -16,5 +15,4 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    QuadSplit.h \
     FileOpenHandler.h
