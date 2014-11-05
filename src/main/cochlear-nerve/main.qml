@@ -3,26 +3,30 @@ import QtQuick.Controls 1.2
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+    width: 400
+    height: 300
+    title: qsTr("Cochlear Neural Encoding using AIMc")
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: { _fileOpenHandler.buttonClicked() }
+    }
 
     menuBar: MenuBar {
         Menu {
             title: qsTr("File")
             MenuItem {
-                text: qsTr("&Open")
+                text: qsTr("&Open settings")
                 onTriggered: console.log("Open action triggered");
             }
             MenuItem {
-                text: qsTr("Exit")
+                text: qsTr("&Save settings")
+                onTriggered: console.log("Save action triggered");
+            }
+            MenuItem {
+                text: qsTr("E&xit")
                 onTriggered: Qt.quit();
             }
         }
-    }
-
-    Text {
-        text: qsTr("Hello World")
-        anchors.centerIn: parent
     }
 }
