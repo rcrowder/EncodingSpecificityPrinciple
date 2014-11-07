@@ -60,7 +60,6 @@ class PaintArea;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     MainWindow();
     ~MainWindow();
@@ -69,11 +68,10 @@ public:
 
 public slots:
     void init();
-
-private slots:
     void exit();
     void shutdown();
 
+private slots:
     void open();
     bool saveAs();
     void chartColor();

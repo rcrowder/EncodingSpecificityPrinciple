@@ -1,44 +1,3 @@
-/****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file is part of the examples of the Qt Toolkit.
-**
-** $QT_BEGIN_LICENSE:BSD$
-** You may use this file under the terms of the BSD license as follows:
-**
-** "Redistribution and use in source and binary forms, with or without
-** modification, are permitted provided that the following conditions are
-** met:
-**   * Redistributions of source code must retain the above copyright
-**     notice, this list of conditions and the following disclaimer.
-**   * Redistributions in binary form must reproduce the above copyright
-**     notice, this list of conditions and the following disclaimer in
-**     the documentation and/or other materials provided with the
-**     distribution.
-**   * Neither the name of Digia Plc and its Subsidiary(-ies) nor the names
-**     of its contributors may be used to endorse or promote products derived
-**     from this software without specific prior written permission.
-**
-**
-** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-** "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-**
-** $QT_END_LICENSE$
-**
-****************************************************************************/
-
-
 #include "interfaces.h"
 #include "mainwindow.h"
 #include "paintarea.h"
@@ -84,14 +43,8 @@ int MainWindow::start(QGuiApplication* app)
     //qDebug() << "Start " + QString::number((int)QThread::currentThreadId());
     this->app = app;
 
-    QDir directory(QCoreApplication::applicationDirPath());
-    QString path = directory.absoluteFilePath("../../cochlear-nerve/qml/splash.qml");
-
-    // Give a reference to this object to the splash.qml file
     this->viewer->engine()->rootContext()->setContextProperty("MainWindow", this);
-
-    // Load splash.qml
-    this->viewer->setSource(QUrl("qrc:qml/splash.qml"));//QUrl::fromLocalFile(path));
+    this->viewer->setSource(QUrl("qrc:qml/splash.qml"));
 
     // And display it
     this->viewer->show();
@@ -105,7 +58,7 @@ void MainWindow::init()
     QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
     QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
 
-    QThread::msleep(2500);
+    QThread::msleep(1000); // 1 second sleep
 
     scrollArea->setBackgroundRole(QPalette::Dark);
     scrollArea->setWidget(paintArea);
@@ -139,7 +92,8 @@ void MainWindow::open()
                                                           QDir::currentPath());
     if (!fileName.isEmpty()) {
         if (!paintArea->openImage(fileName)) {
-            QMessageBox::information(this, tr("Cochlear Auditory Encoding"),
+            QMessageBox::information(this,
+                                     tr("Cochlear Auditory Encoding"),
                                      tr("Cannot load %1.").arg(fileName));
             return;
         }
@@ -151,7 +105,8 @@ bool MainWindow::saveAs()
 {
     const QString initialPath = QDir::currentPath() + "/untitled.png";
 
-    const QString fileName = QFileDialog::getSaveFileName(this, tr("Save As"),
+    const QString fileName = QFileDialog::getSaveFileName(this,
+                                                          tr("Save As"),
                                                           initialPath);
     if (fileName.isEmpty()) {
         return false;
@@ -170,7 +125,8 @@ void MainWindow::chartColor()
 void MainWindow::chartWidth()
 {
     bool ok;
-    const int newWidth = QInputDialog::getInt(this, tr("Cochlear Auditory Encoding"),
+    const int newWidth = QInputDialog::getInt(this,
+                                              tr("Cochlear Auditory Encoding"),
                                               tr("Select chart width:"),
                                               paintArea->chartWidth(),
                                               1, 50, 1, &ok);
@@ -195,7 +151,8 @@ void MainWindow::insertShape()
     QAction *action = qobject_cast<QAction *>(sender());
     ShapeInterface *iShape = qobject_cast<ShapeInterface *>(action->parent());
 
-    const QPainterPath path = iShape->generateShape(action->text(), this);
+    const QPainterPath path = iShape->generateShape(action->text(),
+                                                    this);
     if (!path.isEmpty())
         paintArea->insertShape(path);
 }
@@ -208,7 +165,8 @@ void MainWindow::applyFilter()
     FilterInterface *iFilter =
             qobject_cast<FilterInterface *>(action->parent());
 
-    const QImage image = iFilter->filterImage(action->text(), paintArea->image(),
+    const QImage image = iFilter->filterImage(action->text(),
+                                              paintArea->image(),
                                               this);
     paintArea->setImage(image);
 }
@@ -216,8 +174,9 @@ void MainWindow::applyFilter()
 
 void MainWindow::about()
 {
-   QMessageBox::about(this, tr("About Cochlear Auditory Encoding"),
-            tr("The <b>Cochlear Auditory Encoding</b> ..."));
+   QMessageBox::about(this,
+                      tr("About Cochlear Auditory Encoding"),
+                      tr("The <b>Cochlear Auditory Encoding</b> ..."));
 }
 
 //! [3]
