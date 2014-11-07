@@ -10,8 +10,8 @@ Item {
 
     Rectangle {
         id: backgroundRectangle
-        anchors.fill: parent
-        color: "red"
+        anchors.centerIn: parent
+        color: "white"
 
         Text {
             text: mainLoader.status != Loader.Ready ? 'Loading' : 'Loaded'
@@ -20,8 +20,8 @@ Item {
     }
 
     MouseArea {
-        width:  200
-        height: 150
+        width:  100
+        height: 100
         onClicked: {
             mainLoader.source = ""
             backgroundRectangle.visible = false
@@ -40,7 +40,7 @@ Item {
         duration: 50
         onRunningChanged: {
             if ( !running ) {
-                MainWindow.init();
+                mainWindow.init();
                 mainLoader.source = "qrc:qml/main.qml"
             }
         }

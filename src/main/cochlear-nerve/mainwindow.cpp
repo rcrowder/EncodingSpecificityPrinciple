@@ -17,7 +17,6 @@
 #include <QApplication>
 
 #include <QDir>
-#include <QCoreApplication>
 #include <QPluginLoader>
 #include <QQmlEngine>
 #include <QQmlContext>
@@ -25,12 +24,13 @@
 #include <QTimer>
 
 MainWindow::MainWindow() :
-    paintArea(new PaintArea),
-    scrollArea(new QScrollArea)
+    paintArea(NULL), scrollArea(NULL)
 {
     viewer = new QQuickView();
+    viewer->setResizeMode(QQuickView::SizeViewToRootObject);//QQuickView::SizeRootObjectToView);
 
-    setWindowTitle(tr("Cochlear Auditory Encoding"));
+    paintArea  = new PaintArea(this);
+    scrollArea = new QScrollArea;
 }
 
 MainWindow::~MainWindow()
@@ -38,39 +38,41 @@ MainWindow::~MainWindow()
     delete viewer;
 }
 
-int MainWindow::start(QGuiApplication* app)
+int MainWindow::start(QApplication* app)
 {
     //qDebug() << "Start " + QString::number((int)QThread::currentThreadId());
     this->app = app;
 
-    this->viewer->engine()->rootContext()->setContextProperty("MainWindow", this);
-    this->viewer->setSource(QUrl("qrc:qml/splash.qml"));
+    setWindowTitle(tr("Cochlear Auditory Encoding"));
 
-    // And display it
+    this->viewer->engine()->rootContext()->setContextProperty("mainWindow", this);
+    this->viewer->setSource(QUrl("qrc:qml/splash.qml"));
     this->viewer->show();
 
+    scrollArea->setBackgroundRole(QPalette::Dark);
+    scrollArea->setWidget(paintArea);
+    setCentralWidget(paintArea);
+
+    QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
+    QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
     return 0;
 }
 
 
 void MainWindow::init()
 {
-    QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
-    QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
-
-    QThread::msleep(1000); // 1 second sleep
-
-    scrollArea->setBackgroundRole(QPalette::Dark);
-    scrollArea->setWidget(paintArea);
-    setCentralWidget(scrollArea);
+    //QThread::msleep(1000); // 1 second sleep
 
     createActions();
     createMenus();
     loadPlugins();
 
-//    if (!chartActionGroup->actions().isEmpty())
-//        chartActionGroup->actions().first()->trigger();
-//    QTimer::singleShot(500, this, SLOT(aboutPlugins()));
+    if (!chartActionGroup->actions().isEmpty())
+        chartActionGroup->actions().first()->trigger();
+
+    //QTimer::singleShot(500, this, SLOT(aboutPlugins()));
+
+    menuBar()->setVisible(true);
 }
 
 void MainWindow::exit()

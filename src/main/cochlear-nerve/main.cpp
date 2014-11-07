@@ -3,6 +3,7 @@
 #include <QtPlugin>
 #include <QtQml>
 
+
 #include "mainwindow.h"
 
 Q_IMPORT_PLUGIN(BasicToolsPlugin)
@@ -10,10 +11,10 @@ Q_IMPORT_PLUGIN(BasicToolsPlugin)
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    MainWindow mainApp;
 
     qmlRegisterType<MainWindow>("CochlearNerveWindow", 1, 0, "mainApp");
-
+    MainWindow mainApp;
     mainApp.start(&app);
+
     return app.exec();
 }

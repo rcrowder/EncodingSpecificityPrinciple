@@ -289,13 +289,11 @@ release\moc_mainwindow.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QDir \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qqmldebug.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qtqmlglobal.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qeventloop.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpalette.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qbrush.h \
@@ -303,6 +301,10 @@ release\moc_mainwindow.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QDir \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontinfo.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
 		..\cochlear-nerve\mainwindow.h
 	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtDeclarative -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtScript -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\mainwindow.h -o release\moc_mainwindow.cpp
@@ -843,7 +845,6 @@ release\main.obj: ..\cochlear-nerve\main.cpp C:\Qt\5.3\msvc2010_opengl\include\Q
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qsurface.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qsurfaceformat.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qicon.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h
@@ -969,13 +970,11 @@ release\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\inter
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qqmldebug.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qtqmlglobal.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qeventloop.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpalette.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qbrush.h \
@@ -983,6 +982,10 @@ release\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\inter
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontinfo.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
 		..\cochlear-nerve\paintarea.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
@@ -1018,10 +1021,6 @@ release\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\inter
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtextformat.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpen.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtextoption.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QCoreApplication \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QPluginLoader \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qpluginloader.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qlibrary.h \

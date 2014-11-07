@@ -45,7 +45,7 @@
 #include <QStringList>
 #include <QObject>
 #include <QtQuick/QQuickView>
-#include <QGuiApplication>
+#include <QApplication>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -64,7 +64,7 @@ public:
     MainWindow();
     ~MainWindow();
 
-    int start(QGuiApplication* app);
+    int start(QApplication* app);
 
 public slots:
     void init();
@@ -113,7 +113,7 @@ private:
     QAction *aboutQtAct;
     QAction *aboutPluginsAct;
 
-    QGuiApplication* app;
+    QApplication* app;
     QQuickView *viewer;
 };
 

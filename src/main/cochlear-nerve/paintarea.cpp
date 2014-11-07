@@ -6,7 +6,7 @@
 
 PaintArea::PaintArea(QWidget *parent) :
     QWidget(parent),
-    theImage(500, 400, QImage::Format_RGB32),
+    theImage(100, 100, QImage::Format_RGB32),
     color(Qt::blue),
     thickness(0),
     chartInterface(0),
