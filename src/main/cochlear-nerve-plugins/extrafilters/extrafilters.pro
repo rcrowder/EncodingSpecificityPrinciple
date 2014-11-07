@@ -6,9 +6,9 @@ INCLUDEPATH  += ../..
 HEADERS       = extrafiltersplugin.h
 SOURCES       = extrafiltersplugin.cpp
 TARGET        = $$qtLibraryTarget(pnp_extrafilters)
-DESTDIR       = ../../cochlear-nerve/plugins
-
+DESTDIR       = %{sourceDir}/../../../cochlear-nerve/plugins
 #! [0]
+
 # install
-target.path = ../../cochlear-nerve/plugins
+target.path = %{sourceDir}/../../../cochlear-nerve/plugins
 INSTALLS += target

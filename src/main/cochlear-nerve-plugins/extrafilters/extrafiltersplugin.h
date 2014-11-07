@@ -52,7 +52,7 @@
 class ExtraFiltersPlugin : public QObject, public FilterInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.Examples.PlugAndPaint.FilterInterface" FILE "extrafilters.json")
+    Q_PLUGIN_METADATA(IID "org.rcrowder.Qt.Projects.CochlearNerve.FilterInterface" FILE "extrafilters.json")
     Q_INTERFACES(FilterInterface)
 
 public:

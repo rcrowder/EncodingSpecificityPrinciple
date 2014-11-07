@@ -241,7 +241,7 @@ debug\moc_extrafiltersplugin.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QObje
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qrgb.h \
 		..\..\cochlear-nerve\interfaces.h \
 		..\..\cochlear-nerve-plugins\extrafilters\extrafiltersplugin.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve-plugins/extrafilters -IC:/github-Burt/EncodingSpecificityPrinciple/src/main -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\..\cochlear-nerve-plugins\extrafilters\extrafiltersplugin.h -o debug\moc_extrafiltersplugin.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve-plugins/extrafilters -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\..\cochlear-nerve-plugins\extrafilters\extrafiltersplugin.h -o debug\moc_extrafiltersplugin.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -698,14 +698,14 @@ debug\moc_extrafiltersplugin.obj: debug\moc_extrafiltersplugin.cpp
 ####### Install
 
 install_target: first FORCE
-	@if not exist C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins mkdir C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins & if not exist C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins exit 1
-	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)"
-	-$(INSTALL_FILE) "..\..\cochlear-nerve\plugins\pnp_extrafiltersd.pdb" "C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
+	@if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins mkdir C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins & if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins exit 1
+	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)"
+	-$(INSTALL_FILE) "..\..\cochlear-nerve\plugins\pnp_extrafiltersd.pdb" "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
 
 uninstall_target: FORCE
-	-$(DEL_FILE) "C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)" 
-	 -$(DEL_FILE) "C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
-	-$(DEL_DIR) C:$(INSTALL_ROOT)\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins 
+	-$(DEL_FILE) "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)" 
+	 -$(DEL_FILE) "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
+	-$(DEL_DIR) C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins 
 
 
 install:  install_target  FORCE

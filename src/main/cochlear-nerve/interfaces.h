@@ -55,17 +55,17 @@ class QStringList;
 QT_END_NAMESPACE
 
 //! [0]
-class BrushInterface
+class ChartInterface
 {
 public:
-    virtual ~BrushInterface() {}
+    virtual ~ChartInterface() {}
 
-    virtual QStringList brushes() const = 0;
-    virtual QRect mousePress(const QString &brush, QPainter &painter,
+    virtual QStringList chartes() const = 0;
+    virtual QRect mousePress(const QString &chart, QPainter &painter,
                              const QPoint &pos) = 0;
-    virtual QRect mouseMove(const QString &brush, QPainter &painter,
+    virtual QRect mouseMove(const QString &chart, QPainter &painter,
                             const QPoint &oldPos, const QPoint &newPos) = 0;
-    virtual QRect mouseRelease(const QString &brush, QPainter &painter,
+    virtual QRect mouseRelease(const QString &chart, QPainter &painter,
                                const QPoint &pos) = 0;
 };
 //! [0]
@@ -96,9 +96,9 @@ public:
 
 QT_BEGIN_NAMESPACE
 //! [3] //! [4]
-#define BrushInterface_iid  "org.rcrowder.Qt.CochlearNerve.BrushInterface"
+#define ChartInterface_iid  "org.rcrowder.Qt.CochlearNerve.ChartInterface"
 
-Q_DECLARE_INTERFACE(BrushInterface, BrushInterface_iid)
+Q_DECLARE_INTERFACE(ChartInterface, ChartInterface_iid)
 //! [3]
 
 #define ShapeInterface_iid  "org.rcrowder.Qt.CochlearNerve.ShapeInterface"

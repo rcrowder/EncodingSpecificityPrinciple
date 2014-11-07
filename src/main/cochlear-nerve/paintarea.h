@@ -46,7 +46,7 @@
 #include <QPainterPath>
 #include <QWidget>
 
-class BrushInterface;
+class ChartInterface;
 
 class PaintArea : public QWidget
 {
@@ -59,13 +59,13 @@ public:
     bool saveImage(const QString &fileName, const char *fileFormat);
     void setImage(const QImage &image);
     void insertShape(const QPainterPath &path);
-    void setBrushColor(const QColor &color);
-    void setBrushWidth(int width);
-    void setBrush(BrushInterface *brushInterface, const QString &brush);
+    void setChartColor(const QColor &color);
+    void setChartWidth(int width);
+    void setChart(ChartInterface *chartInterface, const QString &chart);
 
     QImage image() const { return theImage; }
-    QColor brushColor() const { return color; }
-    int brushWidth() const { return thickness; }
+    QColor chartColor() const { return color; }
+    int chartWidth() const { return thickness; }
     QSize sizeHint() const;
 
 protected:
@@ -81,8 +81,8 @@ private:
     QColor color;
     int thickness;
 
-    BrushInterface *brushInterface;
-    QString brush;
+    ChartInterface *chartInterface;
+    QString chart;
     QPoint lastPos;
 
     QPainterPath pendingPath;

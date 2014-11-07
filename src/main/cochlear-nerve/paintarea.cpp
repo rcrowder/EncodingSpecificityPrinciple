@@ -50,7 +50,7 @@ PaintArea::PaintArea(QWidget *parent) :
     theImage(500, 400, QImage::Format_RGB32),
     color(Qt::blue),
     thickness(3),
-    brushInterface(0),
+    chartInterface(0),
     lastPos(-1, -1)
 {
     setAttribute(Qt::WA_StaticContents);
@@ -89,21 +89,21 @@ void PaintArea::insertShape(const QPainterPath &path)
 #endif
 }
 
-void PaintArea::setBrushColor(const QColor &color)
+void PaintArea::setChartColor(const QColor &color)
 {
     this->color = color;
 }
 
-void PaintArea::setBrushWidth(int width)
+void PaintArea::setChartWidth(int width)
 {
     thickness = width;
 }
 
 //! [0]
-void PaintArea::setBrush(BrushInterface *brushInterface, const QString &brush)
+void PaintArea::setChart(ChartInterface *chartInterface, const QString &chart)
 {
-    this->brushInterface = brushInterface;
-    this->brush = brush;
+    this->chartInterface = chartInterface;
+    this->chart = chart;
 }
 //! [0]
 
@@ -142,10 +142,10 @@ void PaintArea::mousePressEvent(QMouseEvent *event)
 #endif
             update();
         } else {
-            if (brushInterface) {
+            if (chartInterface) {
                 QPainter painter(&theImage);
                 setupPainter(painter);
-                const QRect rect = brushInterface->mousePress(brush, painter,
+                const QRect rect = chartInterface->mousePress(chart, painter,
                                                               event->pos());
                 update(rect);
             }
@@ -159,10 +159,10 @@ void PaintArea::mousePressEvent(QMouseEvent *event)
 void PaintArea::mouseMoveEvent(QMouseEvent *event)
 {
     if ((event->buttons() & Qt::LeftButton) && lastPos != QPoint(-1, -1)) {
-        if (brushInterface) {
+        if (chartInterface) {
             QPainter painter(&theImage);
             setupPainter(painter);
-            const QRect rect = brushInterface->mouseMove(brush, painter, lastPos,
+            const QRect rect = chartInterface->mouseMove(chart, painter, lastPos,
                                                          event->pos());
             update(rect);
         }
@@ -175,10 +175,10 @@ void PaintArea::mouseMoveEvent(QMouseEvent *event)
 void PaintArea::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton && lastPos != QPoint(-1, -1)) {
-        if (brushInterface) {
+        if (chartInterface) {
             QPainter painter(&theImage);
             setupPainter(painter);
-            QRect rect = brushInterface->mouseRelease(brush, painter,
+            QRect rect = chartInterface->mouseRelease(chart, painter,
                                                       event->pos());
             update(rect);
         }

@@ -48,7 +48,7 @@
 const float Pi = 3.14159f;
 
 //! [0]
-QStringList BasicToolsPlugin::brushes() const
+QStringList BasicToolsPlugin::chartes() const
 {
     return QStringList() << tr("Pencil") << tr("Air Brush")
                          << tr("Random Letters");
@@ -56,15 +56,15 @@ QStringList BasicToolsPlugin::brushes() const
 //! [0]
 
 //! [1]
-QRect BasicToolsPlugin::mousePress(const QString &brush, QPainter &painter,
+QRect BasicToolsPlugin::mousePress(const QString &chart, QPainter &painter,
                                    const QPoint &pos)
 {
-    return mouseMove(brush, painter, pos, pos);
+    return mouseMove(chart, painter, pos, pos);
 }
 //! [1]
 
 //! [2]
-QRect BasicToolsPlugin::mouseMove(const QString &brush, QPainter &painter,
+QRect BasicToolsPlugin::mouseMove(const QString &chart, QPainter &painter,
                                   const QPoint &oldPos, const QPoint &newPos)
 {
     painter.save();
@@ -77,9 +77,9 @@ QRect BasicToolsPlugin::mouseMove(const QString &brush, QPainter &painter,
     QColor transparentColor(color.red(), color.green(), color.blue(), 0);
 //! [2] //! [3]
 
-    if (brush == tr("Pencil")) {
+    if (chart == tr("Pencil")) {
         painter.drawLine(oldPos, newPos);
-    } else if (brush == tr("Air Brush")) {
+    } else if (chart == tr("Air Brush")) {
         int numSteps = 2 + (newPos - oldPos).manhattanLength() / 2;
 
         painter.setBrush(QBrush(color, Qt::Dense6Pattern));
@@ -92,7 +92,7 @@ QRect BasicToolsPlugin::mouseMove(const QString &brush, QPainter &painter,
             painter.drawEllipse(x - (thickness / 2), y - (thickness / 2),
                                 thickness, thickness);
         }
-    } else if (brush == tr("Random Letters")) {
+    } else if (chart == tr("Random Letters")) {
         QChar ch('A' + (qrand() % 26));
 
         QFont biggerFont = painter.font();
@@ -113,7 +113,7 @@ QRect BasicToolsPlugin::mouseMove(const QString &brush, QPainter &painter,
 //! [3]
 
 //! [4]
-QRect BasicToolsPlugin::mouseRelease(const QString & /* brush */,
+QRect BasicToolsPlugin::mouseRelease(const QString & /* chart */,
                                      QPainter & /* painter */,
                                      const QPoint & /* pos */)
 {

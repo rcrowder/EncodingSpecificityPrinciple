@@ -30,70 +30,70 @@ SUBTARGETS    =  \
 
 sub-basictools-qmake_all:  FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
-	cd basictools\ && $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile
+	cd basictools\ && $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile
 	@set MAKEFLAGS=$(MAKEFLAGS)
 	cd basictools\ && $(MAKE) -f Makefile qmake_all
 sub-basictools: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile
 sub-basictools-make_first: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile 
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile 
 sub-basictools-all: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile all
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile all
 sub-basictools-clean: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile clean
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile clean
 sub-basictools-distclean: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile distclean
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile distclean
 sub-basictools-install_subtargets: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile install
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile install
 sub-basictools-uninstall_subtargets: FORCE
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile uninstall
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile uninstall
 sub-extrafilters-qmake_all:  FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
-	cd extrafilters\ && $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile
+	cd extrafilters\ && $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile
 	@set MAKEFLAGS=$(MAKEFLAGS)
 	cd extrafilters\ && $(MAKE) -f Makefile qmake_all
 sub-extrafilters: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile
 sub-extrafilters-make_first: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile 
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile 
 sub-extrafilters-all: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile all
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile all
 sub-extrafilters-clean: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile clean
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile clean
 sub-extrafilters-distclean: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile distclean
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile distclean
 sub-extrafilters-install_subtargets: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile install
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile install
 sub-extrafilters-uninstall_subtargets: FORCE
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile uninstall
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile uninstall
 
 Makefile: ..\cochlear-nerve-plugins\cochlear-nerve-plugins.pro C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf \
 		C:\Qt\5.3\msvc2010_opengl\mkspecs\common\shell-win32.conf \
@@ -324,31 +324,31 @@ uninstall_subtargets: sub-basictools-uninstall_subtargets sub-extrafilters-unins
 sub-basictools-debug:
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile debug
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile debug
 sub-extrafilters-debug:
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile debug
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile debug
 debug: sub-basictools-debug sub-extrafilters-debug
 
 sub-basictools-release:
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile release
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile release
 sub-extrafilters-release:
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile release
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile release
 release: sub-basictools-release sub-extrafilters-release
 
 sub-basictools-check:
 	@if not exist basictools\ mkdir basictools\ & if not exist basictools\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile check
+	cd basictools\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\basictools\basictools.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile check
 sub-extrafilters-check:
 	@if not exist extrafilters\ mkdir extrafilters\ & if not exist extrafilters\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\github-Burt\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile check
+	cd extrafilters\ && ( if not exist Makefile $(QMAKE) C:\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\extrafilters.pro -spec win32-msvc2010 CONFIG+=debug -o Makefile ) && $(MAKE) -f Makefile check
 check: sub-basictools-check sub-extrafilters-check
 install: install_subtargets  FORCE
 

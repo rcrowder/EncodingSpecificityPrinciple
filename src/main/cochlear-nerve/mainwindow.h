@@ -63,9 +63,9 @@ public:
 private slots:
     void open();
     bool saveAs();
-    void brushColor();
-    void brushWidth();
-    void changeBrush();
+    void chartColor();
+    void chartWidth();
+    void changeChart();
     void insertShape();
     void applyFilter();
     void about();
@@ -85,16 +85,16 @@ private:
     QStringList pluginFileNames;
 
     QMenu *fileMenu;
-    QMenu *brushMenu;
+    QMenu *chartMenu;
     QMenu *shapesMenu;
     QMenu *filterMenu;
     QMenu *helpMenu;
-    QActionGroup *brushActionGroup;
+    QActionGroup *chartActionGroup;
     QAction *openAct;
     QAction *saveAsAct;
     QAction *exitAct;
-    QAction *brushWidthAct;
-    QAction *brushColorAct;
+    QAction *chartWidthAct;
+    QAction *chartColorAct;
     QAction *aboutAct;
     QAction *aboutQtAct;
     QAction *aboutPluginsAct;

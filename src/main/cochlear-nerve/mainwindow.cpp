@@ -44,6 +44,8 @@
 #include "paintarea.h"
 #include "plugindialog.h"
 
+#include "../../../../../../../../Program Files/Mega-Nerd/libsndfile/include/sndfile.h"
+
 #include <QPluginLoader>
 #include <QTimer>
 
@@ -72,8 +74,8 @@ MainWindow::MainWindow() :
 
     setWindowTitle(tr("Cochlear Auditory Encoding"));
 
-    if (!brushActionGroup->actions().isEmpty())
-        brushActionGroup->actions().first()->trigger();
+    if (!chartActionGroup->actions().isEmpty())
+        chartActionGroup->actions().first()->trigger();
 
     QTimer::singleShot(500, this, SLOT(aboutPlugins()));
 }
@@ -106,32 +108,32 @@ bool MainWindow::saveAs()
     }
 }
 
-void MainWindow::brushColor()
+void MainWindow::chartColor()
 {
-    const QColor newColor = QColorDialog::getColor(paintArea->brushColor());
+    const QColor newColor = QColorDialog::getColor(paintArea->chartColor());
     if (newColor.isValid())
-        paintArea->setBrushColor(newColor);
+        paintArea->setChartColor(newColor);
 }
 
-void MainWindow::brushWidth()
+void MainWindow::chartWidth()
 {
     bool ok;
     const int newWidth = QInputDialog::getInt(this, tr("Cochlear Auditory Encoding"),
-                                              tr("Select brush width:"),
-                                              paintArea->brushWidth(),
+                                              tr("Select chart width:"),
+                                              paintArea->chartWidth(),
                                               1, 50, 1, &ok);
     if (ok)
-        paintArea->setBrushWidth(newWidth);
+        paintArea->setChartWidth(newWidth);
 }
 
 //! [0]
-void MainWindow::changeBrush()
+void MainWindow::changeChart()
 {
     QAction *action = qobject_cast<QAction *>(sender());
-    BrushInterface *iBrush = qobject_cast<BrushInterface *>(action->parent());
-    const QString brush = action->text();
+    ChartInterface *iChart = qobject_cast<ChartInterface *>(action->parent());
+    const QString chart = action->text();
 
-    paintArea->setBrush(iBrush, brush);
+    paintArea->setChart(iChart, chart);
 }
 //! [0]
 
@@ -188,13 +190,13 @@ void MainWindow::createActions()
     exitAct->setShortcuts(QKeySequence::Quit);
     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
-    brushColorAct = new QAction(tr("&Brush Color..."), this);
-    connect(brushColorAct, SIGNAL(triggered()), this, SLOT(brushColor()));
+    chartColorAct = new QAction(tr("&Chart Color..."), this);
+    connect(chartColorAct, SIGNAL(triggered()), this, SLOT(chartColor()));
 
-    brushWidthAct = new QAction(tr("&Brush Width..."), this);
-    connect(brushWidthAct, SIGNAL(triggered()), this, SLOT(brushWidth()));
+    chartWidthAct = new QAction(tr("&Chart Width..."), this);
+    connect(chartWidthAct, SIGNAL(triggered()), this, SLOT(chartWidth()));
 
-    brushActionGroup = new QActionGroup(this);
+    chartActionGroup = new QActionGroup(this);
 
     aboutAct = new QAction(tr("&About"), this);
     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
@@ -214,10 +216,10 @@ void MainWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction(exitAct);
 
-    brushMenu = menuBar()->addMenu(tr("&Brush"));
-    brushMenu->addAction(brushColorAct);
-    brushMenu->addAction(brushWidthAct);
-    brushMenu->addSeparator();
+    chartMenu = menuBar()->addMenu(tr("&Chart"));
+    chartMenu->addAction(chartColorAct);
+    chartMenu->addAction(chartWidthAct);
+    chartMenu->addSeparator();
 
     shapesMenu = menuBar()->addMenu(tr("&Shapes"));
 
@@ -267,7 +269,7 @@ void MainWindow::loadPlugins()
 //! [8]
 
 //! [9]
-    brushMenu->setEnabled(!brushActionGroup->actions().isEmpty());
+    chartMenu->setEnabled(!chartActionGroup->actions().isEmpty());
     shapesMenu->setEnabled(!shapesMenu->actions().isEmpty());
     filterMenu->setEnabled(!filterMenu->actions().isEmpty());
 }
@@ -276,10 +278,10 @@ void MainWindow::loadPlugins()
 //! [10]
 void MainWindow::populateMenus(QObject *plugin)
 {
-    BrushInterface *iBrush = qobject_cast<BrushInterface *>(plugin);
-    if (iBrush)
-        addToMenu(plugin, iBrush->brushes(), brushMenu, SLOT(changeBrush()),
-                  brushActionGroup);
+    ChartInterface *iChart = qobject_cast<ChartInterface *>(plugin);
+    if (iChart)
+        addToMenu(plugin, iChart->chartes(), chartMenu, SLOT(changeChart()),
+                  chartActionGroup);
 
     ShapeInterface *iShape = qobject_cast<ShapeInterface *>(plugin);
     if (iShape)

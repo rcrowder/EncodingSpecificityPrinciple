@@ -14,10 +14,10 @@ CXX           = cl
 DEFINES       = -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -O2 -MD -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t -O2 -MD -GR -W3 -w34100 -w34189 -EHsc $(DEFINES)
-INCPATH       = -I"C:\Qt\5.3\msvc2010_opengl\include" -I"C:\Qt\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\5.3\msvc2010_opengl\include\QtCore" -I"release" -I"." -I"C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
+INCPATH       = -I"C:\Program Files\Mega-Nerd\libsndfile\include" -I"C:\Qt\5.3\msvc2010_opengl\include" -I"C:\Qt\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\5.3\msvc2010_opengl\include\QtCore" -I"release" -I"." -I"C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:C:\Qt\5.3\msvc2010_opengl\lib C:\Qt\5.3\msvc2010_opengl\lib\qtmain.lib /LIBPATH:plugins plugins\pnp_basictools.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Widgets.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Gui.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Core.lib 
+LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:C:\Qt\5.3\msvc2010_opengl\lib C:\Qt\5.3\msvc2010_opengl\lib\qtmain.lib /LIBPATH:"..\..\..\..\..\..\..\..\Program Files\Mega-Nerd\libsndfile\lib" /LIBPATH:..\cochlear-nerve\plugins pnp_basictools.lib pnp_extrafilters.lib "..\..\..\..\..\..\..\..\Program Files\Mega-Nerd\libsndfile\lib\libsndfile-1.lib" C:\Qt\5.3\msvc2010_opengl\lib\Qt5Widgets.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Gui.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Core.lib 
 QMAKE         = C:\Qt\5.3\msvc2010_opengl\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -275,7 +275,7 @@ release\moc_mainwindow.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QDir \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qicon.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QStringList \
 		..\cochlear-nerve\mainwindow.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -I"C:/Program Files/Mega-Nerd/libsndfile/include" -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_paintarea.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qcolor.h \
@@ -381,7 +381,7 @@ release\moc_paintarea.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		..\cochlear-nerve\paintarea.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\paintarea.h -o release\moc_paintarea.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -I"C:/Program Files/Mega-Nerd/libsndfile/include" -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\paintarea.h -o release\moc_paintarea.cpp
 
 release\moc_plugindialog.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
@@ -487,7 +487,7 @@ release\moc_plugindialog.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QDialo
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QIcon \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qicon.h \
 		..\cochlear-nerve\plugindialog.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\plugindialog.h -o release\moc_plugindialog.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -I"C:/Program Files/Mega-Nerd/libsndfile/include" -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\plugindialog.h -o release\moc_plugindialog.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -749,6 +749,7 @@ release\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\inter
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QIcon \
+		"C:\Program Files\Mega-Nerd\libsndfile\include\sndfile.h" \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QPluginLoader \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qpluginloader.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qlibrary.h \

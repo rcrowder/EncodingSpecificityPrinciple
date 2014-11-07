@@ -53,27 +53,27 @@
 
 //! [1]
 class BasicToolsPlugin : public QObject,
-                         public BrushInterface,
+                         public ChartInterface,
                          public ShapeInterface,
                          public FilterInterface
 {
     Q_OBJECT
 //! [4]
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.Examples.PlugAndPaint.BrushInterface" FILE "basictools.json")
+    Q_PLUGIN_METADATA(IID "org.rcrowder.Qt.Projects.CochlearNerve.ChartInterface" FILE "basictools.json")
 //! [4]
-    Q_INTERFACES(BrushInterface ShapeInterface FilterInterface)
+    Q_INTERFACES(ChartInterface ShapeInterface FilterInterface)
 //! [0]
 
 //! [2]
 public:
 //! [1]
-    // BrushInterface
-    QStringList brushes() const;
-    QRect mousePress(const QString &brush, QPainter &painter,
+    // ChartInterface
+    QStringList chartes() const;
+    QRect mousePress(const QString &chart, QPainter &painter,
                      const QPoint &pos);
-    QRect mouseMove(const QString &brush, QPainter &painter,
+    QRect mouseMove(const QString &chart, QPainter &painter,
                     const QPoint &oldPos, const QPoint &newPos);
-    QRect mouseRelease(const QString &brush, QPainter &painter,
+    QRect mouseRelease(const QString &chart, QPainter &painter,
                        const QPoint &pos);
 
     // ShapeInterface

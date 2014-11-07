@@ -91,7 +91,7 @@ PluginDialog::PluginDialog(const QString &path, const QStringList &fileNames,
 void PluginDialog::findPlugins(const QString &path,
                                const QStringList &fileNames)
 {
-    label->setText(tr("Plug & Paint found the following plugins\n"
+    label->setText(tr("Found the following plugins\n"
                       "(looked in %1):")
                    .arg(QDir::toNativeSeparators(path)));
 
@@ -122,9 +122,9 @@ void PluginDialog::populateTreeWidget(QObject *plugin, const QString &text)
     pluginItem->setFont(0, boldFont);
 
     if (plugin) {
-        BrushInterface *iBrush = qobject_cast<BrushInterface *>(plugin);
-        if (iBrush)
-            addItems(pluginItem, "BrushInterface", iBrush->brushes());
+        ChartInterface *iChart = qobject_cast<ChartInterface *>(plugin);
+        if (iChart)
+            addItems(pluginItem, "ChartInterface", iChart->chartes());
 
         ShapeInterface *iShape = qobject_cast<ShapeInterface *>(plugin);
         if (iShape)
