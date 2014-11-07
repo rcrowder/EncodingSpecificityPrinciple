@@ -49,10 +49,10 @@ Q_IMPORT_PLUGIN(BasicToolsPlugin)
 
 int main(int argc, char *argv[])
 {
-    qmlRegisterType<MainWindow>("CochlearNerveWindow", 1, 0, "MainWindow");
-
     QApplication app(argc, argv);
     MainWindow mainApp;
+
+    qmlRegisterType<MainWindow>("CochlearNerveWindow", 1, 0, "mainApp");
 
     mainApp.start(&app);
     return app.exec();

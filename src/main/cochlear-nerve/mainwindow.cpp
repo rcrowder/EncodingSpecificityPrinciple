@@ -117,7 +117,7 @@ void MainWindow::init()
     QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
     QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
 
-    QThread::msleep(5000); // Blocks (sleeps) during 5 seconds
+    QThread::msleep(2500);
 }
 
 void MainWindow::exit()
