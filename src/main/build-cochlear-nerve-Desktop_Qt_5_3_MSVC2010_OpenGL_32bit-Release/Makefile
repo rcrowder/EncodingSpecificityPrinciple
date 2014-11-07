@@ -186,7 +186,10 @@ Makefile: ..\cochlear-nerve\cochlear-nerve.pro C:\Qt\5.3\msvc2010_opengl\mkspecs
 		..\cochlear-nerve\cochlear-nerve.pro \
 		C:/Qt/5.3/msvc2010_opengl/lib/qtmain.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Core.prl \
+		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quick.prl \
+		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qml.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgets.prl \
+		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Network.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Gui.prl
 	$(QMAKE) -spec win32-msvc2010 -o Makefile ..\cochlear-nerve\cochlear-nerve.pro
 C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf:
@@ -302,7 +305,10 @@ C:\Qt\5.3\msvc2010_opengl\mkspecs\features\lex.prf:
 ..\cochlear-nerve\cochlear-nerve.pro:
 C:/Qt/5.3/msvc2010_opengl/lib/qtmain.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Core.prl:
+C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quick.prl:
+C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qml.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgets.prl:
+C:/Qt/5.3/msvc2010_opengl/lib/Qt5Network.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Gui.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2010 -o Makefile ..\cochlear-nerve\cochlear-nerve.pro
