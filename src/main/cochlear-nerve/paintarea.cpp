@@ -49,7 +49,7 @@ PaintArea::PaintArea(QWidget *parent) :
     QWidget(parent),
     theImage(500, 400, QImage::Format_RGB32),
     color(Qt::blue),
-    thickness(3),
+    thickness(0),
     chartInterface(0),
     lastPos(-1, -1)
 {

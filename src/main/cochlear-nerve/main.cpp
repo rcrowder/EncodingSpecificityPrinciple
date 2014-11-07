@@ -39,17 +39,21 @@
 ****************************************************************************/
 
 //! [0]
-#include "mainwindow.h"
-#include <QtPlugin>
 #include <QApplication>
+#include <QtPlugin>
+#include <QtQml>
+
+#include "mainwindow.h"
 
 Q_IMPORT_PLUGIN(BasicToolsPlugin)
 
 int main(int argc, char *argv[])
 {
+    qmlRegisterType<MainWindow>("CochlearNerveWindow", 1, 0, "MainWindow");
+
     QApplication app(argc, argv);
-    MainWindow window;
-    window.show();
+    MainWindow mainApp;
+
+    mainApp.start(&app);
     return app.exec();
 }
-//! [0]

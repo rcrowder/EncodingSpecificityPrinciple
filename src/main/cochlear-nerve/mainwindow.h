@@ -42,8 +42,11 @@
 #define MAINWINDOW_H
 
 #include <QDir>
-#include <QMainWindow>
 #include <QStringList>
+#include <QObject>
+#include <QtQuick/QQuickView>
+#include <QGuiApplication>
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -51,6 +54,7 @@ class QActionGroup;
 class QMenu;
 class QScrollArea;
 QT_END_NAMESPACE
+
 class PaintArea;
 
 class MainWindow : public QMainWindow
@@ -59,8 +63,15 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
+    ~MainWindow();
+
+    int start(QGuiApplication* app);
+    Q_INVOKABLE void init();
 
 private slots:
+    void exit();
+    void shutdown();
+
     void open();
     bool saveAs();
     void chartColor();
@@ -68,6 +79,7 @@ private slots:
     void changeChart();
     void insertShape();
     void applyFilter();
+
     void about();
     void aboutPlugins();
 
@@ -81,7 +93,8 @@ private:
 
     PaintArea *paintArea;
     QScrollArea *scrollArea;
-    QDir pluginsDir;
+
+    QDir        pluginsDir;
     QStringList pluginFileNames;
 
     QMenu *fileMenu;
@@ -89,6 +102,7 @@ private:
     QMenu *shapesMenu;
     QMenu *filterMenu;
     QMenu *helpMenu;
+
     QActionGroup *chartActionGroup;
     QAction *openAct;
     QAction *saveAsAct;
@@ -98,6 +112,9 @@ private:
     QAction *aboutAct;
     QAction *aboutQtAct;
     QAction *aboutPluginsAct;
+
+    QGuiApplication* app;
+    QQuickView *viewer;
 };
 
 #endif

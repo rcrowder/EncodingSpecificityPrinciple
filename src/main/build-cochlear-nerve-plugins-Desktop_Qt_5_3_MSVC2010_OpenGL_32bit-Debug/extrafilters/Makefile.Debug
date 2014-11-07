@@ -698,14 +698,14 @@ debug\moc_extrafiltersplugin.obj: debug\moc_extrafiltersplugin.cpp
 ####### Install
 
 install_target: first FORCE
-	@if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins mkdir C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins & if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins exit 1
+	@if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\%{sourceDir}\..\..\..\cochlear-nerve\plugins mkdir C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\%{sourceDir}\..\..\..\cochlear-nerve\plugins & if not exist C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\%{sourceDir}\..\..\..\cochlear-nerve\plugins exit 1
 	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)"
 	-$(INSTALL_FILE) "..\..\cochlear-nerve\plugins\pnp_extrafiltersd.pdb" "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
 
 uninstall_target: FORCE
 	-$(DEL_FILE) "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\$(TARGET)" 
 	 -$(DEL_FILE) "C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve\plugins\pnp_extrafiltersd.pdb"
-	-$(DEL_DIR) C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\..\..\cochlear-nerve\plugins 
+	-$(DEL_DIR) C:$(INSTALL_ROOT)\Users\rcrowder\Documents\GitHub\EncodingSpecificityPrinciple\src\main\cochlear-nerve-plugins\extrafilters\%{sourceDir}\..\..\..\cochlear-nerve\plugins 
 
 
 install:  install_target  FORCE

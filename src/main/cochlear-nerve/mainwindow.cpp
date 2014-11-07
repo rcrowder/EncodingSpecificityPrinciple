@@ -44,10 +44,7 @@
 #include "paintarea.h"
 #include "plugindialog.h"
 
-#include "../../../../../../../../Program Files/Mega-Nerd/libsndfile/include/sndfile.h"
-
-#include <QPluginLoader>
-#include <QTimer>
+//#include "sndfile.h"
 
 #include <QScrollArea>
 #include <QMessageBox>
@@ -60,10 +57,20 @@
 #include <QInputDialog>
 #include <QApplication>
 
+#include <QDir>
+#include <QCoreApplication>
+#include <QPluginLoader>
+#include <QQmlEngine>
+#include <QQmlContext>
+#include <QThread>
+#include <QTimer>
+
 MainWindow::MainWindow() :
     paintArea(new PaintArea),
     scrollArea(new QScrollArea)
 {
+    viewer = new QQuickView();
+
     scrollArea->setBackgroundRole(QPalette::Dark);
     scrollArea->setWidget(paintArea);
     setCentralWidget(scrollArea);
@@ -74,10 +81,55 @@ MainWindow::MainWindow() :
 
     setWindowTitle(tr("Cochlear Auditory Encoding"));
 
-    if (!chartActionGroup->actions().isEmpty())
-        chartActionGroup->actions().first()->trigger();
+//    if (!chartActionGroup->actions().isEmpty())
+//        chartActionGroup->actions().first()->trigger();
+//    QTimer::singleShot(500, this, SLOT(aboutPlugins()));
+}
 
-    QTimer::singleShot(500, this, SLOT(aboutPlugins()));
+MainWindow::~MainWindow()
+{
+    delete viewer;
+}
+
+int MainWindow::start(QGuiApplication* app)
+{
+    //qDebug() << "Start " + QString::number((int)QThread::currentThreadId());
+    this->app = app;
+
+    QDir directory(QCoreApplication::applicationDirPath());
+    QString path = directory.absoluteFilePath("../../cochlear-nerve/qml/splash.qml");
+
+    // Give a reference to this object to the splash.qml file
+    this->viewer->engine()->rootContext()->setContextProperty("MainWindow", this);
+
+    // Load splash.qml
+    this->viewer->setSource(QUrl::fromLocalFile(path));
+
+    // And display it
+    this->viewer->show();
+
+    return 0;
+}
+
+
+void MainWindow::init()
+{
+    QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
+    QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
+
+    QThread::msleep(5000); // Blocks (sleeps) during 5 seconds
+}
+
+void MainWindow::exit()
+{
+    //this->Stop();
+    this->app->exit(0);
+}
+
+void MainWindow::shutdown()
+{
+    //this->Stop();
+    this->app->exit(1);
 }
 
 void MainWindow::open()
