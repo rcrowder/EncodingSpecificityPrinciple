@@ -1,5 +1,5 @@
 #! [0]
-QT += widgets quick qml declarative
+QT += widgets quick qml declarative multimedia
 
 HEADERS        = interfaces.h \
                  mainwindow.h \

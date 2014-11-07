@@ -53,6 +53,8 @@ class QAction;
 class QActionGroup;
 class QMenu;
 class QScrollArea;
+class QAudioProbe;
+class QMediaPlayer;
 QT_END_NAMESPACE
 
 class PaintArea;
@@ -60,11 +62,15 @@ class PaintArea;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
     MainWindow();
     ~MainWindow();
 
-    int start(QApplication* app);
+    int Start(QApplication* app);
+    int Stop() { return 0; }
+
+    bool LoadFile(const QString &);
 
 public slots:
     void init();
@@ -74,6 +80,8 @@ public slots:
 private slots:
     void open();
     bool saveAs();
+    void print();
+
     void chartColor();
     void chartWidth();
     void changeChart();
@@ -85,36 +93,44 @@ private slots:
 
 private:
     void createActions();
+    void updateActions();
+
     void createMenus();
-    void loadPlugins();
     void populateMenus(QObject *plugin);
+
+    void loadPlugins();
+
     void addToMenu(QObject *plugin, const QStringList &texts, QMenu *menu,
                    const char *member, QActionGroup *actionGroup = 0);
 
-    PaintArea *paintArea;
+    PaintArea   *paintArea;
     QScrollArea *scrollArea;
 
     QDir        pluginsDir;
     QStringList pluginFileNames;
 
-    QMenu *fileMenu;
-    QMenu *chartMenu;
-    QMenu *shapesMenu;
-    QMenu *filterMenu;
-    QMenu *helpMenu;
+    QMenu       *fileMenu;
+    QMenu       *chartMenu;
+    QMenu       *shapesMenu;
+    QMenu       *filterMenu;
+    QMenu       *helpMenu;
 
     QActionGroup *chartActionGroup;
-    QAction *openAct;
-    QAction *saveAsAct;
-    QAction *exitAct;
-    QAction *chartWidthAct;
-    QAction *chartColorAct;
-    QAction *aboutAct;
-    QAction *aboutQtAct;
-    QAction *aboutPluginsAct;
+    QAction     *openAct;
+    QAction     *saveAsAct;
+    QAction     *printAct;
+    QAction     *exitAct;
+    QAction     *chartWidthAct;
+    QAction     *chartColorAct;
+    QAction     *aboutAct;
+    QAction     *aboutQtAct;
+    QAction     *aboutPluginsAct;
 
-    QApplication* app;
-    QQuickView *viewer;
+    QApplication *app;
+    QQuickView   *viewer;
+
+    QAudioProbe  *audioProbe;
+    QMediaPlayer *mediaPlayer;
 };
 
 #endif

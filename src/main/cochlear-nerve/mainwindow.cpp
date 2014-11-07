@@ -23,13 +23,18 @@
 #include <QThread>
 #include <QTimer>
 
+#include <QAudioProbe>
+#include <QMediaPlayer>
+
 MainWindow::MainWindow() :
     paintArea(NULL), scrollArea(NULL)
 {
     viewer = new QQuickView();
     viewer->setResizeMode(QQuickView::SizeViewToRootObject);//QQuickView::SizeRootObjectToView);
+    QRect viewerSize = viewer->frameGeometry();
+    viewer->lower();
 
-    paintArea  = new PaintArea(this);
+    paintArea  = new PaintArea;
     scrollArea = new QScrollArea;
 }
 
@@ -38,26 +43,65 @@ MainWindow::~MainWindow()
     delete viewer;
 }
 
-int MainWindow::start(QApplication* app)
+int MainWindow::Start(QApplication* app)
 {
-    //qDebug() << "Start " + QString::number((int)QThread::currentThreadId());
+    // NB: An aduio file could have been loaded by now
+
+    //qDebug() << "start " + QString::number((int)QThread::currentThreadId());
     this->app = app;
 
-    setWindowTitle(tr("Cochlear Auditory Encoding"));
+    //setWindowTitle(tr("Cochlear Auditory Encoding"));
 
     this->viewer->engine()->rootContext()->setContextProperty("mainWindow", this);
     this->viewer->setSource(QUrl("qrc:qml/splash.qml"));
-    this->viewer->show();
 
-    scrollArea->setBackgroundRole(QPalette::Dark);
+    scrollArea->setBackgroundRole(QPalette::Base);
     scrollArea->setWidget(paintArea);
-    setCentralWidget(paintArea);
+    setCentralWidget(scrollArea);
 
     QObject::connect((QObject*)viewer->engine(), SIGNAL(quit()), this, SLOT(exit()));
     QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
+
+    this->viewer->show();
     return 0;
 }
 
+bool MainWindow::LoadFile(const QString &fileName)
+{
+    mediaPlayer = new QMediaPlayer;
+
+    mediaPlayer->setMedia(QUrl::fromLocalFile(fileName));
+    mediaPlayer->setVolume(50);
+    mediaPlayer->play();
+
+    //playlist = new QMediaPlaylist(mediaPlayer);
+    //playlist->addMedia(QUrl("http://example.com/myfile1.mp3"));
+    //playlist->addMedia(QUrl("http://example.com/myfile2.mp3"));
+    //playlist->setCurrentIndex(1);
+
+    //videoWidget = new QVideoWidget;
+    //mediaPlayer->setVideoOutput(videoWidget);
+    //videoWidget->show();
+
+    audioProbe = new QAudioProbe(this);
+    if (audioProbe->setSource(mediaPlayer)) {
+        // Probing succeeded, audioProbe->isValid() should be true.
+        connect(audioProbe, SIGNAL(audioBufferProbed(QAudioBuffer)),
+                this, SLOT(calculateLevel(QAudioBuffer)));
+    }
+    else
+        return false;
+
+    mediaPlayer->play();
+    // Now audio buffers being recorded should be signaled
+    // by the probe, so we can do things like calculating the
+    // audio power level, or performing a frequency transform
+
+    printAct->setEnabled(true);
+    //updateActions();
+
+    return true;
+}
 
 void MainWindow::init()
 {
@@ -65,26 +109,13 @@ void MainWindow::init()
 
     createActions();
     createMenus();
+
     loadPlugins();
 
     if (!chartActionGroup->actions().isEmpty())
         chartActionGroup->actions().first()->trigger();
 
     //QTimer::singleShot(500, this, SLOT(aboutPlugins()));
-
-    menuBar()->setVisible(true);
-}
-
-void MainWindow::exit()
-{
-    //this->Stop();
-    this->app->exit(0);
-}
-
-void MainWindow::shutdown()
-{
-    //this->Stop();
-    this->app->exit(1);
 }
 
 void MainWindow::open()
@@ -93,7 +124,7 @@ void MainWindow::open()
                                                           tr("Open File"),
                                                           QDir::currentPath());
     if (!fileName.isEmpty()) {
-        if (!paintArea->openImage(fileName)) {
+        if (!this->LoadFile(fileName)) {
             QMessageBox::information(this,
                                      tr("Cochlear Auditory Encoding"),
                                      tr("Cannot load %1.").arg(fileName));
@@ -117,6 +148,23 @@ bool MainWindow::saveAs()
     }
 }
 
+void MainWindow::print()
+{
+
+}
+
+void MainWindow::exit()
+{
+    this->Stop();
+    this->app->exit(0);
+}
+
+void MainWindow::shutdown()
+{
+    this->Stop();
+    this->app->exit(1);
+}
+
 void MainWindow::chartColor()
 {
     const QColor newColor = QColorDialog::getColor(paintArea->chartColor());
@@ -136,7 +184,6 @@ void MainWindow::chartWidth()
         paintArea->setChartWidth(newWidth);
 }
 
-//! [0]
 void MainWindow::changeChart()
 {
     QAction *action = qobject_cast<QAction *>(sender());
@@ -145,9 +192,7 @@ void MainWindow::changeChart()
 
     paintArea->setChart(iChart, chart);
 }
-//! [0]
 
-//! [1]
 void MainWindow::insertShape()
 {
     QAction *action = qobject_cast<QAction *>(sender());
@@ -158,9 +203,7 @@ void MainWindow::insertShape()
     if (!path.isEmpty())
         paintArea->insertShape(path);
 }
-//! [1]
 
-//! [2]
 void MainWindow::applyFilter()
 {
     QAction *action = qobject_cast<QAction *>(sender());
@@ -172,7 +215,6 @@ void MainWindow::applyFilter()
                                               this);
     paintArea->setImage(image);
 }
-//! [2]
 
 void MainWindow::about()
 {
@@ -181,13 +223,11 @@ void MainWindow::about()
                       tr("The <b>Cochlear Auditory Encoding</b> ..."));
 }
 
-//! [3]
 void MainWindow::aboutPlugins()
 {
     PluginDialog dialog(pluginsDir.path(), pluginFileNames, this);
     dialog.exec();
 }
-//! [3]
 
 void MainWindow::createActions()
 {
@@ -197,7 +237,13 @@ void MainWindow::createActions()
 
     saveAsAct = new QAction(tr("&Save As..."), this);
     saveAsAct->setShortcuts(QKeySequence::SaveAs);
+    saveAsAct->setEnabled(false);
     connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
+
+    printAct = new QAction(tr("&Print..."), this);
+    printAct->setShortcuts(QKeySequence::Print);
+    printAct->setEnabled(false);
+    connect(printAct, SIGNAL(triggered()), this, SLOT(print()));
 
     exitAct = new QAction(tr("E&xit"), this);
     exitAct->setShortcuts(QKeySequence::Quit);
@@ -227,6 +273,8 @@ void MainWindow::createMenus()
     fileMenu->addAction(openAct);
     fileMenu->addAction(saveAsAct);
     fileMenu->addSeparator();
+    fileMenu->addAction(printAct);
+    fileMenu->addSeparator();
     fileMenu->addAction(exitAct);
 
     chartMenu = menuBar()->addMenu(tr("&Chart"));
@@ -242,16 +290,15 @@ void MainWindow::createMenus()
 
     helpMenu = menuBar()->addMenu(tr("&Help"));
     helpMenu->addAction(aboutAct);
+    helpMenu->addSeparator();
     helpMenu->addAction(aboutQtAct);
     helpMenu->addAction(aboutPluginsAct);
 }
 
-//! [4]
 void MainWindow::loadPlugins()
 {
     foreach (QObject *plugin, QPluginLoader::staticInstances())
         populateMenus(plugin);
-//! [4] //! [5]
 
     pluginsDir = QDir(qApp->applicationDirPath());
 
@@ -266,29 +313,21 @@ void MainWindow::loadPlugins()
     }
 #endif
     pluginsDir.cd("plugins");
-//! [5]
 
-//! [6]
     foreach (QString fileName, pluginsDir.entryList(QDir::Files)) {
         QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
         QObject *plugin = loader.instance();
         if (plugin) {
             populateMenus(plugin);
             pluginFileNames += fileName;
-//! [6] //! [7]
         }
-//! [7] //! [8]
     }
-//! [8]
 
-//! [9]
     chartMenu->setEnabled(!chartActionGroup->actions().isEmpty());
     shapesMenu->setEnabled(!shapesMenu->actions().isEmpty());
     filterMenu->setEnabled(!filterMenu->actions().isEmpty());
 }
-//! [9]
 
-//! [10]
 void MainWindow::populateMenus(QObject *plugin)
 {
     ChartInterface *iChart = qobject_cast<ChartInterface *>(plugin);
@@ -304,7 +343,6 @@ void MainWindow::populateMenus(QObject *plugin)
     if (iFilter)
         addToMenu(plugin, iFilter->filters(), filterMenu, SLOT(applyFilter()));
 }
-//! [10]
 
 void MainWindow::addToMenu(QObject *plugin, const QStringList &texts,
                            QMenu *menu, const char *member,

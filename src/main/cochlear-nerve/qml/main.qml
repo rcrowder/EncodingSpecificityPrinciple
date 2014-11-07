@@ -7,7 +7,6 @@ Rectangle {
     width:  400
     height: 300
 
-    // This item is the item that will be dislplayed as the splash screen
     Rectangle {
         id: backgroundRectangle
         width:  200

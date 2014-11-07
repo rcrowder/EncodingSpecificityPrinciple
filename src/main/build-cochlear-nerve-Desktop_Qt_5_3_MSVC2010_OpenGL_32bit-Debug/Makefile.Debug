@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Debug
 
 CC            = cl
 CXX           = cl
-DEFINES       = -DUNICODE -DWIN32 -DQT_QUICK_LIB -DQT_QML_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_QUICK_LIB -DQT_DECLARATIVE_LIB -DQT_MULTIMEDIA_LIB -DQT_QML_LIB -DQT_WIDGETS_LIB -DQT_SCRIPT_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -nologo -Zm200 -Zc:wchar_t -Zi -MDd -W3 /Fddebug\cochlear-nerve.pdb $(DEFINES)
 CXXFLAGS      = -nologo -Zm200 -Zc:wchar_t -Zi -MDd -GR -W3 -w34100 -w34189 -EHsc /Fddebug\cochlear-nerve.pdb $(DEFINES)
-INCPATH       = -I"C:\Qt\5.3\msvc2010_opengl\include" -I"C:\Qt\5.3\msvc2010_opengl\include\QtQuick" -I"C:\Qt\5.3\msvc2010_opengl\include\QtQml" -I"C:\Qt\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\5.3\msvc2010_opengl\include\QtNetwork" -I"C:\Qt\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\5.3\msvc2010_opengl\include\QtCore" -I"debug" -I"." -I"C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
+INCPATH       = -I"C:\Qt\5.3\msvc2010_opengl\include" -I"C:\Qt\5.3\msvc2010_opengl\include\QtQuick" -I"C:\Qt\5.3\msvc2010_opengl\include\QtDeclarative" -I"C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia" -I"C:\Qt\5.3\msvc2010_opengl\include\QtQml" -I"C:\Qt\5.3\msvc2010_opengl\include\QtWidgets" -I"C:\Qt\5.3\msvc2010_opengl\include\QtScript" -I"C:\Qt\5.3\msvc2010_opengl\include\QtNetwork" -I"C:\Qt\5.3\msvc2010_opengl\include\QtGui" -I"C:\Qt\5.3\msvc2010_opengl\include\QtCore" -I"debug" -I"." -I"C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010"
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /DEBUG /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:C:\Qt\5.3\msvc2010_opengl\lib C:\Qt\5.3\msvc2010_opengl\lib\qtmaind.lib /LIBPATH:..\cochlear-nerve\plugins ..\cochlear-nerve\plugins\pnp_basictoolsd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Quickd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Qmld.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Widgetsd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Networkd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Guid.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Cored.lib 
+LIBS          = glu32.lib opengl32.lib gdi32.lib user32.lib /LIBPATH:C:\Qt\5.3\msvc2010_opengl\lib C:\Qt\5.3\msvc2010_opengl\lib\qtmaind.lib /LIBPATH:..\cochlear-nerve\plugins ..\cochlear-nerve\plugins\pnp_basictoolsd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Quickd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Declaratived.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Multimediad.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Qmld.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Widgetsd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Scriptd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Networkd.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Guid.lib C:\Qt\5.3\msvc2010_opengl\lib\Qt5Cored.lib 
 QMAKE         = C:\Qt\5.3\msvc2010_opengl\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -46,13 +46,15 @@ OBJECTS_DIR   = debug
 SOURCES       = ..\cochlear-nerve\main.cpp \
 		..\cochlear-nerve\mainwindow.cpp \
 		..\cochlear-nerve\paintarea.cpp \
-		..\cochlear-nerve\plugindialog.cpp debug\moc_mainwindow.cpp \
+		..\cochlear-nerve\plugindialog.cpp debug\qrc_main.cpp \
+		debug\moc_mainwindow.cpp \
 		debug\moc_paintarea.cpp \
 		debug\moc_plugindialog.cpp
 OBJECTS       = debug\main.obj \
 		debug\mainwindow.obj \
 		debug\paintarea.obj \
 		debug\plugindialog.obj \
+		debug\qrc_main.obj \
 		debug\moc_mainwindow.obj \
 		debug\moc_paintarea.obj \
 		debug\moc_plugindialog.obj
@@ -150,15 +152,15 @@ $(OBJECTS) $(LIBS) debug\cochlear-nerve.exe_manifest.res
 	if exist debug\cochlear-nerve.exe_manifest.bak del debug\cochlear-nerve.exe_manifest.bak
 
 qmake: FORCE
-	@$(QMAKE) -spec win32-msvc2010 CONFIG+=debug -o Makefile.Debug ..\cochlear-nerve\cochlear-nerve.pro
+	@$(QMAKE) -spec win32-msvc2010 CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile.Debug ..\cochlear-nerve\cochlear-nerve.pro
 
 qmake_all: FORCE
 
 dist:
-	$(ZIP) cochlear-nerve.zip $(SOURCES) $(DIST) ..\cochlear-nerve\cochlear-nerve.pro C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\common\shell-win32.conf C:\Qt\5.3\msvc2010_opengl\mkspecs\qconfig.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt_functions.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\qt_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\default_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\default_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\resolve_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\default_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\build_pass.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\rtti.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\precompile_header.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\warn_on.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\resources.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\moc.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\opengl.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\uic.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\windows.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\testcase_targets.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exceptions.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\yacc.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\lex.prf ..\cochlear-nerve\cochlear-nerve.pro C:/Qt/5.3/msvc2010_opengl/lib/qtmaind.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Cored.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quickd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qmld.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgetsd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Networkd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Guid.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
+	$(ZIP) cochlear-nerve.zip $(SOURCES) $(DIST) ..\cochlear-nerve\cochlear-nerve.pro C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\common\shell-win32.conf C:\Qt\5.3\msvc2010_opengl\mkspecs\qconfig.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt_functions.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\qt_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\spec_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\default_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\default_pre.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\resolve_config.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\default_post.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\build_pass.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qml_debug.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\declarative_debug.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\rtti.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\precompile_header.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\warn_on.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\qt.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\resources.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\moc.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\opengl.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\uic.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\win32\windows.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\testcase_targets.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\exceptions.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\yacc.prf C:\Qt\5.3\msvc2010_opengl\mkspecs\features\lex.prf ..\cochlear-nerve\cochlear-nerve.pro ..\cochlear-nerve\main.qrc C:/Qt/5.3/msvc2010_opengl/lib/qtmaind.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Cored.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quickd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Declaratived.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Multimediad.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qmld.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgetsd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Scriptd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Networkd.prl C:/Qt/5.3/msvc2010_opengl/lib/Qt5Guid.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.obj debug\mainwindow.obj debug\paintarea.obj debug\plugindialog.obj debug\moc_mainwindow.obj debug\moc_paintarea.obj debug\moc_plugindialog.obj
+	-$(DEL_FILE) debug\main.obj debug\mainwindow.obj debug\paintarea.obj debug\plugindialog.obj debug\qrc_main.obj debug\moc_mainwindow.obj debug\moc_paintarea.obj debug\moc_plugindialog.obj
 	-$(DEL_FILE) debug\cochlear-nerve.exp debug\cochlear-nerve.ilk debug\cochlear-nerve.idb debug\cochlear-nerve.exe.embed.manifest debug\cochlear-nerve.exe_manifest.rc debug\cochlear-nerve.exe_manifest.res
 
 distclean: clean 
@@ -174,8 +176,14 @@ check: first
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: debug\qrc_main.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) debug\qrc_main.cpp
+debug\qrc_main.cpp: ..\cochlear-nerve\main.qrc \
+		..\cochlear-nerve\qml\splash.qml \
+		..\cochlear-nerve\qml\main.qml
+	C:\Qt\5.3\msvc2010_opengl\bin\rcc.exe -name main ..\cochlear-nerve\main.qrc -o debug\qrc_main.cpp
+
 compiler_moc_header_make_all: debug\moc_mainwindow.cpp debug\moc_paintarea.cpp debug\moc_plugindialog.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) debug\moc_mainwindow.cpp debug\moc_paintarea.cpp debug\moc_plugindialog.cpp
@@ -293,13 +301,11 @@ debug\moc_mainwindow.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QDir \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qqmldebug.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qtqmlglobal.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qeventloop.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpalette.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qbrush.h \
@@ -307,9 +313,13 @@ debug\moc_mainwindow.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtCore\QDir \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontinfo.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
 		..\cochlear-nerve\mainwindow.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtDeclarative -IC:/Qt/5.3/msvc2010_opengl/include/QtMultimedia -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtScript -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug\moc_paintarea.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qcolor.h \
@@ -415,7 +425,7 @@ debug\moc_paintarea.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		..\cochlear-nerve\paintarea.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\paintarea.h -o debug\moc_paintarea.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtDeclarative -IC:/Qt/5.3/msvc2010_opengl/include/QtMultimedia -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtScript -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\paintarea.h -o debug\moc_paintarea.cpp
 
 debug\moc_plugindialog.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QDialog \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdialog.h \
@@ -521,7 +531,7 @@ debug\moc_plugindialog.cpp: C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QDialog 
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QIcon \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qicon.h \
 		..\cochlear-nerve\plugindialog.h
-	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/Users/rcrowder/Documents/GitHub/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\plugindialog.h -o debug\moc_plugindialog.cpp
+	C:\Qt\5.3\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.3/msvc2010_opengl/mkspecs/win32-msvc2010 -IC:/github-Burt/EncodingSpecificityPrinciple/src/main/cochlear-nerve -IC:/Qt/5.3/msvc2010_opengl/include -IC:/Qt/5.3/msvc2010_opengl/include/QtQuick -IC:/Qt/5.3/msvc2010_opengl/include/QtDeclarative -IC:/Qt/5.3/msvc2010_opengl/include/QtMultimedia -IC:/Qt/5.3/msvc2010_opengl/include/QtQml -IC:/Qt/5.3/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.3/msvc2010_opengl/include/QtScript -IC:/Qt/5.3/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.3/msvc2010_opengl/include/QtGui -IC:/Qt/5.3/msvc2010_opengl/include/QtCore -I. ..\cochlear-nerve\plugindialog.h -o debug\moc_plugindialog.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -533,7 +543,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean 
 
 
 
@@ -645,6 +655,9 @@ debug\main.obj: ..\cochlear-nerve\main.cpp C:\Qt\5.3\msvc2010_opengl\include\QtW
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QCommandLineParser \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcommandlineparser.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcommandlineoption.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QtPlugin \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qplugin.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qpointer.h \
@@ -739,8 +752,6 @@ debug\main.obj: ..\cochlear-nerve\main.cpp C:\Qt\5.3\msvc2010_opengl\include\QtW
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qbytearraymatcher.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcache.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcollator.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcommandlineoption.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcommandlineparser.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcryptographichash.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qelapsedtimer.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qlinkedlist.h \
@@ -847,7 +858,6 @@ debug\main.obj: ..\cochlear-nerve\main.cpp C:\Qt\5.3\msvc2010_opengl\include\QtW
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qsurface.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qsurfaceformat.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qicon.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h
@@ -973,13 +983,11 @@ debug\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\interfa
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qqmldebug.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtQml\qtqmlglobal.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QGuiApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qeventloop.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qwidget.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpalette.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qbrush.h \
@@ -987,6 +995,10 @@ debug\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\interfa
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qfontinfo.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QMainWindow \
+		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
 		..\cochlear-nerve\paintarea.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\QColor \
@@ -1022,10 +1034,6 @@ debug\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\interfa
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtextformat.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qpen.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtGui\qtextoption.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QApplication \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qapplication.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QCoreApplication \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QPluginLoader \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qpluginloader.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qlibrary.h \
@@ -1040,7 +1048,22 @@ debug\mainwindow.obj: ..\cochlear-nerve\mainwindow.cpp ..\cochlear-nerve\interfa
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qthread.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QTimer \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qtimer.h \
-		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qbasictimer.h
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qbasictimer.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QSharedDataPointer \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QString \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QUrl \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.3\msvc2010_opengl\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtCore\qmetaobject.h \
+		C:\Qt\5.3\msvc2010_opengl\include\QtNetwork\qnetworkconfiguration.h
 
 debug\paintarea.obj: ..\cochlear-nerve\paintarea.cpp ..\cochlear-nerve\interfaces.h \
 		C:\Qt\5.3\msvc2010_opengl\include\QtCore\QtPlugin \
@@ -1308,6 +1331,8 @@ debug\plugindialog.obj: ..\cochlear-nerve\plugindialog.cpp ..\cochlear-nerve\int
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QTreeWidgetItem \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\QHeaderView \
 		C:\Qt\5.3\msvc2010_opengl\include\QtWidgets\qheaderview.h
+
+debug\qrc_main.obj: debug\qrc_main.cpp 
 
 debug\moc_mainwindow.obj: debug\moc_mainwindow.cpp 
 

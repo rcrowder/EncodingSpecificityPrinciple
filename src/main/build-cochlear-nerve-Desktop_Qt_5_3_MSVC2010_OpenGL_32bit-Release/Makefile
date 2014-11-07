@@ -188,6 +188,7 @@ Makefile: ..\cochlear-nerve\cochlear-nerve.pro C:\Qt\5.3\msvc2010_opengl\mkspecs
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Core.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quick.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Declarative.prl \
+		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Multimedia.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qml.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgets.prl \
 		C:/Qt/5.3/msvc2010_opengl/lib/Qt5Script.prl \
@@ -309,6 +310,7 @@ C:/Qt/5.3/msvc2010_opengl/lib/qtmain.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Core.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Quick.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Declarative.prl:
+C:/Qt/5.3/msvc2010_opengl/lib/Qt5Multimedia.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Qml.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Widgets.prl:
 C:/Qt/5.3/msvc2010_opengl/lib/Qt5Script.prl:
