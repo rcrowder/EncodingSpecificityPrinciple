@@ -66,7 +66,9 @@ public:
     ~MainWindow();
 
     int start(QGuiApplication* app);
-    Q_INVOKABLE void init();
+
+public slots:
+    void init();
 
 private slots:
     void exit();

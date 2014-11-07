@@ -71,19 +71,7 @@ MainWindow::MainWindow() :
 {
     viewer = new QQuickView();
 
-    scrollArea->setBackgroundRole(QPalette::Dark);
-    scrollArea->setWidget(paintArea);
-    setCentralWidget(scrollArea);
-
-    createActions();
-    createMenus();
-    loadPlugins();
-
     setWindowTitle(tr("Cochlear Auditory Encoding"));
-
-//    if (!chartActionGroup->actions().isEmpty())
-//        chartActionGroup->actions().first()->trigger();
-//    QTimer::singleShot(500, this, SLOT(aboutPlugins()));
 }
 
 MainWindow::~MainWindow()
@@ -103,7 +91,7 @@ int MainWindow::start(QGuiApplication* app)
     this->viewer->engine()->rootContext()->setContextProperty("MainWindow", this);
 
     // Load splash.qml
-    this->viewer->setSource(QUrl::fromLocalFile(path));
+    this->viewer->setSource(QUrl("qrc:qml/splash.qml"));//QUrl::fromLocalFile(path));
 
     // And display it
     this->viewer->show();
@@ -118,6 +106,18 @@ void MainWindow::init()
     QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(exit()));
 
     QThread::msleep(2500);
+
+    scrollArea->setBackgroundRole(QPalette::Dark);
+    scrollArea->setWidget(paintArea);
+    setCentralWidget(scrollArea);
+
+    createActions();
+    createMenus();
+    loadPlugins();
+
+//    if (!chartActionGroup->actions().isEmpty())
+//        chartActionGroup->actions().first()->trigger();
+//    QTimer::singleShot(500, this, SLOT(aboutPlugins()));
 }
 
 void MainWindow::exit()

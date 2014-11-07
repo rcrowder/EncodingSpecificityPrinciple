@@ -1,5 +1,5 @@
 #! [0]
-QT += widgets quick qml
+QT += widgets quick qml declarative
 
 HEADERS        = interfaces.h \
                  mainwindow.h \
@@ -10,6 +10,8 @@ SOURCES        = main.cpp \
                  mainwindow.cpp \
                  paintarea.cpp \
                  plugindialog.cpp
+
+RESOURCES     += main.qrc
 
 LIBS           = -L../cochlear-nerve/plugins \
                  -lpnp_basictools
@@ -24,6 +26,4 @@ if(!debug_and_release|build_pass):CONFIG(debug, debug|release) {
 target.path = $$[QT_INSTALL_EXAMPLES]/cochlear-nerve
 INSTALLS += target
 
-OTHER_FILES += \
-    qml/main.qml \
-    qml/splash.qml
+OTHER_FILES +=
