@@ -38,4 +38,5 @@ followed by,
 Feature inegration (100 - 150 ms)  
 
 * Tuning on the basilar membrane changes from high to low frequency.  
-
+* A1 neurons carrying six times less information about ST then IC
+* Abstract entities per spike is twice smaller in A1 than IC
