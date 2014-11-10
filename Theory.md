@@ -119,7 +119,7 @@ Outer hair cells on the other hand boost the mechanical signal by using electrom
 
 Outer middle ear processing (PCP) can be approximated with 2nd order Butterworth filter? (Lf 450 Hz, Hf 8000 Hz)
 
-The basilar membrane of the cochlea is tonotopic.  
+The basilar membrane of the cochlea is tonotopic. Location of middle ectosylvian gyrus, and tonotopic organization in approx. dorsoventrally across the gyrus.
 
 Feature extraction (150 - 400 ms)  
  * relative piches (~1500 frequencies),  
@@ -135,14 +135,15 @@ followed by,
 Feature inegration (100 - 150 ms)  
 
 * Tuning on the basilar membrane changes from high to low frequency.  
-  * Auditory filters that are non-linear, level-dependent.
-  * Filter critical bandwidth size decreases from the base to apex of the cochlea (high to low)
+* Auditory filters that are non-linear, level-dependent.
+* Filter critical bandwidth size decreases from the base to apex of the cochlea (high to low)
 
 Can feedback from unmyelinated cortical neurons handle attentional auditory processing? Via the inferior colliculus?
 
 Feedback from the tensor tympani and stapedius muscles could also be determined to deduce energy state information from ossicle simulation?
 
 Thalamic reticular nucleus (TRN) neurons (targets medial geniculate body (MGB)), may transiently deactivate surrounding TRN neurons in response to fresh stimulus, altering auditory thalamus responses and inducing attention shift?  
+
 
 - Spectro-Temporal Receptive Field (STRF) estimated from the responses to relevant complex stimuli  
 - Volterra integral representation?  
