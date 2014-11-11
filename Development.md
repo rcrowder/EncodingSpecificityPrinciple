@@ -11,6 +11,8 @@ Beaglebone: Qt Creator for C++ ARM Embedded Linux Development http://youtu.be/kP
 * [Auditory Image Model](http://www.acousticscale.org/wiki/index.php/Main_Page)
 * [Numenta CLA & HTM](http://numenta.org/)
 
+Some example Vamp plugins for SV can be found here; http://www.mazurka.org.uk/software/sv/plugin/
+
 ### AIM - The Auditory Image Model
 
 http://www.pdn.cam.ac.uk/groups/cnbh/research/aim.php  
