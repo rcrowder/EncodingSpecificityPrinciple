@@ -4,13 +4,30 @@ Development
 Need to find this for Raspberry PI  
 Beaglebone: Qt Creator for C++ ARM Embedded Linux Development http://youtu.be/kP7uvOu9hoQ  
 
+### Third-party Applications (TBD)
+
+* [Sonic Visualiser](http://www.sonicvisualiser.org/)
+* [Vamp Plugins](http://www.vamp-plugins.org/)
+* [Auditory Image Model](http://www.acousticscale.org/wiki/index.php/Main_Page)
+* [Numenta CLA & HTM](http://numenta.org/)
+
 ### AIM - The Auditory Image Model
 
 http://www.pdn.cam.ac.uk/groups/cnbh/research/aim.php  
-http://www.acousticscale.org/wiki/index.php/Main_Page  
 https://code.google.com/p/aimc/  
 
-#### Processing stages in AIM
+For an overview of AIM, see [here](http://www.acousticscale.org/wiki/index.php/Overview)
+
+#### Elements of AIM
+
+A high level breakdown of AIM, described in the [Wiki](http://www.acousticscale.org/wiki/index.php/Category:Auditory_Image):
+
+1. [Communication Sounds and Acoustic Scale](http://www.acousticscale.org/wiki/index.php/Part_1_Chapters)
+2. [The Auditory Image and Auditory Figures](http://www.acousticscale.org/wiki/index.php/Part_2_Chapters)
+3. [Auditory Events](http://www.acousticscale.org/wiki/index.php/Part_3_Chapters)
+4. [The Size-Covariant Auditory Image](http://www.acousticscale.org/wiki/index.php/Part_4_Chapters)
+5. [Auditory Objects and the Auditory Scene](http://www.acousticscale.org/wiki/index.php/An_introduction_to_auditory_objects,_events,_figures,_images_and_scenes)
+6. Auditory Image Research
 
 The principle functions of AIM are to simulate:
 
