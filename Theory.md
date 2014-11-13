@@ -1,9 +1,7 @@
 Cochlear Nerve
 ==============
 
-The purpose of this repository is to investigate the sparse encoding of auditory signals and it's passage into the primary auditory cortex ([Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus)).
-
-http://en.wikipedia.org/wiki/Vestibulocochlear_nerve
+The purpose of this repository is to investigate the sparse encoding of auditory signals and it's passage into the primary auditory cortex ([Cochlear nucleus](http://en.wikipedia.org/wiki/Cochlear_nucleus)) http://en.wikipedia.org/wiki/Vestibulocochlear_nerve
 
 An intention is to use the [Numenta Platform for Intelligent Computing](http://numenta.org/ "Numenta | NuPIC") library at the highest level (only PreFrontal, and T2/T3?). Working down via the;  
 * [Medial geniculate nucleus](http://en.wikipedia.org/wiki/Medial_geniculate_nucleus) (MGB to Brodmann area 41 (A1)), [Ventral posterior nucleus](http://en.wikipedia.org/wiki/Ventral_posterior_nucleus) to
@@ -24,51 +22,67 @@ An intention is to use the [Numenta Platform for Intelligent Computing](http://n
 **Auditory-Based Processing of Communication Sounds**  
 Walters, Thomas C. (2011)  
 http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds  
+
+- 
+**A Biomimetic, 4.5μW, 120+dB, Log-domain Cochlea Channel with AGC**
+A. G. Katsiamis, Student, Member IEEE, E. M. Drakakis, Member, IEEE and R. F. Lyon, Fellow, IEEE
+Richard F. Lyon's Google page; http://research.google.com/pubs/author35932.html  
+
 - 
 **Time‐domain modeling of peripheral auditory processing: A modular architecture and a software platform**  
-Roy D. Patterson1, Mike H. Allerhand1 and Christian Giguère (1995)  
+Roy D. Patterson, Mike H. Allerhand and Christian Giguère (1995)  
 http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
 http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing  
+
 - 
 **Segregating information about the size and shape of the vocal tract using a time-domain auditory model: The Stabilised Wavelet Mellin Transform**  
 Toshio Irino and Roy D. Patterson, Speech Communication, 36 (3-4), pp.181-203, March 2002.  
 http://www.pdn.cam.ac.uk/groups/cnbh/teaching/lectures/IPsc02.pdf  
+
 - 
 **Neural Coding of Periodicity in Marmoset Auditory Cortex**  
 Daniel Bendor and Xiaoqin Wang  
 http://web1.johnshopkins.edu/xwang/Publications_files/BendorWang_JN2010.pdf  
+
 - 
-*Periodicity coding in the inferior colliculus of the cat.*  
-_I. Topographical Organization AND II. Topographical Organization_  
+**Periodicity coding in the inferior colliculus of the cat.**  
+**_I. Topographical Organization AND II. Topographical Organization_**  
 G. Langner, C. E. Schreiner, Journal of Neurophysiology  
 http://www.ncbi.nlm.nih.gov/pubmed/3236052  
+
 - 
 **Patterning of pre-thalamic somatosensory pathways**  
 Gabrielle Pouchelon, Laura Frangeul, Filippo M. Rijli and Denis Jabaudon (2012)  
 http://scholar.google.co.uk/scholar?q=Patterning+of+pre-thalamic+somatosensory+pathways&hl=en&as_sdt=0&as_vis=1&oi=scholart&sa=X&ei=padSVPTzGsLhaPOjgagH&ved=0CCAQgQMwAA  
 > **See** section _Ascending trigeminothalamic pathways_, follows _From whiskers to the brainstem trigeminal complex_  
 > **And** Fig 1. Summary of pre-thalamic somatosensory pathways  
+
 - 
 **Binary Spiking in Auditory Cortex**  
 Michael R. DeWeese, Michael Wehr, and Anthony M. Zador (2003)  
 http://scholar.google.co.uk/scholar?q=Binary+Spiking+in+Auditory+Cortex  
+
 - 
 **Efficient coding of natural sounds**  
 Michael S. Lewicki (2012)  
 http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds  
+
 - 
 **Steady-state evoked potentials as an index of multisensory temporal binding**  
 Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
 http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding  
+
 - 
 **Auditory abstraction from spectro-temporal features to coding auditory entities**  
 Gal Chechik and Israel Nelken (2012)  
 http://www.pnas.org/content/109/46/18968.short  
 http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/  
+
 - 
 **Unsupervised feature learning for audio classification using convolutional deep belief networks**  
 Honglak Lee, Yan Largman, Peter Pham and Andrew Y. Ng. In NIPS*2009.  
 http://ai.stanford.edu/~ang/papers/nips09-AudioConvolutionalDBN.pdf  
+
 
 ##### Kaggle competitions
 
@@ -87,7 +101,7 @@ But firstly, the creation of the SDR encoders.
 
 ### Encoding for the Thalamocortical pathways
 
-Before reaching the ventral division of the medial geniculate body of the thalamus (MGB), a variety of information processing needs to take place. A [sparse distributed representation](https://www.youtube.com/watch?v=LbZtc_zWBS4) ([SDR](https://github.com/numenta/nupic/wiki/Sparse-Distributed-Representations)), an array containing distributed bit encoded semantic meanings, is required to be sent into the Thalamocortical highways. Our highways will be built using NuPIC. 
+Before reaching the ventral division of the medial geniculate body of the thalamus (MGB), a variety of information processing needs to take place. A [sparse distributed representation](https://www.youtube.com/watch?v=LbZtc_zWBS4) ([SDR](https://github.com/numenta/nupic/wiki/Sparse-Distributed-Representations)), an array containing distributed bit encoded semantic meanings, is required to be sent into the Thalamocortical highways. Our highways (beltways?) will be built using NuPIC. 
 
 http://en.wikipedia.org/wiki/Neuronal_encoding_of_sound
 
@@ -111,7 +125,7 @@ Optionally; A size invariant representation of the information in the SAI referr
 
 The audible frequency range for adult humans is about 20 Hz to 16,000 Hz. With about 32,000 hair cells per ear in the cochlear. Maximum frequency 20k Hz for infants, 16k Hz for adults. Within this range, the human ear is most sensitive between 2 and 5 kHz, largely due to the resonance of the ear canal and the transfer function of the ossicles of the middle ear.
 
-Via mechanotransduction (see organ of Corti, below), inner hair cells detect the motion of waves, and excite myelinated Type I neurons of the auditory nerve. Exocytosis of neurotransmitter vesicles at ribbon synapses, generates an action potential in the connected auditory-nerve fiber. 
+Via mechanotransduction (see organ of Corti, below), inner hair cells detect the motion of waves, and excite myelinated Type I (source?) neurons of the auditory nerve. Exocytosis of neurotransmitter vesicles at ribbon synapses, generates an action potential in the connected auditory-nerve fiber. 
 
 The mechanotransduction by stereocilia is highly sensitive, and able to detect perturbations as small as fluid fluctuations of 0.3 nanometers. Converting this mechanical stimulation into an electrical nerve impulse in about 10 microseconds. 
 
