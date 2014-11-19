@@ -16,20 +16,40 @@ An intention is to use the [Numenta Platform for Intelligent Computing](http://n
 [Critical band](http://en.wikipedia.org/wiki/Critical_band)  
 [Equal loudness contour](http://en.wikipedia.org/wiki/Equal-loudness_contour)   
 [Hair cell - Neural connection](http://en.wikipedia.org/wiki/Hair_cell#Neural_connection)  
-[Nyquist‚ÄìShannon sampling theorem](http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem)  
+[Nyquist Shannon sampling theorem](http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem)  
 
 - 
-**Auditory-Based Processing of Communication Sounds**  
+**Auditory-Based Processing of Communication Sounds**
 Walters, Thomas C. (2011)  
 http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication+Sounds  
 
 - 
-**A Biomimetic, 4.5ŒºW, 120+dB, Log-domain Cochlea Channel with AGC**
-A. G. Katsiamis, Student, Member IEEE, E. M. Drakakis, Member, IEEE and R. F. Lyon, Fellow, IEEE
-Richard F. Lyon's Google page; http://research.google.com/pubs/author35932.html  
+**Frequency Selectivity of Voxel-by-Voxel Functional Connectivity in Human Auditory Cortex**
+Kuwook Cha, Robert J. Zatorre and Marc Schˆnwiesner
+http://cercor.oxfordjournals.org/content/early/2014/09/02/cercor.bhu193.abstract
 
 - 
-**Time‚Äêdomain modeling of peripheral auditory processing: A modular architecture and a software platform**  
+**Hemispheric Asymmetry for Auditory Processing in the Human Auditory Brain Stem, Thalamus, and Cortex**
+Marc Schˆnwiesner, Katrin Krumbholz, Rudolf R¸bsamen, Gereon R. Fink and D. Yves von Cramon
+http://cercor.oxfordjournals.org/content/17/2/492.short
+
+- 
+**The Representation of Interaural Time Differences in High-Frequency Auditory Cortex**
+Dina Moshitch and Israel Nelken
+http://cercor.oxfordjournals.org/content/early/2014/09/26/cercor.bhu230.abstract
+
+- 
+**Heschl's Gyrus, Posterior Superior Temporal Gyrus, and Mid-Ventrolateral Prefrontal Cortex Have Different Roles in the Detection of Acoustic Changes**
+Marc Schˆnwiesner, Nikolai Novitski, Satu Pakarinen, Synnˆve Carlson, Mari Tervaniemi, and Risto N‰‰t‰nen
+http://classic.jn.physiology.org/content/97/3/2075.short
+
+- 
+**A Biomimetic, 4.5W, 120+dB, Log-domain Cochlea Channel with AGC**
+A. G. Katsiamis, Student, Member IEEE, E. M. Drakakis, Member, IEEE and R. F. Lyon, Fellow, IEEE
+Richard F. Lyons Google page; http://research.google.com/pubs/author35932.html  
+
+- 
+**Time domain modeling of peripheral auditory processing: A modular architecture and a software platform**  
 Roy D. Patterson, Mike H. Allerhand and Christian Gigu√®re (1995)  
 http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
 http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing  
@@ -82,6 +102,9 @@ http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3503225/
 **Unsupervised feature learning for audio classification using convolutional deep belief networks**  
 Honglak Lee, Yan Largman, Peter Pham and Andrew Y. Ng. In NIPS*2009.  
 http://ai.stanford.edu/~ang/papers/nips09-AudioConvolutionalDBN.pdf  
+
+- 
+**http://scholar.google.com/scholar?q=%22author%3ASch%C3%B6nwiesner%20author%3AM.%22**
 
 
 ##### Kaggle competitions
