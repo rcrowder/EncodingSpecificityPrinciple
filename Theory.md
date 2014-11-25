@@ -25,12 +25,12 @@ http://scholar.google.co.uk/scholar?q=Auditory-Based+Processing+of+Communication
 
 - 
 **Frequency Selectivity of Voxel-by-Voxel Functional Connectivity in Human Auditory Cortex**
-Kuwook Cha, Robert J. Zatorre and Marc Sch�nwiesner
+Kuwook Cha, Robert J. Zatorre and Marc Schönwiesner
 http://cercor.oxfordjournals.org/content/early/2014/09/02/cercor.bhu193.abstract
 
 - 
 **Hemispheric Asymmetry for Auditory Processing in the Human Auditory Brain Stem, Thalamus, and Cortex**
-Marc Sch�nwiesner, Katrin Krumbholz, Rudolf R�bsamen, Gereon R. Fink and D. Yves von Cramon
+Marc Schönwiesner, Katrin Krumbholz, Rudolf Rübsamen, Gereon R. Fink and D. Yves von Cramon
 http://cercor.oxfordjournals.org/content/17/2/492.short
 
 - 
@@ -40,7 +40,7 @@ http://cercor.oxfordjournals.org/content/early/2014/09/26/cercor.bhu230.abstract
 
 - 
 **Heschl's Gyrus, Posterior Superior Temporal Gyrus, and Mid-Ventrolateral Prefrontal Cortex Have Different Roles in the Detection of Acoustic Changes**
-Marc Sch�nwiesner, Nikolai Novitski, Satu Pakarinen, Synn�ve Carlson, Mari Tervaniemi, and Risto N��t�nen
+Marc Schönwiesner, Nikolai Novitski, Satu Pakarinen, Synnöve Carlson, Mari Tervaniemi, and Risto Näätänen
 http://classic.jn.physiology.org/content/97/3/2075.short
 
 - 
@@ -50,7 +50,7 @@ Richard F. Lyons Google page; http://research.google.com/pubs/author35932.html
 
 - 
 **Time domain modeling of peripheral auditory processing: A modular architecture and a software platform**  
-Roy D. Patterson, Mike H. Allerhand and Christian Giguère (1995)  
+Roy D. Patterson, Mike H. Allerhand and Christian GiguÃ¨re (1995)  
 http://scitation.aip.org/content/asa/journal/jasa/98/4/10.1121/1.414456  
 http://scholar.google.co.uk/scholar?q=time+domain+modelling+of+peripheral+auditory+processing  
 
@@ -89,7 +89,7 @@ http://scholar.google.co.uk/scholar?q=Efficient+coding+of+natural+sounds
 
 - 
 **Steady-state evoked potentials as an index of multisensory temporal binding**  
-Sylvie Nozaradan, b, Isabelle Peretz, André Mouraux (2011)  
+Sylvie Nozaradan, b, Isabelle Peretz, AndrÃ© Mouraux (2011)  
 http://scholar.google.co.uk/scholar?q=Steady-state+evoked+potentials+as+an+index+of+multisensory+temporal+binding  
 
 - 
@@ -106,6 +106,8 @@ http://ai.stanford.edu/~ang/papers/nips09-AudioConvolutionalDBN.pdf
 - 
 **http://scholar.google.com/scholar?q=%22author%3ASch%C3%B6nwiesner%20author%3AM.%22**
 
+- 
+**http://research.microsoft.com/en-us/people/deng/**
 
 ##### Kaggle competitions
 
@@ -198,7 +200,7 @@ Thalamic reticular nucleus (TRN) neurons (targets medial geniculate body (MGB)),
 
 http://en.wikibooks.org/wiki/Sensory_Systems/Auditory_System
 
-<p><a href="http://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg#mediaviewer/File:Anatomy_of_the_Human_Ear.svg"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Anatomy_of_the_Human_Ear.svg/1200px-Anatomy_of_the_Human_Ear.svg.png" alt="Anatomy of the Human Ear.svg" width="500"></a><br>"<a href="http://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg#mediaviewer/File:Anatomy_of_the_Human_Ear.svg">Anatomy of the Human Ear</a>" by Chittka L, Brockmann A - <a rel="nofollow" class="external text" href="http://biology.plosjournals.org/perlserv/?request=get-document&amp;doi=10.1371/journal.pbio.0030137&amp;ct=1">Perception Space—The Final Frontier, A PLoS Biology Vol. 3, No. 4, e137 doi:10.1371/journal.pbio.0030137</a> (<a rel="nofollow" class="external text" href="http://biology.plosjournals.org/perlserv/?request=slideshow&amp;type=figure&amp;doi=10.1371/journal.pbio.0030137&amp;id=24748">Fig. 1A</a>/<a rel="nofollow" class="external text" href="http://www.plosbiology.org/article/showImageLarge.action?uri=info%3Adoi%2F10.1371%2Fjournal.pbio.0030137.g001">Large version</a>), vectorised by <a href="//commons.wikimedia.org/wiki/User:Inductiveload" title="User:Inductiveload">Inductiveload</a>. Licensed under <a href="http://creativecommons.org/licenses/by/2.5" title="Creative Commons Attribution 2.5">CC BY 2.5</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
+<p><a href="http://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg#mediaviewer/File:Anatomy_of_the_Human_Ear.svg"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Anatomy_of_the_Human_Ear.svg/1200px-Anatomy_of_the_Human_Ear.svg.png" alt="Anatomy of the Human Ear.svg" width="500"></a><br>"<a href="http://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg#mediaviewer/File:Anatomy_of_the_Human_Ear.svg">Anatomy of the Human Ear</a>" by Chittka L, Brockmann A - <a rel="nofollow" class="external text" href="http://biology.plosjournals.org/perlserv/?request=get-document&amp;doi=10.1371/journal.pbio.0030137&amp;ct=1">Perception SpaceâThe Final Frontier, A PLoS Biology Vol. 3, No. 4, e137 doi:10.1371/journal.pbio.0030137</a> (<a rel="nofollow" class="external text" href="http://biology.plosjournals.org/perlserv/?request=slideshow&amp;type=figure&amp;doi=10.1371/journal.pbio.0030137&amp;id=24748">Fig. 1A</a>/<a rel="nofollow" class="external text" href="http://www.plosbiology.org/article/showImageLarge.action?uri=info%3Adoi%2F10.1371%2Fjournal.pbio.0030137.g001">Large version</a>), vectorised by <a href="//commons.wikimedia.org/wiki/User:Inductiveload" title="User:Inductiveload">Inductiveload</a>. Licensed under <a href="http://creativecommons.org/licenses/by/2.5" title="Creative Commons Attribution 2.5">CC BY 2.5</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
 
 ### Organ of corti
 
