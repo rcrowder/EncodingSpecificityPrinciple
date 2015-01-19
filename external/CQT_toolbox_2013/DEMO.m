@@ -7,7 +7,7 @@ gamma = 20;
 fmax = fs/2;
 
 %% INPUT SIGNAL
-x = wavread('brent2.wav');
+x = audioread('Billy Joel - New York State of Mind.mp3');
 x = x(:); xlen = length(x);
 
 %% COMPUTE COEFFIENTS
