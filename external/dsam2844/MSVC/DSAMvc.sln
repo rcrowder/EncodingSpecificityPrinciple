@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSAM", "DSAM\DSAM.vcxproj", "{853D1FD7-20AB-586C-9699-9680F84AC985}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSAM_ext", "DSAM_ext\DSAM_ext.vcxproj", "{C9E31748-0EAE-42D6-A1E5-FC27373143CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{853D1FD7-20AB-586C-9699-9680F84AC985} = {853D1FD7-20AB-586C-9699-9680F84AC985}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSAM_g", "DSAM_g\DSAM_g.vcxproj", "{D4D9E054-27C3-42B6-3136-27A41CF3C593}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB} = {C9E31748-0EAE-42D6-A1E5-FC27373143CB}
+		{853D1FD7-20AB-586C-9699-9680F84AC985} = {853D1FD7-20AB-586C-9699-9680F84AC985}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug (DL)|Win32 = Debug (DL)|Win32
+		Debug (DL)|x64 = Debug (DL)|x64
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		DLL Release|Win32 = DLL Release|Win32
+		DLL Release|x64 = DLL Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug (DL)|Win32.ActiveCfg = Debug (DL)|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug (DL)|Win32.Build.0 = Debug (DL)|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug (DL)|x64.ActiveCfg = Debug (DL)|x64
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug (DL)|x64.Build.0 = Debug (DL)|x64
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug|Win32.ActiveCfg = Debug|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug|Win32.Build.0 = Debug|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug|x64.ActiveCfg = Debug|x64
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.Debug|x64.Build.0 = Debug|x64
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.DLL Release|Win32.ActiveCfg = DLL Release|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.DLL Release|Win32.Build.0 = DLL Release|Win32
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.DLL Release|x64.ActiveCfg = DLL Release|x64
+		{853D1FD7-20AB-586C-9699-9680F84AC985}.DLL Release|x64.Build.0 = DLL Release|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug (DL)|Win32.ActiveCfg = Debug (DL)|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug (DL)|Win32.Build.0 = Debug (DL)|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug (DL)|x64.ActiveCfg = Debug (DL)|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug (DL)|x64.Build.0 = Debug (DL)|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug|Win32.Build.0 = Debug|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug|x64.ActiveCfg = Debug|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.Debug|x64.Build.0 = Debug|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.DLL Release|Win32.ActiveCfg = DLL Release|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.DLL Release|Win32.Build.0 = DLL Release|Win32
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.DLL Release|x64.ActiveCfg = DLL Release|x64
+		{C9E31748-0EAE-42D6-A1E5-FC27373143CB}.DLL Release|x64.Build.0 = DLL Release|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug (DL)|Win32.ActiveCfg = Debug (DL)|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug (DL)|Win32.Build.0 = Debug (DL)|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug (DL)|x64.ActiveCfg = Debug (DL)|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug (DL)|x64.Build.0 = Debug (DL)|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug|Win32.Build.0 = Debug|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug|x64.ActiveCfg = Debug|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.Debug|x64.Build.0 = Debug|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.DLL Release|Win32.ActiveCfg = DLL Release|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.DLL Release|Win32.Build.0 = DLL Release|Win32
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.DLL Release|x64.ActiveCfg = DLL Release|x64
+		{D4D9E054-27C3-42B6-3136-27A41CF3C593}.DLL Release|x64.Build.0 = DLL Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

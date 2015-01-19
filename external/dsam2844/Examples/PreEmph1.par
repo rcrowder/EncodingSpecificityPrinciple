@@ -1,0 +1,4 @@
+CASCADE	2	Filter cascade.
+GAIN	0	Pre-attenuation for filter (dB).
+LOWER_FREQ	450	Lower, 3 dB down cut-off frequency (Hz).
+UPPER_FREQ	8500	Upper, 3 dB down cut-off frequency (Hz).

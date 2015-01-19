@@ -1,0 +1,205 @@
+#
+# File:         GrLib/makefile.b32
+# Comments:		
+# Author:       Lowel P. O'Mard
+# Created:      13 Jul 2001
+# Updated:      
+# Copyright:    (c) 2001, University of Essex
+
+###############################################################################
+###############################################################################
+##                     Environment tests                                     ##
+###############################################################################
+###############################################################################
+
+!if "$(WXWIN)" == ""
+!error You must define the WXWIN variable, e.g. WXWIN=c:\wxMSW
+!endif
+
+###############################################################################
+###############################################################################
+##                     Include Files                                         ##
+###############################################################################
+###############################################################################
+
+!include $(DSAMDIR)\src\makeb32.env
+
+###############################################################################
+###############################################################################
+##                     General make environment                              ##
+###############################################################################
+###############################################################################
+
+LIB		= $(GR_LIB)
+
+WXWININC	= $(WXBASEINC);$(WXINC)
+WXLDFLAGS	= -L$(WXWIN)\lib
+WXLDLIBS	= $(LIBTARGET)
+WXLIBS		= wx32 winpng zlib jpeg xpm tiff #odbc32
+
+!if "$(USINGDLL)" == "1"
+BCCLIBS=cw32mti import32 ole2w32
+!else
+BCCLIBS=cw32mt import32 ole2w32
+!endif
+
+BINCCDSAMG	= $(DSAMDIR)\bin\$(CCDSAM)g.bat
+
+CFLAGS		= @$(MAIN_CFG) @$(GR_CFG)
+LINK_FLAGS	= -aa -c $(DEBUG_FLAGS) -L%DSAMDIR%\lib;%WXWIN%\lib
+ 
+###############################################################################
+###############################################################################
+##                     Main section of makefile                              ##
+###############################################################################
+###############################################################################
+
+###############################################################################
+##                     GR - DSAM library compilation   _                     ##
+###############################################################################
+
+GRAPHICS_OBJS = GrBrushes.obj GrCanvas.obj GrDialogInfo.obj GrDialogList.obj \
+				GrDisplayS.obj GrFonts.obj GrLine.obj GrMessage.obj \
+				GrModParDialog.obj GrParControl.obj GrParListInfo.obj \
+				GrParListInfoList.obj GrPrintDisp.obj GrSignalDisp.obj \
+				GrSimMgr.obj GrSimModDialog.obj GrSocket.obj GrUtils.obj \
+				GrSimThread.obj
+
+$(LIB): 	$(MAIN_CFG) $(GR_CFG) $(GRAPHICS_OBJS) $(BINCCDSAMG)
+		@echo $(LIB) library updated.
+
+
+###############################################################################
+##                     GR_CFG - Configuration file                           ##
+###############################################################################
+
+$(GR_CFG): $(DSAMDIR)\src\makeb32.env makefile.b32
+	copy &&!
+
+-Hc
+-H=$(WXWIN)\src\msw\wx32.csm
+
+-P
+-DGRAPHICS_SUPPORT
+
+-D__WXWIN__ -D__WXMSW__ -D__WINDOWS__
+-DWIN32
+-D__WIN95__
+-I$(WXWIN)\include
+-L$(WXWIN)\lib
+
+-w-par
+-w-aus
+-w-hid # virtual function A hides virtual function B
+
+-tWM
+
+$(OPTIONS)
+
+! $(GR_CFG)
+
+###############################################################################
+##                    BINCCDSAMG - batch file creation                        ##
+###############################################################################
+
+$(BINCCDSAMG): $(DSAMDIR)\src\makeb32.env makefile.b32
+		
+	copy &&!
+		$(CC) @%DSAMDIR%\$(LDIRNAME)\$(MAIN_CFG_NAM) \
+		  @%DSAMDIR%\$(LDIRNAME)\$(GR_CFG_NAM) $(OPTIONS2) -c %1 %2 %3 %4 %5 \
+		  %6 %7 %8 %9 
+		$(BRC) -r -fO%1.res %1
+		$(LINK) $(LINK_FLAGS) c0w32 %1, %1, $(MAP_NAME), \
+		  $(MAIN_LNAME) $(GR_LNAME) $(WXLIBS) $(BCCLIBS), $(DEF_NAME), \
+		  $(BASELNAM) %1
+		$(TOUCH) %1.tds
+! $(BINCCDSAMG)
+
+###############################################################################
+#                      Graphics module dependencies                          ##
+###############################################################################
+
+GrBrushes.obj:	$(INCDIR)/GrBrushes.h
+
+GrCanvas.obj:	$(INCDIR)/GrCanvas.h  $(GEN_HEADERS) $(INCDIR)/GrUtils.h \
+				  $(INCDIR)/GrBrushes.h $(INCDIR)/GrSignalDisp.h \
+				  $(INCDIR)/GrDisplayS.h $(INCDIR)/GrPrintDisp.h \
+				  $(INCDIR)/GrModParDialog.h
+
+GrDialogInfo.obj:	$(INCDIR)/GrDialogInfo.h $(INCDIR)/GeCommon.h \
+					  $(INCDIR)/GrDialogInfo.h
+
+GrDialogList.obj:	$(INCDIR)/*.h $(DSAMDIR)\src\$(MAIN_LIB_DIR)\UtSSParser.h
+
+GrDisplayS.obj:	$(INCDIR)/GrDisplayS.h $(GEN_HEADERS) $(INCDIR)/GrCanvas.h \
+				  $(INCDIR)/GrUtils.h $(INCDIR)/GrSimMgr.h $(INCDIR)/GrLine.h \
+				  $(INCDIR)/GrModParDialog.h $(INCDIR)/GrSignalDisp.h
+
+GrFonts.obj:	$(INCDIR)/GrFonts.h
+
+GrLine.obj:		$(INCDIR)/GrLine.h $(GEN_HEADERS) $(INCDIR)/GrUtils.h \
+				  $(INCDIR)/GrBrushes.h
+
+GrMessage.obj:	$(INCDIR)/StdMessage.h $(INCDIR)/GeCommon.h \
+				  $(INCDIR)/GrSimMgr.h
+
+GrModParDialog.obj:	$(INCDIR)/*.h $(DSAMDIR)\src\$(MAIN_LIB_DIR)\UtSSParser.h
+
+GrParControl.obj:	$(INCDIR)/GrParControl.h $(INCDIR)/GeCommon.h \
+					  $(INCDIR)/GeUniParMgr.h
+
+GrParListInfo.obj:	$(INCDIR)/*.h $(DSAMDIR)\src\$(MAIN_LIB_DIR)\UtSSParser.h
+
+GrParListInfoList.obj:	$(DSAMDIR)\src\$(MAIN_LIB_DIR)\UtSSParser.h \
+						  $(INCDIR)/*.h
+
+GrPrintDisp.obj:	$(INCDIR)/GrPrintDisp.h $(GEN_HEADERS) $(INCDIR)/GrUtils.h \
+					  $(INCDIR)/GrBrushes.h $(INCDIR)/GrSignalDisp.h \
+					  $(INCDIR)/GrDisplayS.h $(INCDIR)/GrCanvas.h
+
+GrSignalDisp.obj:	$(INCDIR)/GrSignalDisp.h $(GEN_HEADERS) \
+					  $(INCDIR)/GeModuleMgr.h $(INCDIR)/GeNSpecLists.h \
+					  $(INCDIR)/FiParFile.h $(INCDIR)/GrUtils.h \
+					  $(INCDIR)/GrSimMgr.h $(INCDIR)/GrLine.h \
+					  $(INCDIR)/GrSignalDisp.h $(INCDIR)/GrCanvas.h \
+					  $(INCDIR)/GrDisplayS.h
+
+GrSimMgr.obj:	$(RES) $(INCDIR)/*.h $(DSAMDIR)/src/$(MAIN_LIB_DIR)/UtSSParser.h
+
+GrSimModDialog.obj:	$(INCDIR)/*.h $(DSAMDIR)/src/$(MAIN_LIB_DIR)/UtSSParser.h
+
+GrSocket.obj:	$(INCDIR)/GrSocket.h $(INCDIR)/GeCommon.h \
+				  $(INCDIR)/GeEarObject.h
+
+GrUtils.obj:	$(INCDIR)/GrUtils.h $(INCDIR)/GeCommon.h
+
+GrSimThread.obj:	$(INCDIR)/*.h $(DSAMDIR)/src/$(MAIN_LIB_DIR)/UtSSParser.h
+
+GrDisplayThread.obj:	$(INCDIR)/GrDisplayThread.h $(GEN_HEADERS) \
+						  $(INCDIR)/GrSimMgr.h $(INCDIR)/GrSignalDisp.h \
+						  $(INCDIR)/GrDisplayS.h $(INCDIR)/GrCanvas.h
+
+$(RES):		$(INCDIR)/dsam.rc
+				brc32 -r /i$(BCCDIR)\include /i$(WXWIN)\include \
+				  $(INCDIR)/dsam.rc -fo$<
+
+
+
+###############################################################################
+###############################################################################
+##                     Other Make utilities                                  ##
+###############################################################################
+###############################################################################
+
+###############################################################################
+##                     CLEAN - delete files                                  ##
+###############################################################################
+
+clean: mostly-clean
+	$(RM) $(LIB)
+	$(RM) $(GR_CFG)
+	$(RM) $(RES)
+
+mostly-clean:
+	$(RM) *.obj
+

@@ -1,0 +1,8 @@
+date: 2000/11/14 09:13:55;  author: lowel;  state: Exp;  lines: +1 -1
+Changed the RAW output format to interleave output channels.  This makes it more
+conducive to use with outputing and reading directly from sound cards.
+
+date: 2000/10/12 16:50:55;  author: lowel;  state: Exp;  lines: +1 -1
+The 'PROCESS_START_TIME' should be set to zero and not 1.  I have changed all
+files to correspond with this notion of 'instantaneous time'.
+

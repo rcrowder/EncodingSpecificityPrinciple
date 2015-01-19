@@ -1,0 +1,400 @@
+#######################
+##
+## File:		makefile.b32
+## Purpose:		MainLib directory makefile.
+## Comments:	Process this file with automake to produce Makefile.in
+## Author:		L. P. O'Mard
+## Created:		13 Jul 2001
+## Updated:
+## Copyright:	(c) 2001 Lowel P. O'Mard
+##
+#######################
+##
+##  This file is part of DSAM.
+##
+##  DSAM is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  DSAM is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with DSAM.  If not, see <http://www.gnu.org/licenses/>.
+##
+#######################
+
+###############################################################################
+###############################################################################
+##                     Include Files                                         ##
+###############################################################################
+###############################################################################
+
+!include $(DSAMDIR)\src\makeb32.env
+
+###############################################################################
+###############################################################################
+##                     General make environment                              ##
+###############################################################################
+###############################################################################
+
+LIB		= $(MAIN_LIB)
+
+###############################################################################
+###############################################################################
+##                     Main section of makefile                              ##
+###############################################################################
+###############################################################################
+
+###############################################################################
+##                     Main DSAM library compilation                         ##
+###############################################################################
+
+ANALYSIS_OBJS= AnExperiment.obj AnFourierT.obj AnGeneral.obj AnAutoCorr.obj \
+			AnHistogram.obj AnCrossCorr.obj AnSynchIndex.obj \
+			AnFindBin.obj AnInterSIH.obj AnSpikeReg.obj AnAverages.obj \
+			AnConvolve.obj AnFindNextIndex.obj AnIntensity.obj AnSAImage.obj \
+			AnFourierT.obj
+
+FILING_OBJS = FiParFile.obj FiDataFile.obj FiRaw.obj FiMSWave.obj FiASCII.obj \
+			FiAIFF.obj
+
+FILTER_OBJS	= FlBandPass.obj FlLowPass.obj FlMultiBPass.obj FlFIR.obj
+
+GENERAL_OBJS= GeCommon.obj  GeSignalData.obj  GeEarObject.obj  \
+			GeModuleMgr.obj GeNSpecLists.obj GeUniParMgr.obj GeModuleReg.obj
+			
+STD_OBJS	= StdMessage.obj StdSignalDisp.obj
+
+GRAPHIC_OBJS= GrMessage.obj GrBrushes.obj GrFonts.obj GrCanvas.obj GrLine.obj \
+				GrSignalDisp.obj GrDisplayS.obj GrSimMgr.obj GrUtils.obj \
+				GrPrintDisp.obj GrSimModDialog.obj \
+				GrModParDialog.obj GrParListInfo.obj GrDialogInfo.obj \
+				GrDialogList.obj GrParListInfoList.obj GrParControl.obj
+
+MODEL_OBJS	= MoANSGBinom.obj MoANSGCarney.obj MoANSGSimple.obj MoBM0DRNL.obj \
+			MoBMCarney.obj MoBMCooke.obj MoBMDRNL.obj MoBMGammaT.obj \
+			FlLowPass.obj MoHCRPCarney.obj MoHCRPMeddis.obj MoHCRPShamma.obj \
+			MoIHC86Meddis.obj MoIHC86aMeddis.obj MoIHCMeddis2000.obj \
+			MoIHCCarney.obj MoIHCCooke.obj MoNCArleKim.obj MoNCHHuxley.obj \
+			MoNCMcGregor.obj MoBMGammaC.obj MoHCRPSham3StVIn.obj
+
+STIMULUS_OBJS= StMPTone.obj  StPTone.obj  StPTone2.obj StClick.obj  \
+			StAMTone.obj  StStepFun.obj StBPTone.obj  StMPPTone.obj  \
+			StWhiteNoise.obj StHarmonic.obj  StFMTone.obj  \
+			StPulseTrain.obj StEGatedTone.obj
+
+STIMULUS_OBJS= StAMTone.obj StBPTone.obj StClick.obj StFMTone.obj \
+			StHarmonic.obj StMPPTone.obj StMPTone.obj StPTone.obj StPTone2.obj \
+			StPulseTrain.obj StStepFun.obj StWhiteNoise.obj StEGatedTone.obj
+
+UTILITY_OBJS= UtSSParser.obj UtAccumulate.obj UtAmpMod.obj UtBandwidth.obj \
+			UtBinSignal.obj UtCBinauralITD.obj UtCFList.obj UtCmplxM.obj \
+			UtCompress.obj UtConvMonaural.obj UtCreateBinaural.obj UtDatum.obj \
+			UtDelay.obj UtFilters.obj UtIonChanList.obj UtIterRipple.obj \
+			UtNameSpecs.obj UtRamp.obj UtRandom.obj UtRedceChans.obj \
+			UtReduceDt.obj UtRefractory.obj UtSample.obj UtSelectChans.obj \
+			UtShapePulse.obj UtSSSymbols.obj UtSimScript.obj UtSpikeList.obj \
+			UtStddise.obj UtUIEEEFloat.obj UtUPortableIO.obj \
+			UtCreateJoined.obj UtStrobe.obj UtOptions.obj UtString.obj \
+			UtPause.obj UtHalfWRectify.obj UtDynaList.obj UtAppInterface.obj \
+			UtFFT.obj UtParArray.obj UtGCFilters.obj UtFIRFilters.obj \
+			UtRemez.obj
+
+TRANSFORM_OBJS= TrGate.obj TrSetDBSPL.obj
+
+$(LIB):		$(MAIN_CFG) $(ANALYSIS_OBJS) $(FILING_OBJS) $(FILTER_OBJS) \
+			  $(GENERAL_OBJS) $(MODEL_OBJS) $(STIMULUS_OBJS) $(UTILITY_OBJS) \
+			  $(TRANSFORM_OBJS)
+		@echo $(LIB) library updated.
+
+###############################################################################
+#                      Analysis module dependencies                           #
+###############################################################################
+
+AnExperiment.obj:       $(INCDIR)/AnExperiment.h $(INCDIR)/AnGeneral.h \
+						  $(GEN_HEADERS)
+
+AnAutoCorr.obj: $(INCDIR)/AnAutoCorr.h $(GEN_HEADERS)
+
+AnConvolve.obj: $(INCDIR)/AnConvolve.h $(GEN_HEADERS)
+
+AnAverages.obj: $(INCDIR)/AnAverages.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtNameSpecs.h
+
+AnCrossCorr.obj:        $(INCDIR)/AnCrossCorr.h $(GEN_HEADERS)
+
+AnFourierT.obj: $(INCDIR)/AnFourierT.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtCmplxM.h
+
+AnFindBin.obj:  $(INCDIR)/AnFindBin.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtNameSpecs.h
+
+AnFindNextIndex.obj:    $(INCDIR)/AnFindNextIndex.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtNameSpecs.h
+
+AnGeneral.obj:  $(INCDIR)/AnGeneral.h $(GEN_HEADERS)
+
+AnHistogram.obj:        $(INCDIR)/AnHistogram.h $(INCDIR)/AnGeneral.h \
+						  $(GEN_HEADERS) $(INCDIR)/UtNameSpecs.h
+
+AnIntensity.obj:        $(INCDIR)/AnIntensity.h $(GEN_HEADERS)
+
+AnInterSIH.obj: $(INCDIR)/AnInterSIH.h $(INCDIR)/UtSpikeList.h \
+						  $(GEN_HEADERS)
+
+AnModulusFT.obj:        $(INCDIR)/AnModulusFT.h $(GEN_HEADERS)
+
+AnSipkeReg.obj: $(INCDIR)/AnSipkeReg.h $(INCDIR)/UtSpikeList.h \
+						  $(GEN_HEADERS)
+
+AnSynchIndex.obj:       $(INCDIR)/AnSynchIndex.h $(GEN_HEADERS)
+
+AnSAImage.obj:  $(INCDIR)/AnSAImage.h $(GEN_HEADERS)
+
+###############################################################################
+#                      Filing utility module dependencies                     #
+###############################################################################
+
+FiParFile.obj:  $(INCDIR)/FiParFile.h $(INCDIR)/GeCommon.h
+
+FiDataFile.obj: $(INCDIR)/FiDataFile.h $(GEN_HEADERS)
+
+FiRaw.obj: $(INCDIR)/FiRaw.h $(INCDIR)/FiDataFile.h $(GEN_HEADERS)
+
+FiMSWave.obj: $(INCDIR)/FiMSWave.h $(INCDIR)/FiDataFile.h $(GEN_HEADERS)
+
+FiASCII.obj: $(INCDIR)/FiASCII.h $(INCDIR)/FiDataFile.h $(GEN_HEADERS)
+
+FiAIFF.obj: $(INCDIR)/FiAIFF.h $(INCDIR)/FiDataFile.h $(GEN_HEADERS)
+
+###############################################################################
+#                      Filter module dependencies                             #
+###############################################################################
+
+FlLowPass.obj:  $(INCDIR)/FlLowPass.h $(INCDIR)/GeCommon.h
+
+FlMultiBPass.obj:  $(INCDIR)/FlMultiBPass.h $(INCDIR)/GeCommon.h
+
+FlFIR.obj:  $(INCDIR)/FlFIR.h $(INCDIR)/GeCommon.h
+
+###############################################################################
+#                      Ge (main) modules dependencies                         #
+###############################################################################
+
+GeCommon.obj:           $(INCDIR)/GeCommon.h
+
+GeSignalData.obj:       $(INCDIR)/GeSignalData.h $(INCDIR)/GeCommon.h
+
+GeEarObject.obj:        $(GEN_HEADERS)
+
+GeModuleMgr.obj:        $(INCDIR)/*.h
+
+GeModuleReg.obj:        $(INCDIR)/*.h
+
+GeNSpecLists.obj:       $(INCDIR)/GeCommon.h $(INCDIR)/GeNSpecLists.h
+
+GeUniParMgr.obj:       $(INCDIR)/GeCommon.h $(INCDIR)/GeUniParMgr.h
+
+###############################################################################
+#                      Model Module dependencies                              #
+###############################################################################
+
+MoANSGCarney.obj:       $(INCDIR)/MoANSGCarney.h $(GEN_HEADERS)
+
+MoANSGBinom.obj:        $(INCDIR)/MoANSGBinom.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtRandom.h $(INCDIR)/UtRefractory.h
+
+MoANSGSimple.obj:       $(INCDIR)/MoANSGSimple.h $(GEN_HEADERS)
+
+MoBMGammaT.obj: $(INCDIR)/MoBMGammaT.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+MoBMDRNL.obj:   $(INCDIR)/MoBMDRNL.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+MoBM0DRNL.obj:  $(INCDIR)/MoBM0DRNL.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+MoBMCooke.obj:  $(INCDIR)/MoBMCooke.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+MoBMCarney.obj: $(INCDIR)/MoBMCarney.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+MoIHC86Meddis.obj:      $(INCDIR)/MoIHC86Meddis.h $(GEN_HEADERS)
+
+MoIHC86aMeddis.obj:     $(INCDIR)/MoIHC86aMeddis.h $(GEN_HEADERS)
+
+MoIHC95Meddis.obj:      $(INCDIR)/MoIHC95Meddis.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtRandom.h
+
+MoIHCCarney.obj:        $(INCDIR)/MoIHCCarney.h $(GEN_HEADERS)
+
+MoIHCCooke.obj: $(INCDIR)/MoIHCCooke.h $(GEN_HEADERS)
+
+MoNCArleKim.obj:        $(INCDIR)/MoNCArleKim.h $(GEN_HEADERS)
+
+MoNCHHuxley.obj:        $(INCDIR)/MoNCHHuxley.h $(INCDIR)/UtIonChanList.h \
+					  $(GEN_HEADERS)
+
+MoNCMcGregor.obj:       $(INCDIR)/MoNCMcGregor.h $(GEN_HEADERS)
+
+FlBandPass.obj:  $(INCDIR)/FlBandPass.h $(GEN_HEADERS)
+
+FlMultiBPass.obj:  $(INCDIR)/FlMultiBPass.h $(GEN_HEADERS)
+
+MoHCRPMeddis.obj:       $(INCDIR)/MoHCRPMeddis.h $(GEN_HEADERS)
+
+MoHCRPShamma.obj:       $(INCDIR)/MoHCRPShamma.h $(GEN_HEADERS)
+
+MoHCRPSham3StVIn.obj:       $(INCDIR)/MoHCRPSham3StVIn.h $(GEN_HEADERS)
+
+MoHCRPCarney.obj:       $(INCDIR)/MoHCRPCarney.h $(GEN_HEADERS) \
+						  $(CF_HEADERS)
+
+Mo2RecptPotn.obj:       $(INCDIR)/Mo2RecptPotn.h $(GEN_HEADERS)
+
+###############################################################################
+#                      Stimulus module dependencies                           #
+###############################################################################
+
+StPTone.obj:    $(INCDIR)/StPTone.h $(GEN_HEADERS)
+
+StPTone2.obj:   $(INCDIR)/StPTone2.h $(GEN_HEADERS)
+
+StClick.obj:    $(INCDIR)/StClick.h $(GEN_HEADERS)
+
+StAMTone.obj:   $(INCDIR)/StAMTone.h $(GEN_HEADERS)
+
+StBPTone.obj:   $(INCDIR)/StBPTone.h $(GEN_HEADERS)
+
+StEGatedTone.obj:       $(INCDIR)/StEGatedTone.h $(GEN_HEADERS)
+
+StMPTone.obj:   $(INCDIR)/StMPTone.h $(GEN_HEADERS)
+
+StMPPTone.obj:  $(INCDIR)/StMPPTone.h $(GEN_HEADERS)
+
+StStepFun.obj:  $(INCDIR)/StStepFun.h $(GEN_HEADERS)
+
+StPulseTrain.obj:       $(INCDIR)/StPulseTrain.h $(GEN_HEADERS)
+
+StWhiteNoise.obj:       $(INCDIR)/StWhiteNoise.h $(GEN_HEADERS)
+
+StHarmonic.obj: $(INCDIR)/StHarmonic.h $(GEN_HEADERS)
+
+StFMTone.obj:   $(INCDIR)/StFMTone.h $(GEN_HEADERS)
+
+###############################################################################
+#                      Utility module dependencies                            #
+###############################################################################
+
+UtBandwidth.obj:  $(INCDIR)/UtBandwidth.h $(INCDIR)/GeCommon.h
+
+UtBinSignal.obj:        $(INCDIR)/UtBinSignal.h $(GEN_HEADERS)
+
+UtCBinauralITD.obj:     $(INCDIR)/UtCBinauralITD.h $(GEN_HEADERS)
+
+UtCFList.obj:     $(INCDIR)/UtCFList.h $(INCDIR)/GeCommon.h \
+						  $(INCDIR)/UtBandwidth.h $(INCDIR)/UtNameSpecs.h
+
+UtCmplxM.obj:   $(INCDIR)/UtCmplxM.h $(INCDIR)/GeCommon.h
+
+UtCompress.obj: $(INCDIR)/UtCompress.h $(INCDIR)/GeCommon.h \
+						  $(INCDIR)/UtNameSpecs.h
+
+UtCreateBinaural.obj:   $(INCDIR)/UtCreateBinaural.h $(GEN_HEADERS)
+
+UtConvBinaural.obj:     $(INCDIR)/UtConvBinaural.h $(GEN_HEADERS)
+
+UtDatum.obj:    $(INCDIR)/UtDatum.h $(GEN_HEADERS)
+
+UtDebug.obj:    $(INCDIR)/UtDebug.h $(GEN_HEADERS)
+
+UtDelay.obj:    $(INCDIR)/UtDelay.h $(GEN_HEADERS)
+
+UtFilters.obj:  $(INCDIR)/UtFilters.h $(GEN_HEADERS) \
+						  $(INCDIR)/UtCmplxM.h
+
+UtUIEEEFloat.obj:       $(INCDIR)/UtUIEEEFloat.h
+
+UtUPortableIO.obj:      $(INCDIR)/UtUPortableIO.h $(INCDIR)/UtUIEEEFloat.h
+
+UtRamp.obj:     $(INCDIR)/UtRamp.h $(GEN_HEADERS)
+
+UtRandom.obj:   $(INCDIR)/UtRandom.h $(INCDIR)/GeCommon.h
+
+UtRefractory.obj:       $(INCDIR)/UtRefractory.h $(INCDIR)/GeCommon.h
+
+UtSSParser.obj: $(INCDIR)/UtSSParser.h $(INCDIR)/UtSimScript.h \
+						  $(INCDIR)/UtDatum.h $(GEN_HEADERS)
+
+UtString.obj:	$(INCDIR)/UtString.h $(INCDIR)/GeCommon.h
+
+$(INCDIR)/UtSSParser.h: UtSSParser.c
+				copy UtSSParser.h $(INCDIR)
+
+UtSimScript.obj:  $(INCDIR)/*.h
+
+UtAccumulate.obj:       $(INCDIR)/UtAccumulate.h $(GEN_HEADERS)
+
+UtAmpMod.obj:           $(INCDIR)/UtAmpMod.h $(GEN_HEADERS)
+
+UtIterRipple.obj:       $(INCDIR)/UtIterRipple.h $(GEN_HEADERS)
+
+UtIonChanList.obj:      $(INCDIR)/UtIonChanList.h $(GEN_HEADERS)
+
+UtNameSpecs.obj:        $(INCDIR)/UtNameSpecs.h $(INCDIR)/GeCommon.h
+
+UtRedceChans.obj:       $(INCDIR)/UtRedceChans.h $(GEN_HEADERS)
+
+UtReduceDt.obj: $(INCDIR)/UtReduceDt.h $(GEN_HEADERS)
+
+UtSelectChans.obj:      $(INCDIR)/UtSelectChans.h $(GEN_HEADERS)
+
+UtSample.obj:   $(INCDIR)/UtSample.h $(GEN_HEADERS)
+
+UtShapePulse.obj:       $(INCDIR)/UtShapePulse.h $(GEN_HEADERS)
+
+UtSpikeList.obj:        $(INCDIR)/UtSpikeList.h $(GEN_HEADERS)
+
+UtStddise.obj:  $(INCDIR)/UtStddise.h $(GEN_HEADERS)
+
+UtCreateJoined.obj:     $(INCDIR)/UtCreateJoined.h $(GEN_HEADERS)
+
+UtStrobe.obj:   $(INCDIR)/UtStrobe.h $(GEN_HEADERS)
+
+UtOptions.obj:   $(INCDIR)/UtOptions.h
+
+UtPause.obj:   $(INCDIR)/UtPause.h $(GEN_HEADERS) $(INCDIR)/StdMessage.h
+
+###############################################################################
+#                      Transform module dependencies                          #
+###############################################################################
+
+TrGate.obj:  $(INCDIR)/TrGate.h $(INCDIR)/GeCommon.h
+
+TrSetDBSPL.obj:  $(INCDIR)/TrSetDBSPL.h $(INCDIR)/GeCommon.h
+
+###############################################################################
+###############################################################################
+##                     Other Make utilities                                  ##
+###############################################################################
+###############################################################################
+
+###############################################################################
+##                     CLEAN - delete files                                  ##
+###############################################################################
+
+clean: mostly-clean
+	$(RM) $(LIB)
+#	$(RM) $(LIBRARY).CSM
+
+
+mostly-clean:
+	$(RM) *.obj
+
+

@@ -1,0 +1,155 @@
+#!/bin/sh
+#######################
+##
+## File:		dsam-config.in
+## Purpose:		Configuration script
+## Comments:	
+## Author:		L. P. O'Mard
+## Created:		
+## Updated:
+## Copyright:	(c) 2010 Lowel P. O'Mard
+##
+#######################
+##
+##  This file is part of DSAM.
+##
+##  DSAM is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  DSAM is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with DSAM.  If not, see <http://www.gnu.org/licenses/>.
+##
+#######################
+
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+exec_prefix_set=no
+
+usage()
+{
+	cat <<EOF
+Usage: dsam-config [OPTIONS] [LIBRARIES]
+Options:
+	[--cflags]
+	[--debug]
+	[--exec-prefix[=DIR]]
+	[--gui]
+	[--libs]
+	[--prefix[=DIR]]
+	[--rflags]
+	[--version]
+EOF
+	exit $1
+}
+
+if [ $# -eq 0 ]; then
+	usage 1 1>&2
+fi
+
+while [ $# -gt 0 ]; do
+	case "$1" in
+	-*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+	*) optarg= ;;
+	esac
+
+	case $1 in
+	--prefix=*)
+		prefix=$optarg
+		if [ $exec_prefix_set = no ]; then
+			exec_prefix=$optarg
+		fi
+		;;
+	--prefix)
+		echo_prefix=yes
+		;;
+	--exec-prefix=*)
+		exec_prefix=$optarg
+		exec_prefix_set=yes
+		;;
+	--exec-prefix)
+		echo_exec_prefix=yes
+		;;
+	--version)
+		echo @PACKAGE_VERSION@
+		exit 0
+		;;
+	--cflags)
+		if [ "@includedir@" != /usr/include ]; then
+			includes="-I@includedir@"
+		fi
+		echo_cflags=yes
+		;;
+	--rflags)
+		echo_rflags=yes
+		;;
+	--libs)
+		echo_libs=yes
+		;;
+	--gui)
+		if [ -z "@DSAM_GRAPHICS_FALSE@" ]; then
+			echo Graphics support not installed.
+			exit 1
+		fi
+		use_gui=yes
+		;;
+	--debug)
+		use_debug=yes
+		;;
+	*)
+		usage 1 1>&2
+		;;
+	esac
+	shift
+done
+
+if [ "$echo_prefix" = "yes" ]; then
+	echo $prefix
+fi
+if [ "$echo_exec_prefix" = "yes" ]; then
+	echo $exec_prefix
+fi
+if test "$echo_cflags" = "yes"; then
+	cflags="@DEFS@ @DSAM_DEFS@ -I@includedir@/@PACKAGE@ @PORTAUDIO_CFLAGS@ @SNDFILE_CFLAGS@ @FFTW3_CFLAGS@"
+	if [ "$use_debug" = "yes" ]; then
+		cflags="$cflags -ggdb3 -DDMALLOC"
+	fi
+	if [ "$use_gui" = "yes" ]; then
+		cflags="$cflags -DUSE_GUI @WXINC@"
+	else
+		cflags="$cflags @WX_BASE_CXXFLAGS@"
+	fi
+	if [ "@MINGW32@" = "yes" -a "$use_debug" != "yes" ]; then
+		cflags="$cflags -mwindows"
+	fi
+	echo $cflags
+fi
+if [ "$echo_rflags" = "yes" ]; then
+	rflags="@WXRESFLAGS@ --include-dir @includedir@"
+	echo $rflags
+fi
+if [ "$echo_libs" = "yes" ]; then
+	libs="-L@libdir@  @DSAMEXTLIB@ -l@PACKAGE@ @SNDFILE_LIBS@ @FFTW3_LIBS@ @PORTAUDIO_LIBS@"
+	if test "$use_debug" = "yes"; then
+		libs="$libs -ldmalloc"
+		if test "$use_gui" = "yes"; then
+			libs="$libs -ldmallocxx"
+		fi
+	fi
+	if [ "$use_gui" = "yes" ]; then
+		libs="-l@PACKAGE@_g $libs @WXLDLIBS@ @WXOGLLIBS@"
+	else
+		libs="$libs -lm"
+		if [ -z "@DSAM_EXTENSIONS_TRUE@" ]; then
+			libs="$libs @WX_BASE_LIBS@"
+		fi
+	fi
+	echo $libs
+fi

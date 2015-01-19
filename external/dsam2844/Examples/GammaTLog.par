@@ -1,0 +1,7 @@
+4			Order for the gamma tone filters - BM model.
+parameters	Diagnostic mode ('list' or 'parameters').
+log			Centre frequency mode for filter.
+80.0		Initial centre frequency of gamma-tone filter bank.
+4500.0		Final centre frequency of gamma-tone filter bank.
+10			No. of channels.
+ERB			Band width (3 dB down) mode for filters.

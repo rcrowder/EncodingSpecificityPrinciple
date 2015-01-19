@@ -1,0 +1,5 @@
+2			Number of pure tones.
+9410.0	80.0	0.0		Probe tone (Hz, dB SPL, phase).
+10800.0	80.0	0.0		Test tone (Hz, dB SPL, phase).
+100.0e-3			Stimulus signal duration (seconds).
+0.005e-3		Stimulus sampling interval, dt (seconds).

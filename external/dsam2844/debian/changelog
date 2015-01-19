@@ -1,0 +1,60 @@
+dsam (2.8.44-0ubuntu1) quantal; urgency=low
+
+  * Several bug fixes have been made in addition to the code being re-configured  * to allow Windows(tm) DLLs to be created.
+  * The SAMS application was crashing on startup.  A mismatch in memory
+  * allocation was corrected.
+  * I also corrected problems with the GUI support shared library linkage. 
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Wed, 07 Nov 2012 10:05:13 +0000
+
+dsam (2.8.35-0ubuntu1) natty; urgency=low
+
+  * Added xmlto to the dependencies in the debian/control file. It is required
+  * for producing the man page.
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Tue, 04 Oct 2011 10:31:35 +0100
+
+dsam (2.8.34-0ubuntu1) natty; urgency=low
+
+  * Added the debian files to the installation and also a simple man(7) page.
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Mon, 03 Oct 2011 21:25:05 +0100
+
+dsam (2.8.33-0ubuntu6) natty; urgency=low
+
+  * Corrected error in debian control file - missing comma for libdsam
+    dependency. 
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Sun, 25 Sep 2011 15:38:36 +0100
+
+dsam (2.8.33-0ubuntu5) lucid; urgency=low
+
+  * Added dependencies to dsam2.8-dev to ensure that dependencies are loaded
+    with the library. 
+  * Had to run ./configure in directory before the build.
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Sun, 25 Sep 2011 15:08:02 +0100
+
+dsam (2.8.33-0ubuntu1) lucid; urgency=low
+
+  * New upstream version with a bug fix to x-axis of displays when segment
+    processing mode is used.  Various other cosmetic code upates were also
+    completed. 
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Fri, 23 Sep 2011 13:03:42 +0100
+
+dsam (2.8.32-0ubuntu4) natty; urgency=low
+
+  * Previous package (0ubuntu2) only contained the documents and not the
+    library.  I forgot to update the changelog for the previous attempt at
+    correcting the problem (0ubuntu3) which I think caused the previous
+    version to be downloaded.
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Fri, 12 Aug 2011 09:32:24 +0100
+
+dsam (2.8.32-0ubuntu3) natty; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+  * Added the 'cdbs' package requirement.
+
+ -- Dr. Lowel P. O'Mard (One Word) <lowel.omard@gmail.com>  Thu, 11 Aug 2011 12:23:04 +0100

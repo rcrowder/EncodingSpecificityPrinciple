@@ -1,0 +1,115 @@
+#######################
+##
+## File:		dsam.spec.in
+## Purpose:		Spec for building DSAM RPM Packages
+## Comments:	
+## Author:		L. P. O'Mard
+## Created:		
+## Updated:
+## Copyright:	(c) 2010 Lowel P. O'Mard
+##
+#######################
+##
+##  This file is part of DSAM.
+##
+##  DSAM is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  DSAM is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with DSAM.  If not, see <http://www.gnu.org/licenses/>.
+##
+#######################
+
+# Note that this is NOT a relocatable package
+%define prefix	/usr
+%define ver		2.8.44
+%define libVer	2.8
+%define RELEASE 1
+%define rel		%{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
+%define numCPUs %{?cpus} %{!?cpus:1}
+
+Name: dsam
+Summary: Development System for Auditory Modelling
+Version: %{ver}
+Release: %{rel}
+License: LICENSE 
+Group: Libraries
+Source: http://prdownloads.sourceforge.net/dsam/%{name}-%{ver}.tar.gz
+URL: http://dsam.org.uk
+Packager: Lowel P. O'Mard <lowel.omard@gmail.com> 
+Requires: libsndfile
+BuildRoot: %{_tmppath}/%{name}-%{ver}-root
+Obsoletes: dsam
+
+%description
+DSAM is a library to support programmers producing auditory models.  It includes
+a wide collection of established and experimental auditory models.  It also
+provides facilities for reading and writing to sound file formats, in addition
+to including many analysis functions.
+
+%changelog
+* Wed Mar 22 2000 Lowel P. O'Mard <lowel@essex.ac.uk>
+- Initial skeleton, based on the .specs from ddd-3.2 and gtk+-1.2.6.
+
+%package devel
+Summary: Version %{ver} of the DSAM library
+Group: Development/Libraries
+Requires: dsam
+Obsoletes: dsam-devel
+
+%description devel
+Header files for dsam %{ver} library.
+
+%prep
+%setup
+PATH=$PATH:/opt/gnome/bin
+DSAM_FLAGS="--prefix=%{prefix} --enable-graphics --enable-shared"
+
+%configure $DSAM_FLAGS
+
+%build
+# Needed for snapshot releases.
+if [ "$SMP" != "" ]; then
+  export MAKE="make -j$SMP"
+else
+  export MAKE="make"
+fi
+$MAKE
+
+%install
+[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
+%makeinstall
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%preun
+
+%clean
+[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-, root, root)
+
+%doc AUTHORS LICENSE README NEWS ChangeLog
+%doc Examples
+%{_libdir}/lib*-%{libVer}.so*
+%{_mandir}/*
+
+%files devel
+%defattr(-, root, root)
+
+%{_includedir}/*
+%{_libdir}/lib*.so
+%{_libdir}/*a
+%{_bindir}/*
+

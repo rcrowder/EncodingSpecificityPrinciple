@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug (DL)|x64">
+      <Configuration>Debug (DL)</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug (DL)|Win32">
+      <Configuration>Debug (DL)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DLL Release|Win32">
+      <Configuration>DLL Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DLL Release|x64">
+      <Configuration>DLL Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>DSAM</ProjectName>
+    <ProjectGuid>{853D1FD7-20AB-586C-9699-9680F84AC985}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">$(SolutionDir)..\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">$(SolutionDir)..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">.\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">.\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">$(SolutionDir)..\lib\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">$(SolutionDir)..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">.\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">.\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">true</GenerateManifest>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">.dll</TargetExt>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">$(ProjectName)_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">$(ProjectName)_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">$(ProjectName)_x86</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_x86</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">$(ProjectName)_x86</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)_x86</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\lib\vc_lib\mswud;.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\$(ProcessorArchitecture);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\lib\vc_lib\mswud;.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>wxmsw28ud_core.lib;wxbase28ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>vc_mswud\minimal.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>.\..\..\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>vc_mswud\minimal.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_d$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\lib\vc_lib\mswud;.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;__WXMSW__;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\lib\vc_lib\mswud;.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>wxmsw28ud_core.lib;wxbase28ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>vc_mswud\minimal.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>.\..\..\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>vc_mswud\minimal.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_d$(TargetExt)</OutputFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\$(ProcessorArchitecture);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\$(ProcessorArchitecture);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;DSAM_MAKING_DLL=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;_USRDLL;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>libsndfile_x86.lib;portaudio.lib;libfftw3-3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(DSAMDIR)\lib;$(LIBSNDFILE)\MSVC\Release;$(FFTW3DIR)\x86;$(PORTAUDIO)\build\msvc\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>
+      </SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(solutiondir)..\lib\$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;DSAM_MAKING_DLL=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;_USRDLL;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>libsndfile_x64.lib;portaudio.lib;libfftw3-3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(DSAMDIR)\lib;$(LIBSNDFILE)\MSVC\x64\Release;$(FFTW3DIR)\x64;$(PORTAUDIO)\build\msvc\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>
+      </SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(solutiondir)..\lib\$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\$(ProcessorArchitecture);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Debug (DL)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug (DL)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>.\..\..\lib\vc_dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_d$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug (DL)|x64'">
+    <Midl>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(solutiondir)\..\Include;$(solutiondir)\..;$(PORTAUDIO)\include;$(LIBSNDFILE)\src;$(FFTW3DIR)\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__MSVISUALC__;HAVE_CONFIG_H;LIBRARY_COMPILE;EXTENSIONS_SUPPORT=1;DSAM_USE_UNICODE=1;_CRT_SECURE_NO_WARNINGS;USE_PORTAUDIO=1;_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ObjectFileName>.\Debug (DL)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug (DL)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4054</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;__WXMSW__;_UNICODE;WXUSINGDLL;_WINDOWS;NOPCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>.\..\..\include;.;.\..\..\samples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>.\..\..\lib\vc_dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_d$(TargetExt)</OutputFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\MainLib\AnALSR.c" />
+    <ClCompile Include="..\..\src\MainLib\AnAutoCorr.c" />
+    <ClCompile Include="..\..\src\MainLib\AnAverages.c" />
+    <ClCompile Include="..\..\src\MainLib\AnConvolve.c" />
+    <ClCompile Include="..\..\src\MainLib\AnCrossCorr.c" />
+    <ClCompile Include="..\..\src\MainLib\AnExperiment.c" />
+    <ClCompile Include="..\..\src\MainLib\AnFindBin.c" />
+    <ClCompile Include="..\..\src\MainLib\AnFindNextIndex.c" />
+    <ClCompile Include="..\..\src\MainLib\AnFourierT.c" />
+    <ClCompile Include="..\..\src\MainLib\AnGeneral.c" />
+    <ClCompile Include="..\..\src\MainLib\AnHistogram.c" />
+    <ClCompile Include="..\..\src\MainLib\AnIntensity.c" />
+    <ClCompile Include="..\..\src\MainLib\AnInterSIH.c" />
+    <ClCompile Include="..\..\src\MainLib\AnSAC.c" />
+    <ClCompile Include="..\..\src\MainLib\AnSAImage.c" />
+    <ClCompile Include="..\..\src\MainLib\AnSpikeReg.c" />
+    <ClCompile Include="..\..\src\MainLib\AnSynchIndex.c" />
+    <ClCompile Include="..\..\src\MainLib\DiSignalDisp.c" />
+    <ClCompile Include="..\..\src\MainLib\FiASCII.c" />
+    <ClCompile Include="..\..\src\MainLib\FiDataFile.c" />
+    <ClCompile Include="..\..\src\MainLib\FiParFile.c" />
+    <ClCompile Include="..\..\src\MainLib\FiSndFile.c" />
+    <ClCompile Include="..\..\src\MainLib\FlBandPass.c" />
+    <ClCompile Include="..\..\src\MainLib\FlDistLowPass.c" />
+    <ClCompile Include="..\..\src\MainLib\FlFIR.c" />
+    <ClCompile Include="..\..\src\MainLib\FlLowPass.c" />
+    <ClCompile Include="..\..\src\MainLib\FlMultiBPass.c" />
+    <ClCompile Include="..\..\src\MainLib\FlZBMiddleEar.c" />
+    <ClCompile Include="..\..\src\MainLib\GeCommon.c" />
+    <ClCompile Include="..\..\src\MainLib\GeEarObject.c" />
+    <ClCompile Include="..\..\src\MainLib\GeModuleMgr.c" />
+    <ClCompile Include="..\..\src\MainLib\GeModuleReg.c" />
+    <ClCompile Include="..\..\src\MainLib\GeNSpecLists.c" />
+    <ClCompile Include="..\..\src\MainLib\GeSignalData.c" />
+    <ClCompile Include="..\..\src\MainLib\GeUniParMgr.c" />
+    <ClCompile Include="..\..\src\MainLib\IOAudioIn.c" />
+    <ClCompile Include="..\..\src\MainLib\MoANSGBinom.c" />
+    <ClCompile Include="..\..\src\MainLib\MoANSGCarney.c" />
+    <ClCompile Include="..\..\src\MainLib\MoANSGMeddis02.c" />
+    <ClCompile Include="..\..\src\MainLib\MoANSGSimple.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMCarney.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMCooke.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMDGammaC.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMDRNL.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMGammaC.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMGammaT.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMZhang.c" />
+    <ClCompile Include="..\..\src\MainLib\MoBMZilanyBruce.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPCarney.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPLopezPoveda.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPMeddis.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPSham3StVIn.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPShamma.c" />
+    <ClCompile Include="..\..\src\MainLib\MoHCRPZhang.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHC86aMeddis.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHC86Meddis.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHCCarney.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHCCooke.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHCMeddis2000.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHCZhang.c" />
+    <ClCompile Include="..\..\src\MainLib\MoIHCZilanyBruce.c" />
+    <ClCompile Include="..\..\src\MainLib\MoNCArleKim.c" />
+    <ClCompile Include="..\..\src\MainLib\MoNCHHuxley.c" />
+    <ClCompile Include="..\..\src\MainLib\MoNCMcGregor.c" />
+    <ClCompile Include="..\..\src\MainLib\StAMTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StBPTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StClick.c" />
+    <ClCompile Include="..\..\src\MainLib\StCMRHarmMask.c" />
+    <ClCompile Include="..\..\src\MainLib\StCMRNoiseMask.c" />
+    <ClCompile Include="..\..\src\MainLib\StEGatedTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StFMTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StFSHarmonic.c" />
+    <ClCompile Include="..\..\src\MainLib\StHarmonic.c" />
+    <ClCompile Include="..\..\src\MainLib\StMPPTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StMPTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StPTone.c" />
+    <ClCompile Include="..\..\src\MainLib\StPTone2.c" />
+    <ClCompile Include="..\..\src\MainLib\StPulseTrain.c" />
+    <ClCompile Include="..\..\src\MainLib\StStepFun.c" />
+    <ClCompile Include="..\..\src\MainLib\StWhiteNoise.c" />
+    <ClCompile Include="..\..\src\MainLib\TrCollectSignals.c" />
+    <ClCompile Include="..\..\src\MainLib\TrGate.c" />
+    <ClCompile Include="..\..\src\MainLib\TrSetDBSPL.c" />
+    <ClCompile Include="..\..\src\MainLib\UtAccumulate.c" />
+    <ClCompile Include="..\..\src\MainLib\UtAmpMod.c" />
+    <ClCompile Include="..\..\src\MainLib\UtANSGUtils.c" />
+    <ClCompile Include="..\..\src\MainLib\UtAppInterface.c" />
+    <ClCompile Include="..\..\src\MainLib\UtBandwidth.c" />
+    <ClCompile Include="..\..\src\MainLib\UtBinSignal.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCFList.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCmplxM.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCollateSignals.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCompress.c" />
+    <ClCompile Include="..\..\src\MainLib\UtConvMonaural.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCreateBinaural.c" />
+    <ClCompile Include="..\..\src\MainLib\UtCreateJoined.c" />
+    <ClCompile Include="..\..\src\MainLib\UtDatum.c" />
+    <ClCompile Include="..\..\src\MainLib\UtDebug.c" />
+    <ClCompile Include="..\..\src\MainLib\UtDelay.c" />
+    <ClCompile Include="..\..\src\MainLib\UtDynaBList.c" />
+    <ClCompile Include="..\..\src\MainLib\UtDynaList.c" />
+    <ClCompile Include="..\..\src\MainLib\UtFFT.c" />
+    <ClCompile Include="..\..\src\MainLib\UtFilters.c" />
+    <ClCompile Include="..\..\src\MainLib\UtFIRFilters.c" />
+    <ClCompile Include="..\..\src\MainLib\UtGCFilters.c" />
+    <ClCompile Include="..\..\src\MainLib\UtHalfWRectify.c" />
+    <ClCompile Include="..\..\src\MainLib\UtIonChanList.c" />
+    <ClCompile Include="..\..\src\MainLib\UtIterRipple.c" />
+    <ClCompile Include="..\..\src\MainLib\UtLocalChans.c" />
+    <ClCompile Include="..\..\src\MainLib\UtMathOp.c" />
+    <ClCompile Include="..\..\src\MainLib\UtNameSpecs.c" />
+    <ClCompile Include="..\..\src\MainLib\UtNoiseMod.c" />
+    <ClCompile Include="..\..\src\MainLib\UtOptions.c" />
+    <ClCompile Include="..\..\src\MainLib\UtPadSignal.c" />
+    <ClCompile Include="..\..\src\MainLib\UtParArray.c" />
+    <ClCompile Include="..\..\src\MainLib\UtPause.c" />
+    <ClCompile Include="..\..\src\MainLib\UtRamp.c" />
+    <ClCompile Include="..\..\src\MainLib\UtRandom.c" />
+    <ClCompile Include="..\..\src\MainLib\UtRedceChans.c" />
+    <ClCompile Include="..\..\src\MainLib\UtReduceDt.c" />
+    <ClCompile Include="..\..\src\MainLib\UtRefractory.c" />
+    <ClCompile Include="..\..\src\MainLib\UtRemez.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSample.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSelectChans.c" />
+    <ClCompile Include="..\..\src\MainLib\UtShapePulse.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSimScript.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSpikeList.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSSParser.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSSSymbols.c" />
+    <ClCompile Include="..\..\src\MainLib\UtStddise.c" />
+    <ClCompile Include="..\..\src\MainLib\UtString.c" />
+    <ClCompile Include="..\..\src\MainLib\UtStrobe.c" />
+    <ClCompile Include="..\..\src\MainLib\UtSwapLR.c" />
+    <ClCompile Include="..\..\src\MainLib\UtTranspose.c" />
+    <ClCompile Include="..\..\src\MainLib\UtZhang.c" />
+    <ClCompile Include="..\..\src\MainLib\UtZilanyBruce.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\DSAMSetup.h" />
+    <ClInclude Include="..\..\Include\AnALSR.h" />
+    <ClInclude Include="..\..\Include\AnAutoCorr.h" />
+    <ClInclude Include="..\..\Include\AnAverages.h" />
+    <ClInclude Include="..\..\Include\AnConvolve.h" />
+    <ClInclude Include="..\..\Include\AnCrossCorr.h" />
+    <ClInclude Include="..\..\Include\AnExperiment.h" />
+    <ClInclude Include="..\..\Include\AnFindBin.h" />
+    <ClInclude Include="..\..\Include\AnFindNextIndex.h" />
+    <ClInclude Include="..\..\Include\AnFourierT.h" />
+    <ClInclude Include="..\..\Include\AnGeneral.h" />
+    <ClInclude Include="..\..\Include\AnHistogram.h" />
+    <ClInclude Include="..\..\Include\AnIntensity.h" />
+    <ClInclude Include="..\..\Include\AnInterSIH.h" />
+    <ClInclude Include="..\..\Include\AnSAC.h" />
+    <ClInclude Include="..\..\Include\AnSAImage.h" />
+    <ClInclude Include="..\..\Include\AnSpikeReg.h" />
+    <ClInclude Include="..\..\Include\AnSynchIndex.h" />
+    <ClInclude Include="..\..\Include\DiSignalDisp.h" />
+    <ClInclude Include="..\..\Include\DSAM.h" />
+    <ClInclude Include="..\..\Include\FiASCII.h" />
+    <ClInclude Include="..\..\Include\FiDataFile.h" />
+    <ClInclude Include="..\..\Include\FiParFile.h" />
+    <ClInclude Include="..\..\Include\FiSndFile.h" />
+    <ClInclude Include="..\..\Include\FlBandPass.h" />
+    <ClInclude Include="..\..\Include\FlDistLowPass.h" />
+    <ClInclude Include="..\..\Include\FlFIR.h" />
+    <ClInclude Include="..\..\Include\FlLowPass.h" />
+    <ClInclude Include="..\..\Include\FlMultiBPass.h" />
+    <ClInclude Include="..\..\Include\FlZBMiddleEar.h" />
+    <ClInclude Include="..\..\Include\GeCommon.h" />
+    <ClInclude Include="..\..\Include\GeEarObject.h" />
+    <ClInclude Include="..\..\Include\GeModuleMgr.h" />
+    <ClInclude Include="..\..\Include\GeModuleReg.h" />
+    <ClInclude Include="..\..\Include\GeNSpecLists.h" />
+    <ClInclude Include="..\..\Include\GeSignalData.h" />
+    <ClInclude Include="..\..\Include\GeUniParMgr.h" />
+    <ClInclude Include="..\..\Include\IOAudioIn.h" />
+    <ClInclude Include="..\..\Include\MoANSGBinom.h" />
+    <ClInclude Include="..\..\Include\MoANSGCarney.h" />
+    <ClInclude Include="..\..\Include\MoANSGMeddis02.h" />
+    <ClInclude Include="..\..\Include\MoANSGSimple.h" />
+    <ClInclude Include="..\..\Include\MoBMCarney.h" />
+    <ClInclude Include="..\..\Include\MoBMCooke.h" />
+    <ClInclude Include="..\..\Include\MoBMDGammaC.h" />
+    <ClInclude Include="..\..\Include\MoBMDRNL.h" />
+    <ClInclude Include="..\..\Include\MoBMGammaC.h" />
+    <ClInclude Include="..\..\Include\MoBMGammaT.h" />
+    <ClInclude Include="..\..\Include\MoBMZhang.h" />
+    <ClInclude Include="..\..\Include\MoBMZilanyBruce.h" />
+    <ClInclude Include="..\..\Include\MoHCRPCarney.h" />
+    <ClInclude Include="..\..\Include\MoHCRPLopezPoveda.h" />
+    <ClInclude Include="..\..\Include\MoHCRPMeddis.h" />
+    <ClInclude Include="..\..\Include\MoHCRPSham3StVIn.h" />
+    <ClInclude Include="..\..\Include\MoHCRPShamma.h" />
+    <ClInclude Include="..\..\Include\MoHCRPZhang.h" />
+    <ClInclude Include="..\..\Include\MoIHC86aMeddis.h" />
+    <ClInclude Include="..\..\Include\MoIHC86Meddis.h" />
+    <ClInclude Include="..\..\Include\MoIHCCarney.h" />
+    <ClInclude Include="..\..\Include\MoIHCCooke.h" />
+    <ClInclude Include="..\..\Include\MoIHCMeddis2000.h" />
+    <ClInclude Include="..\..\Include\MoIHCZhang.h" />
+    <ClInclude Include="..\..\Include\MoIHCZilanyBruce.h" />
+    <ClInclude Include="..\..\Include\MoNCArleKim.h" />
+    <ClInclude Include="..\..\Include\MoNCHHuxley.h" />
+    <ClInclude Include="..\..\Include\MoNCMcGregor.h" />
+    <ClInclude Include="..\..\Include\StAMTone.h" />
+    <ClInclude Include="..\..\Include\StBPTone.h" />
+    <ClInclude Include="..\..\Include\StClick.h" />
+    <ClInclude Include="..\..\Include\StCMRHarmMask.h" />
+    <ClInclude Include="..\..\Include\StCMRNoiseMask.h" />
+    <ClInclude Include="..\..\Include\StdSimThread.h" />
+    <ClInclude Include="..\..\Include\StEGatedTone.h" />
+    <ClInclude Include="..\..\Include\StFMTone.h" />
+    <ClInclude Include="..\..\Include\StFSHarmonic.h" />
+    <ClInclude Include="..\..\Include\StHarmonic.h" />
+    <ClInclude Include="..\..\Include\StMPPTone.h" />
+    <ClInclude Include="..\..\Include\StMPTone.h" />
+    <ClInclude Include="..\..\Include\StPTone.h" />
+    <ClInclude Include="..\..\Include\StPTone2.h" />
+    <ClInclude Include="..\..\Include\StPulseTrain.h" />
+    <ClInclude Include="..\..\Include\StStepFun.h" />
+    <ClInclude Include="..\..\Include\StWhiteNoise.h" />
+    <ClInclude Include="..\..\Include\TrCollectSignals.h" />
+    <ClInclude Include="..\..\Include\TrGate.h" />
+    <ClInclude Include="..\..\Include\TrSetDBSPL.h" />
+    <ClInclude Include="..\..\Include\UtAccumulate.h" />
+    <ClInclude Include="..\..\Include\UtAmpMod.h" />
+    <ClInclude Include="..\..\Include\UtANSGUtils.h" />
+    <ClInclude Include="..\..\Include\UtAppInterface.h" />
+    <ClInclude Include="..\..\Include\UtBandwidth.h" />
+    <ClInclude Include="..\..\Include\UtBinSignal.h" />
+    <ClInclude Include="..\..\Include\UtCFList.h" />
+    <ClInclude Include="..\..\Include\UtCmplxM.h" />
+    <ClInclude Include="..\..\Include\UtCollateSignals.h" />
+    <ClInclude Include="..\..\Include\UtCompress.h" />
+    <ClInclude Include="..\..\Include\UtConvMonaural.h" />
+    <ClInclude Include="..\..\Include\UtCreateBinaural.h" />
+    <ClInclude Include="..\..\Include\UtCreateJoined.h" />
+    <ClInclude Include="..\..\Include\UtDatum.h" />
+    <ClInclude Include="..\..\Include\UtDebug.h" />
+    <ClInclude Include="..\..\Include\UtDelay.h" />
+    <ClInclude Include="..\..\Include\UtDynaBList.h" />
+    <ClInclude Include="..\..\Include\UtDynaList.h" />
+    <ClInclude Include="..\..\Include\UtFFT.h" />
+    <ClInclude Include="..\..\Include\UtFilters.h" />
+    <ClInclude Include="..\..\Include\UtFIRFilters.h" />
+    <ClInclude Include="..\..\Include\UtGCFilters.h" />
+    <ClInclude Include="..\..\Include\UtHalfWRectify.h" />
+    <ClInclude Include="..\..\Include\UtIonChanList.h" />
+    <ClInclude Include="..\..\Include\UtIterRipple.h" />
+    <ClInclude Include="..\..\Include\UtLocalChans.h" />
+    <ClInclude Include="..\..\Include\UtMathOp.h" />
+    <ClInclude Include="..\..\Include\UtNameSpecs.h" />
+    <ClInclude Include="..\..\Include\UtNoiseMod.h" />
+    <ClInclude Include="..\..\Include\UtOptions.h" />
+    <ClInclude Include="..\..\Include\UtPadSignal.h" />
+    <ClInclude Include="..\..\Include\UtParArray.h" />
+    <ClInclude Include="..\..\Include\UtPause.h" />
+    <ClInclude Include="..\..\Include\UtRamp.h" />
+    <ClInclude Include="..\..\Include\UtRandom.h" />
+    <ClInclude Include="..\..\Include\UtRedceChans.h" />
+    <ClInclude Include="..\..\Include\UtReduceDt.h" />
+    <ClInclude Include="..\..\Include\UtRefractory.h" />
+    <ClInclude Include="..\..\Include\UtRemez.h" />
+    <ClInclude Include="..\..\Include\UtSample.h" />
+    <ClInclude Include="..\..\Include\UtSelectChans.h" />
+    <ClInclude Include="..\..\Include\UtShapePulse.h" />
+    <ClInclude Include="..\..\Include\UtSimScript.h" />
+    <ClInclude Include="..\..\Include\UtSpikeList.h" />
+    <ClInclude Include="..\..\Include\UtSSParser.h" />
+    <ClInclude Include="..\..\Include\UtSSSymbols.h" />
+    <ClInclude Include="..\..\Include\UtStddise.h" />
+    <ClInclude Include="..\..\Include\UtString.h" />
+    <ClInclude Include="..\..\Include\UtStrobe.h" />
+    <ClInclude Include="..\..\Include\UtSwapLR.h" />
+    <ClInclude Include="..\..\Include\UtTranspose.h" />
+    <ClInclude Include="..\..\Include\UtZhang.h" />
+    <ClInclude Include="..\..\Include\UtZilanyBruce.h" />
+    <ClInclude Include="..\..\src\MainLib\UtSSParser.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

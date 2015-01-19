@@ -1,0 +1,102 @@
+#!/bin/sh
+##################
+#
+# File:		dos-dist
+# Purpose:	This script runs all of the commands necessary for configuring DSAM
+#			from the CVS repository for dos compilation
+# Author:	L.P.O'Mard
+# Created:	13 Jul 2001
+# Updated:	
+# Copyright:(c) 2001, University of Essex
+#
+##################
+
+INCDIR=Include
+SRCDIR=src
+MAINLIB=$SRCDIR/MainLib
+CFGTOOLS=CfgTools
+TEMP_FILE=file.tmp
+BULDROOT=build
+
+############################### Usage ##########################################
+
+usage()
+{
+	cat <<EOF
+Usage: dos-dist command
+commands:
+    autogen   - configure the cvs source for compilation on windows platform.
+    clean     - remove all windows compilation created directories and files.
+	make      - Create a zip archive distribution.
+EOF
+	exit $1
+}
+
+############################### CVSConfigure ###################################
+
+CVSConfigure()
+{
+	./autogen.sh
+	./configure
+	(cd $MAINLIB; make UtSSParser.c)
+	sed "s/#define.*HAVE_STRINGS_H.*/\/* #undef HAVE_STRINGS_H *\//" \
+	  DSAMSetup.h > temp
+	mv temp DSAMSetup.h
+	sed "s/#define.*SIZEOF_LONG.*/\/* #undef SIZEOF_LONG *\//" \
+	  DSAMSetup.h > temp
+	mv temp DSAMSetup.h
+	cp $MAINLIB/UtSSParser.h $INCDIR
+}
+
+############################### Main Script ####################################
+
+if [ $# -eq 0 ]; then
+	usage 1 1>&2
+fi
+
+case $1 in
+autogen)
+	CVSConfigure
+	rm -f config.status config.cache
+	;;
+clean)
+	rm -rf lib bin $INCDIR/UtSSParser.h `find . -name '*.obj'`
+	rm -f `find . -name '*.exe'`
+	rm -f `find . -name '*.pch'`
+	rm -f `find . -name '*.idb'`
+	rm -f `find . -name '*.pdb'`
+	rm -f `find . -name '*.plg'`
+	rm -f `find . -name '*.ncb'`
+	rm -f `find . -name '*.opt'`
+	;;
+make)
+	echo Creating unix distribution directory ...
+	CVSConfigure > $TEMP_FILE
+	make dist > $TEMP_FILE
+	grep "^PACKAGE " Makefile | sed "s/ //g" > $TEMP_FILE
+	grep "^VERSION " Makefile | sed "s/ //g" >> $TEMP_FILE
+	source ./$TEMP_FILE
+	archiveName=${PACKAGE}-${VERSION}
+	echo archiveName = $archiveName
+	rm -rf $archiveName
+	tar zxf $archiveName.tar.gz
+	rm $archiveName.tar.gz
+
+	echo Copying extra files to include directory ...
+	cp $archiveName/$MAINLIB/UtSSParser.h $archiveName/$INCDIR
+	#cp $archiveName/$GRLIB/dsam.rc $archiveName/$INCDIR
+
+	echo Creating zip archive ...
+	newArchiveName=`echo $archiveName | tr -d ".-"`
+	rm -rf $newArchiveName
+	mv $archiveName $newArchiveName
+	zip -r $newArchiveName.zip $newArchiveName > $TEMP_FILE
+	rm -rf $newArchiveName
+	rm $TEMP_FILE
+	make distclean
+	
+	echo Finished creating $newArchiveName.zip.
+	;;
+*)
+	usage 1 1>&2
+esac

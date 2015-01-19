@@ -1,0 +1,79 @@
+#######################
+##
+## File:		README.in
+## Purpose:		README file for DSAM
+## Comments:	
+## Author:		L. P. O'Mard
+## Created:		
+## Updated:
+## Copyright:	(c) 2010 Lowel P. O'Mard
+##
+#######################
+##
+##  This file is part of DSAM.
+##
+##  DSAM is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  DSAM is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with DSAM.  If not, see <http://www.gnu.org/licenses/>.
+##
+#######################
+
+General Information
+===================
+
+This is dsam version 2.8.44.  dsam is a library to support
+programmers producing auditory models.  It includes a wide collection of
+established and experimental auditory models.  It also provides facilities for
+reading and writing to sound file formats, in addition to including many
+analysis functions.
+
+To use the graphics support code, the wxWin code must be obtained and compiled
+(it can be found at http://www.wxwindows.org/).
+
+The official web site is:
+  http://dsam.org.uk
+
+A mailing list is located at:
+  dsam@mailbase.ac.uk
+
+To subscribe: visit the web site at http://www.mailbase.ac.uk/lists/dsam/
+
+Installation
+============
+
+See the file 'INSTALL'
+
+How to report bugs
+==================
+
+To report a bug, send mail either to the dsam list, as mentioned above.
+
+In the mail include:
+
+* The version of dsam
+
+* Information about your system. For instance:
+
+   - What operating system and version
+   - What version of X
+   - For Linux, what version of the C library
+
+  And anything else you think is relevant.
+
+* How to reproduce the bug. 
+
+* If the bug was a crash, the exact text that was printed out
+  when the crash occured.
+
+* Further information such as stack traces may be useful, but
+  is not necessary.
+

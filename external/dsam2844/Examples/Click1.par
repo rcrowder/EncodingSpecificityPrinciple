@@ -1,0 +1,4 @@
+1.25e-3		Time for the delta-function click (s).
+7.959		Stimulus signal intensity (dB SPL).
+12.5e-3		Stimulus signal duration (seconds).
+0.05e-3		Stimulus sampling interval, dt (seconds).

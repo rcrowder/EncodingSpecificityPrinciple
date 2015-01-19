@@ -1,0 +1,5 @@
+1000.0		20	Left stimulus frequency/Intensity (Hz/dB SPL).
+1000.0		20	Right stimulus frequency/Intensity (Hz/dB SPL).
+180.0		Phase difference between channels (degrees).
+20.0e-3		Stimulus signal duration (seconds).
+0.05e-3		Stimulus sampling interval, dt (seconds).

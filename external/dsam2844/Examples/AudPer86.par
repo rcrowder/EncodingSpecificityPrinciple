@@ -1,0 +1,14 @@
+#
+# Main Parameter file
+#
+output.dat		Name of output file.
+#
+# Module specifications.
+#
+#Parameter files
+#---------------
+PTone1.par		Stimulus generation paradigm.
+Ramp1.par		Ramp transform process (gate).
+PreEmph1.par	Outer-/middler-ear filter model.
+GammaT1.par		Basilar membrane filter model.
+Meddis86.par	Meddis 86 Inner hair cell (IHC) model.
