@@ -12,6 +12,8 @@ An intention is to use the [Numenta Platform for Intelligent Computing](http://n
 
 ###### Suggested reading list
 
+**To be reworkd** to take into account of [Mendeley](http://www.mendeley.com/), a free reference manager for PDFs.
+
 [Spectral density](http://en.wikipedia.org/wiki/Spectral_density)  
 [Critical band](http://en.wikipedia.org/wiki/Critical_band)  
 [Equal loudness contour](http://en.wikipedia.org/wiki/Equal-loudness_contour)   
