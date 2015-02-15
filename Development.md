@@ -8,58 +8,9 @@ Beaglebone: Qt Creator for C++ ARM Embedded Linux Development http://youtu.be/kP
 
 * [Sonic Visualiser](http://www.sonicvisualiser.org/)
 * [Vamp Plugins](http://www.vamp-plugins.org/)
-* [Auditory Image Model](http://www.acousticscale.org/wiki/index.php/Main_Page)
 * [Numenta CLA & HTM](http://numenta.org/)
-
-Some example Vamp plugins for SV can be found here; http://www.mazurka.org.uk/software/sv/plugin/
-
-[BBC Vamp plugin collection](https://github.com/bbcrd/bbc-vamp-plugins/blob/master/README.md) - This is a collection of audio feature extraction algorithms written in the Vamp plugin format by BBC Research and Development.
-
-* Peaks
-  - Peak/trough
-* Energy
-  - RMS energy
-  - RMS energy delta
-  - Moving average
-  - Dip probability
-  - Low energy ratio
-* Intensity
-  - Intensity
-  - Intensity ratio
-* Rhythm
-  - Onset detection curve
-  - Moving average of the onset detection curve
-  - Difference between 1 and 2
-  - Onsets
-  - Average onset frequency
-  - Rhythm strength
-  - Autocorrelation
-  - Mean correlation peak
-  - Peak valley ratio
-  - Tempo
-* Spectral Contrast
-  - Valleys
-  - Peaks
-  - Mean
-* Spectral Flux
-  - Spectral flux
-* Speech/music segmenter
-  - Segmentation
-  - Detection function
-
-[C++ Constant-Q](https://code.soundsoftware.ac.uk/projects/constant-q-cpp) - A C++ library and Vamp plugin implementing the Constant-Q transform of a time-domain signal.
-
-[Mazurka Plugins](http://www.mazurka.org.uk/software/sv/plugin/) - Mazurka Project Plugins for Sonic Visualiser
-
-- MzAttack: Identify note attacks in the audio data.
-- MzChronogram: Time-domain analogy to spectrograms.
-- MzHarmonicSpectrum: Displays the Harmonic Product Spectrum from which pitch estimates of monophonic harmonic input audio can be made.
-- MzNevermore: Independent control of window size and transform size for spectrogram display.
-- MzPowerCurve: Measures the power over time of an audio signal.
-- MzSpectralFlux: Estimates note onsets from changes in spectral magnitude.
-- MzSpectrogramClient: Demonstration of how to create spectral data from time data supplied by a host application.
-- MzSpectrogramFFTW: Demonstration of how to create spectral data using FFTW from time data supplied by a host application.
-- MzSpectrogramHost: Demonstration of how to process spectral data from host applications.
+* [Marsyas](https://github.com/marsyas/marsyas)
+* [Auditory Image Model](http://www.acousticscale.org/wiki/index.php/Main_Page) (Part of Marsyas)
 
 ### AIM - The Auditory Image Model
 
@@ -107,3 +58,55 @@ Feature integration (100 - 150 ms)
 Tuning on the basilar membrane changes from high to low frequency.  
 A1 neurons carrying six times less information about ST then IC  
 Abstract entities per spike is twice smaller in A1 than IC  
+
+## Vamp plugins
+
+Some example Vamp plugins for SV can be found here; http://www.mazurka.org.uk/software/sv/plugin/
+
+[C++ Constant-Q](https://code.soundsoftware.ac.uk/projects/constant-q-cpp) - A C++ library and Vamp plugin implementing the Constant-Q transform of a time-domain signal.
+
+[BBC Vamp plugin collection](https://github.com/bbcrd/bbc-vamp-plugins/blob/master/README.md) - This is a collection of audio feature extraction algorithms written in the Vamp plugin format by BBC Research and Development.
+
+* Peaks
+  - Peak/trough
+* Energy
+  - RMS energy
+  - RMS energy delta
+  - Moving average
+  - Dip probability
+  - Low energy ratio
+* Intensity
+  - Intensity
+  - Intensity ratio
+* Rhythm
+  - Onset detection curve
+  - Moving average of the onset detection curve
+  - Difference between 1 and 2
+  - Onsets
+  - Average onset frequency
+  - Rhythm strength
+  - Autocorrelation
+  - Mean correlation peak
+  - Peak valley ratio
+  - Tempo
+* Spectral Contrast
+  - Valleys
+  - Peaks
+  - Mean
+* Spectral Flux
+  - Spectral flux
+* Speech/music segmenter
+  - Segmentation
+  - Detection function
+
+[Mazurka Plugins](http://www.mazurka.org.uk/software/sv/plugin/) - Mazurka Project Plugins for Sonic Visualiser
+
+- MzAttack: Identify note attacks in the audio data.
+- MzChronogram: Time-domain analogy to spectrograms.
+- MzHarmonicSpectrum: Displays the Harmonic Product Spectrum from which pitch estimates of monophonic harmonic input audio can be made.
+- MzNevermore: Independent control of window size and transform size for spectrogram display.
+- MzPowerCurve: Measures the power over time of an audio signal.
+- MzSpectralFlux: Estimates note onsets from changes in spectral magnitude.
+- MzSpectrogramClient: Demonstration of how to create spectral data from time data supplied by a host application.
+- MzSpectrogramFFTW: Demonstration of how to create spectral data using FFTW from time data supplied by a host application.
+- MzSpectrogramHost: Demonstration of how to process spectral data from host applications.
