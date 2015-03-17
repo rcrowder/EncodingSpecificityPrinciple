@@ -158,7 +158,7 @@ The mechanotransduction by stereocilia is highly sensitive, and able to detect p
 
 Outer hair cells on the other hand boost the mechanical signal by using electromechanical feedback, a frequency specific boost and unmyelinated.  
 
-Outer middle ear processing (PCP) can be approximated with 2nd order Butterworth filter? (Lf 450 Hz, Hf 8000 Hz)
+Outer middle ear processing (PCP) can be approximated with 2nd order Butterworth filter? (Lf 450 Hz, Hf 8000 Hz). Need PCP for spatial locationing of sound (horizontal and vertical calculated in seperate neuronal clusters).
 
 The basilar membrane of the cochlea is tonotopic. Location of middle ectosylvian gyrus, and tonotopic organization in approx. dorsoventrally across the gyrus.
 
@@ -185,6 +185,7 @@ Feedback from the tensor tympani and stapedius muscles could also be determined 
 
 Thalamic reticular nucleus (TRN) neurons (targets medial geniculate body (MGB)), may transiently deactivate surrounding TRN neurons in response to fresh stimulus, altering auditory thalamus responses and inducing attention shift?  
 
+Individual subdivisions of the medial geniculate body (MG) receive a majority of their ascending inputs from 1 or 2 subdivisions of the inferior colliculus (IC). This establishes parallel pathways that provide a model for understanding auditory projections from the IC through the MG and on to auditory cortex. 
 
 - Spectro-Temporal Receptive Field (STRF) estimated from the responses to relevant complex stimuli  
 - Volterra integral representation?  
