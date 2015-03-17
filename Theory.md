@@ -185,8 +185,14 @@ Feedback from the tensor tympani and stapedius muscles could also be determined 
 
 Thalamic reticular nucleus (TRN) neurons (targets medial geniculate body (MGB)), may transiently deactivate surrounding TRN neurons in response to fresh stimulus, altering auditory thalamus responses and inducing attention shift?  
 
-Individual subdivisions of the medial geniculate body (MG) receive a majority of their ascending inputs from 1 or 2 subdivisions of the inferior colliculus (IC). This establishes parallel pathways that provide a model for understanding auditory projections from the IC through the MG and on to auditory cortex. 
+Quote of abstract from; Excitatory and inhibitory projections in parallel pathways from the inferior colliculus to the auditory thalamus. Jeffrey G Mellott, Nichole L Foster, Andrew P Ohl.
 
+> Individual subdivisions of the medial geniculate body (MG) receive a majority of their ascending inputs from 1 or 2 subdivisions of the inferior colliculus (IC). This establishes parallel pathways that provide a model for understanding auditory projections from the IC through the MG and on to auditory cortex. 
+
+Quote of abstract from; Descending projections from auditory cortex to excitatory and inhibitory cells in the nucleus of the brachium of the inferior colliculus. Jeffrey G Mellott, Martha E Bickford, Brett R Schofield
+
+> Descending projections from the auditory cortex (AC) terminate in subcortical auditory centers from the medial geniculate nucleus (MG) to the cochlear nucleus, allowing the AC to modulate the processing of acoustic information at many levels of the auditory system. The nucleus of the brachium of the inferior colliculus (NBIC) is a large midbrain auditory nucleus that is a target of these descending cortical projections. The NBIC is a source of several auditory projections, including an ascending projection to the MG. This ascending projection appears to originate from both excitatory and inhibitory NBIC cells, but whether the cortical projections contact either of these cell groups is unknown.
+ 
 - Spectro-Temporal Receptive Field (STRF) estimated from the responses to relevant complex stimuli  
 - Volterra integral representation?  
 - Processing of spatial cues all pre-isothalamic?  
